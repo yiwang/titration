@@ -1,0 +1,21 @@
+---
+#1.1.1Air quality (usage value)– Gain and Loss 
+base: 21 
+var: [65]
+sub:[ ]
+desc:
+  en:>
+    Imagine that you live in a region that has a fairly constant climate all year round, like San Diego. The current air quality (measured by number and size of particulates) in the area is moderate and the local county government is considering a temporary change to its emissions policy to study the effects of air quality on human health and the local wildlife. The particulate output of nearby factories will be reduced, but the factories will be compensated so that they do not incur any costs during the test period. The test will lead to an immediate improvement in air quality over a period of three weeks ($BASE_VALUE days), after which time the air quality will return to its former level. However, the government is also considering carrying out the test a year from now, for a different length of time.
+  zh:>
+    请设想一下, 您住在一个气候比较稳定的地方, 比如昆明. 您那里的空气质量 (主要是空气中的浮尘) 属于中等. 当地政府准备试行一段时间一个新的排污政策, 用来测试空气质量对人们的身体健康以及对当地野生动物的影响. 试行期间,附近的工厂要减少大气排放. 因为减少排放而造成工厂的利润损失将由政府补贴. 如果现在马上开始试行的话, 试行会持续3个星期 ($BASE_VALUE 天). 这3个星期的空气质量会有所提高. 3个星期以后将恢复原有政策, 空气质量回落到现有水平. 当地政府也在考虑等到一年以后再做这个试行测试. 如果等到一年以后再试行, 试行持续的时间长短还没有确定.
+ans:
+  en:
+    - Improved air quality immediately for $BASE_VALUE days.
+    - Improved air quality a year from now for $VAR_VALUE days.
+  zh:
+    - 试行马上开始, 接下来$BASE_VALUE天的空气质量都有提高.
+    - 等一年再试行, 试行时间持续$VAR_VALUE天 ($VAR_VALUE天比较好的空气质量).
+# note, only for ctype = 0
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政策的看法.

@@ -1,0 +1,21 @@
+---
+#1.1.1Air quality (usage value)– Gain and Loss 
+base: 22
+var: [24, 27, 32, 37, 65, 80, 95, 120]
+division: 4
+desc:
+  en:>
+    Imagine that you live 2 hours (by car) away from a forest. You have never visited it and do not plan to do so. The local government is selling part of the forest to an estate developer to help cover the financial deficit. Two developers are interested in buying it. Developer A has informed the government that they will cut down $BASE_VALUE 100-year-old trees immediately to make space for their current project. Developer B intends to cut down $VAR_VALUE 100-year-old trees a year from now for their project. The government is conducting a survey on the public’s preference.
+  zh:>
+    请设想一下, 离您住的地方附近有一个森林. 坐车去那里要2个小时. 你从来没有去过那个森林, 也不打算去. 因为财政问题, 当地政府准备把森林的一部分卖给房产开发商. 现在有两个开发商想要买这块地. 开发商甲告诉政府说如果卖给他们, 他们会马上砍掉$BASE_VALUE棵百年老树, 因为他们马上就需要地皮. 开发商乙说如果卖给他们, 他们会在一年以后砍掉$VAR_VALUE棵百年老树, 因为他们一年以后才有计划开发那里. 当地政府正在做一个调查, 想知道人们愿意选择卖给谁.    
+ans:
+  en:
+    - Cut down $BASE_VALUE trees immediately
+    - Cut down $VAR_VALUE trees a year from now
+  zh:
+    - 卖给甲, 马上砍掉$BASE_VALUE棵老树
+    - 还是乙, 一年以后砍掉$VAR_VALUE棵老树
+# note, only for ctype = 0
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on selling part of the forest . What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政府行为的看法.

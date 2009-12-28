@@ -1,0 +1,611 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script language="JavaScript" type="text/javascript">
+
+/*
+For questions about this example, please write Jonathan Baron
+at baron@psych.upenn.edu.  It is a work in progress.  It is a
+template for web questionnaires.
+
+Note that JS (JavaScript) strings have quotes around them.  Line
+breaks are interpreted as ends of JS commands unless they are
+preceded by a backslash, called "escape".  Comments on one line
+begin with two forward slashes.  Multi-line comments are
+bracketed with slash+asterisk and asterisk+slash, like this one.
+
+Strings are all quoted here because all web pages are created by building
+up a long string and then printing it to the screen with the JS function
+document.write().
+
+The basic idea is to cycle between present(), which presents the item,
+and getresp(), which stores the data.  Each of these calls the other until
+the experiment is done.  We use a frame so that the data are not destroyed
+each time a page is written.  There is also an introductory page and a final
+section for submitting the data.
+*/
+
+// some variables, Code is the code for the study.
+var Code="code",Pay=3,Sex=9,Age,Email // replace with code and pay for study
+
+/* A html page can begin with a <head> and this can contain a style
+specification.  Here, the "body" style sets the background to light gray (#EEEEEE),
+sets font family to sans serif, and sets a proportional left and right margin.
+The width and height settings probably don't work, but the label setting
+gives the user a larger area to click on, with a white background to shot it.
+The white-space setting allows spacing within and around text. */
+
+// style specification: margins, light gray background
+var Style="body {background-color: #f5f5f5; margin-left: 6%;\
+ margin-right: 10%; font-family: sans-serif;}\
+ input.radio {white-space: nowrap;}\
+ label {white-space: pre;} label:hover {background-color: yellow;\
+ cursor:pointer; cursor:hand;} input:focus {background: yellow; }"
+
+// head of each web page
+var Head="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\
+ \"http://www.w3.org/TR/html4/loose.dtd\"><html><head>\
+ <style type=\"text/css\">"+Style+"</style></head>"
+
+var pstart=Head+"<body><H1>Basic template ("+Code+")</H1>"+
+
+"Use View/Source to see how this works."+
+// The introduction goes here.
+
+/*
+Get demographic data. Note that <p> (paragraph), <br> (line break),
+<hr> (horizontal rule), <form ...>, and <input ...> are basic html tags.
+See below for definition of but() in terms of another input tag.
+*/
+"<form name='subform'><hr>\
+What is your sex?"+but(0,1," male  ")+but(0,0," female")+
+"<P>What is your age? <input type='text' size=5 name='age' value=''>\
+ <P>What is your email address? (Use the address with which you are registered.)\
+ <br><input type='text' size=60 name='aemail'>\
+ <br>An acknowledgment message will be sent to this address. \
+ <P><input type=\"button\" value=\"Click here to continue.\" \
+ onClick=\"top.present();\">\
+ <hr>Note: With <a href=\"http://mozilla.org\">Firefox</a>, \
+ the TAB key moves to the next button and the SPACE key selects that button. \
+ The ENTER key goes to the next page if the 'Click to go on' button is highlighted. \
+ </form></body></html>"
+ 
+/* List the cases, but see below for another way to do this.  This is a JS array
+consisting of strings.  The brackets begin and end it.  The commas separate the
+elements.  The first string is refered to as Cases[0] and the last as Cases[2]. */
+var Cases=[
+"This is the first proposal.",
+"This is the second proposal.",
+"This is the third proposal."
+]
+
+// more variables: nitems items, nqs questions, item is what is printed
+var nitems=3, itemno=0, nqs=4, All, time1, err, item, itm, r, i, j, sf
+var done=new Array(nqs+1) // short arrays for storing data from each page
+var qtim=new Array(nqs+1) // array for times
+var alldata=new Array(nitems) // for storing data from all the pages
+var Comm=new Array(nitems) // array for comments
+
+// This function, defined here, clears done and qtim before each page.
+function Reset() {for (i=0;i<=nqs;i++) {done[i]=null;qtim[i]=0}}
+
+Reset() // Executes the function to make sure that everything is null or 0 to start.
+
+// randomize the order of the cases
+var iorder = new Array(nitems) // creates random order of conditions
+for (i=0; i < nitems; i++) {iorder[i]=i} // iorder is now [0,1,2,...]
+for (i=0; i < nitems; i++) // switch each number in iorder with a random one
+{r=Math.floor(Math.random()*(nitems-i))+i;
+ j=iorder[r]; iorder[r]=iorder[i]; iorder[i]=j}
+
+// This records the time by subtracting time1 from current time.  Units 0.1 sec.
+// But it is also the way to do things when a button is clicked.
+// the line with "if," with the questions below, show how to control visbility
+function SaveTime(x) {
+qtim[x]=Math.round((new Date().getTime()-time1)/100)
+if (x==1) {tframe.document.getElementById("2").style.visibility="visible"}
+return}
+
+// This function puts commas in numbers.  Don't ask.
+function format(number) {number = '' + number
+if (number.length > 3) {
+ var mod = number.length % 3;
+ var output = (mod > 0 ? (number.substring(0,mod)) : '');
+ for (i=0 ; i < Math.floor(number.length / 3); i++) {
+  if ((mod == 0) && (i == 0))
+  output += number.substring(mod+ 3 * i, mod + 3 * i + 3);
+  else
+  output+= ',' + number.substring(mod + 3 * i, mod + 3 * i + 3)}
+ return "$"+output}
+else return "$"+number}
+
+// This is for a button, each with text (z). Spaces are honored.
+// The space at the beginning allows the string to fold.
+// To make a list, put <br> before it.
+function but(x,y,z) { // x=question number y=response number z=text
+return " <label> <input type='radio' class='radio' name='"+x+
+"' value='"+y+"' onClick='top.SaveTime("+x+")'>"+z+" </label>"}
+
+// a string of buts illustrating the use of spaces
+function buts(x) {return "<br>"+but(x,1,"1    ")+but(x,2,"2 ")+but(x,3,"3 ")+
+but(x,4,"4 ")+but(x,5,"5 ")+but(x,6," ")+but(x,7,"7")}
+
+function yn(x) {return "<br>"+but(x,1,"yes   ")+but(x,2,"no")} // yes/no
+
+// text input
+function inp(x) {return "<input type='text' size='5' name='"+x+
+"' onChange='top.SaveTime("+x+")'>"}
+
+// the main function for presenting a case and questions
+function present()
+{
+
+// if the first case, make sure age and sex are there
+if (itemno==0) {
+ sf=tframe.document.subform.elements // sf is now an array of form elements
+ for (i=0;i<2;i++) {r=sf[i]; if (r.checked) {Sex=r.value}} // read radio buttons
+ if (Sex>2) {alert("Please indicate your sex. (If it didn't work, try Firefox.)"); return}
+ Age=sf.age.value
+ if (Age!=parseInt(Age)) {alert("Please enter your age."); return}
+ Email=sf.aemail.value.toLowerCase() // user lowercase email always
+}
+
+// if the last case, go to the end
+if (itemno>=nitems) {endq(); return}
+
+// itm is the number of the case to be presented
+itm=iorder[itemno]
+
+// make another page header
+item=Head+"<body><form name='subform' onSubmit='top.getresp();'><small>Item "+
+ (itemno+1)+" out of "+nitems+":</small><p>"+
+
+Cases[itm]+
+
+/* alternative to using the array for Cases:
+if (itm==0) {item+="This is the first proposal."}
+if (itm==1) {item+="This is the second proposal."}
+if (itm==2) {item+="This is the third proposal."}
+[then get rid of the + before Cases above, and put item+= before the next line]
+*/
+
+"<p>How reasonable is this proposal?<br>\
+ (1=totally unreasonable, \
+ 4=somewhat reasonable, depending on the circumstances and the other proposals, \
+ other requests, and 7=very reasonable -- even generous.)<br>"+buts(1)+
+
+// Note that the second question is enclosed in an invisible <div></div>, which becomes
+// visible when the first question is answered, as controlled above by SaveTime().
+"<div id=\"2\" style=\"visibility: hidden;\">\
+<P>How can you possibly know?<br>"+
+but(2,1,"I guessed.<br>")+
+but(2,2,"No way.<br>")+
+but(2,3,"I have extrasensory perception.<br>")+
+but(2,4,"Someone offered me "+format(1000000)+".")+
+"</div>"+
+
+"<P>Did you see the second question after you answered the first?"+
+"<select size='4' name='3'>"+
+"<option value='1'>nothing</option>"+
+"<option value='2'>a little</option>"+
+"<option value='3'>quite a bit</option>"+
+"<option value='4'>very much</option></select>"+
+
+"<P>How much is this worth? $"+inp(4)+
+
+"<P><input type='button' value='Click here to go on.' \
+ onClick='top.getresp()'>\
+ <P>Please write any comments on this page here (up to 255 characters):<br>\
+ <input type='text' size=80 name='comm'></form></BODY></HTML>"
+
+// display the page and start the timer
+tframe.document.open()
+tframe.document.write(item)
+tframe.document.close()
+tframe.document.subform.elements[0].focus() // focus on first response button
+tframe.scroll(0,0) // scroll to the top
+time1=new Date().getTime() // start the timer by setting time1 to current time
+}
+
+// get the responses, check for errors, store the data, go to next page
+function getresp() {
+sf=tframe.document.subform.elements
+err=""
+// deal with radio buttons and text inputs
+for (i=0;i<sf.length;i++) {r=sf[i]
+ if (r.type=="text") {r.value=r.value.replace(/,/g,"")} // remove commas
+ if (r.checked || r.type=="text") {done[r.name]=r.value}}
+// deal with select, allow storing multiple values adjacently with ! as separator
+for (i=0;i<sf.length-1;i++)
+ {r=sf[i]
+   if (r.type=="select-one" || r.type=="select-multiple")
+     {for (j=0;j<r.length;j++)
+       {if (r.options[j].selected)
+         {done[r.name]=(done[r.name]==null ? "" : done[r.name])+"!"+r.options[j].value}}}}
+// check responses using input names, in case fewer items than nqs
+//  use sf.length-1 to ignore comment input
+for (i=0;i<sf.length-1;i++) {r=sf[i]
+ if ((done[r.name]==null && r.name>0) || (r.type=="text" && r.value==""))
+  {err+=" "+r.name}}
+if (err!="") {alert("Please answer all questions."); return}
+// test for items that require a number:
+err=""
+for (i=0;i<sf.length-1;i++) {r=sf[i]
+ if (r.type=="text" && parseFloat(done[r.name])!=done[r.name]) {err+=" "+r.name}}
+if (err!="") {alert("Please use numbers only."); return}
+// use NA (missing data code in R) when nqs higher than last item
+for (i=1;i<=nqs;i++) {if (done[i]==null) {done[i]="NA"}}
+done[0]=itemno
+alldata[itm]=done.join("+")+"+"+qtim.join("+") // alldata contains the data
+Comm[itm]=itm+":"+sf.comm.value // comments go here
+itemno++ // advance the item number so that the next case is chosen
+Reset()
+// block the back button: intersperse a blank page with a forward command
+// [top.present() works around Opera bug]
+tframe.document.open()
+tframe.document.write("<html><body onLoad=\"history.forward(); top.present();\"> </body></html>")
+tframe.document.close()
+top.present(); return // complete the getresp()/present() cycle, present next page
+}
+
+function endq()
+{item=Head+"<body><form name='subform' onSubmit='top.compute()'>\
+ <P>Please write any additional comments here (up to 255 characters):<br>\
+ <input type='text' size=80 name='comm'>\
+ <P>If you disconnected from the Internet, you must reconnect before you click:\
+ <br><input type='button' value='Submit responses.' onClick='top.compute()'>\
+ </form></body></html>"
+tframe.document.open()
+tframe.document.write(item)
+tframe.document.close()
+tframe.scroll(0,0) // scroll to the top (in case the browser doesn't)
+tframe.document.subform.elements[0].focus()} // focus on the first element
+
+// puts together the data and submits everything
+function compute() {
+sf = tframe.document.subform
+All=Age+","+Sex+","+alldata.join(",").replace(/ /g,"_")
+item="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\""+
+ "\"http://www.w3.org/TR/html4/loose.dtd\"><html><body>\
+ <form name=\"mainform\" method=\"POST\" \
+ action=\"http://www.sas.upenn.edu/~baron/saveform.php\" target=\"_top\">\
+ <input type=\"hidden\" name=\"aquaire\" value=\""+Code+"\">\
+ <input type=\"hidden\" name=\"aemail\" value=\""+Email+"\">\
+ <input type=\"hidden\" name=\"apay\" value=\"$"+Pay+"\">\
+ <input type=\"hidden\" name=\"all\" value=\""+All+"\">\
+ <input type=\"hidden\" name=\"comm\" value=\""+sf.comm.value.replace(/"/g,"'")+
+"+"+Comm.join("+").replace(/"/g,"'")+"\">\
+ Here are your responses.  If this page remains on your screen,\
+ <input type=\"submit\" value=\"Try clicking here\">.  If the page still remains,\
+ the submission has failed.  Please cut and paste the page into an email message\
+ to <a href=\"mailto:baron@psych.upenn.edu\">baron@psych.upenn.edu</a><P>"+Code+","+
+Email+",$"+Pay+"<br>"+All.replace(/,/g,"<br>")+
+sf.comm.value.replace(/"/g,"'")+"</form></BODY></HTML>"
+tframe.document.open()
+tframe.document.write(item)
+tframe.document.close()
+tframe.document.mainform.submit()
+}
+
+// function to write the first page
+function qstart() {
+tframe.document.open() // tframe is the name of the frame (see below)
+tframe.document.write(pstart) // pstart is defined way at the top
+tframe.document.close()
+time1=new Date().getTime() // start timer: page 0 time -> qtim[0], unless overwritten
+}
+</script><link media="screen" rel="stylesheet" href="template_files/preview.css" type="text/css"><style type="text/css">/**
+ * Highlight style classes
+ * .a background color
+ * .b underline
+ * .c underline + font color
+ */
+ 
+@media screen{
+em.diigoHighlight {
+	text-align:inherit;
+	text-decoration: inherit;
+	line-height:inherit;
+	font:inherit;
+	color:inherit;
+	display:inline;
+	position:relative;
+}
+em.diigoHighlight.a.mouseOvered {
+	background-color: #ffc62a !important;
+}	
+
+em.diigoHighlight.b.mouseOvered, em.diigoHighlight.c.mouseOvered {
+	border-bottom: solid 2px #ffc62a;
+}
+	
+em.diigoHighlight.c {
+	color: #000099;
+}
+em.diigoHighlight.c.mouseOvered {
+	color: #ffc62a;
+}	
+
+em.diigoHighlight.a.yellow {
+	background-color: #FF9;
+}
+
+em.diigoHighlight.b.yellow, em.diigoHighlight.c.yellow {
+	border-bottom: solid 2px #FF9;
+}
+	
+img.diigoHighlight.yellow {/*image highlight*/
+	cursor: pointer; 
+	outline:2px solid #FF9;
+}
+	
+em.diigoHighlight.a.blue {
+	background-color: #ABD5FF;
+}
+
+em.diigoHighlight.b.blue, em.diigoHighlight.c.blue {
+	border-bottom: solid 2px #ABD5FF;
+}
+	
+img.diigoHighlight.blue {/*image highlight*/
+	cursor: pointer; 
+	outline:2px solid #ABD5FF;
+}
+	
+	
+em.diigoHighlight.a.green {
+	background-color: #B2E57E;
+}
+
+em.diigoHighlight.b.green, em.diigoHighlight.c.green {
+	border-bottom: solid 2px #B2E57E;
+}
+
+img.diigoHighlight.green {/*image highlight*/
+	cursor: pointer; 
+	outline:2px solid #B2E57E;
+}	
+	
+	
+em.diigoHighlight.a.pink {
+	background-color: #ffcccc;
+}
+
+em.diigoHighlight.b.pink, em.diigoHighlight.c.pink {
+	border-bottom: solid 2px #ffcccc;
+}
+	
+img.diigoHighlight.pink {/*image highlight*/
+	cursor: pointer; 
+	outline:2px solid #ffcccc;
+}	
+	
+img.diigoHighlight.mouseOvered {
+	cursor: pointer; 
+	outline:2px solid #ffc62a;
+}	
+	
+
+div.diigotb-inline-cloud{
+	position:fixed !important;
+	width:440px !important;
+	height:370px !important;
+	left:0;top:0;
+	background-color:#fef5c7 !important;
+	z-index:9999999999 !important;
+	display:none;
+	-moz-border-radius:15px !important;
+}
+/*  capture image */
+
+#diigotb-upload-cover{
+	background:transparent url(chrome://diigotb/skin/cover.png) repeat scroll 0 0;
+	cursor:crosshair;
+	height:100%;
+	left:0;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:99999;
+}
+#diigotb-upload-box{
+  z-index: 190000; 
+  background: transparent url(chrome://diigotb/skin/cover.png) repeat scroll 0 0; 
+  border: 1px solid #fff;
+  position: absolute;
+  cursor: crosshair;
+}
+.diigotb-upload-result{
+  z-index: 100000; 
+  background: url(chrome://diigotb/skin/temp.png); 
+  border: 1px solid #000;
+  position:fixed;
+}		
+
+/*highlight label*/
+.diigoHighlight .diigoHighlightLabel sup {
+	font:normal normal normal 8px/8px "lucida grande",tahoma,verdana,arial,sans-serif;
+	text-decoration:none;
+	background-color:inherit;
+	cursor:default;
+}
+	
+body.diigoHiPen.yellow{
+	cursor:url(chrome://diigotb/skin/highlighter-orange.cur), text !important
+}
+	
+body.diigoHiPen.blue{
+	cursor:url(chrome://diigotb/skin/highlighter-blue.cur), text !important
+}
+
+body.diigoHiPen.green{
+	cursor:url(chrome://diigotb/skin/highlighter-green.cur), text !important
+}	
+	
+body.diigoHiPen.pink{
+	cursor:url(chrome://diigotb/skin/highlighter-pink.cur), text !important
+}
+em.diigoHighlight.type_0.commented {	
+	padding-left:30px;
+}
+	
+/*float note*/
+div.diigoHighlight.type_2 {
+	position:absolute;
+	width:29px;
+	height:36px;
+	text-align:center;
+	background:transparent url('chrome://diigotb/skin/float_icon.png') no-repeat 50% 50%;
+	z-index:9996;
+}
+div.diigoHighlight.type_2.mouseOvered {
+	position:absolute;
+	width:37px;
+	height:31px;
+	text-align:center;
+	background:transparent url('chrome://diigotb/skin/float_icon.png') no-repeat;
+	z-index:9996;
+}	
+div.diigoHighlight.type_2 span {
+	color:#000;
+	font:bold 13px Arial, Helvetica, sans-serif;
+	cursor: default;
+	line-height: 37px;
+	text-shadow: #fff 0 1px 0;
+}
+/*
+* html div.diigoHighlight.type_2{
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale, src="http://www.diigo.com/javascripts/webtoolbar/images/float_icon.png");
+	overflow:hidden;
+	background:none;
+}
+*/
+	
+
+div.diigoIcon.commented.TextIcon.diigoEdit{
+	background-repeat:no-repeat !important;
+	background-position:right !important;
+}
+
+	
+div.diigoIcon.commented.ImageIcon.diigoEdit{
+	background-repeat:no-repeat !important;
+	background-position:right !important;
+}
+
+
+/*mouse over effect*/
+/*
+.diigoHighlight.id_190e5778b533dc0fa1b1660653a4f6f5 {outline: 2px dotted green !important;}
+*/
+div.diigoIcon{
+	cursor:pointer !important;
+	margin: 0pt; 
+	padding: 0px 0px 0px 0px;
+	position: absolute;
+	display:none;
+	width: 24px !important; 
+	z-index:999999;
+	height: 23px !important;
+	background: transparent url('chrome://diigotb/skin/edit-highlight.png') no-repeat left;
+}
+
+div.diigoIcon span{
+	color:#000000;
+	display:block;
+	font-family:Helvetica,Arial,sans-serif;
+	font-size:13px;
+	font-weight:700;
+	line-height:18px;
+	text-align:center;
+	text-shadow:0 1px 1px #FFFFFF;
+}
+
+div.diigoIcon.commented.ImageIcon{
+	display:block !important;
+	background-color: transparent !important;
+}
+	
+div.diigoIcon:hover{
+	background-background: transparent !important;
+	background-repeat:no-repeat !important;
+	background-position:right !important;
+}
+	
+div.diigoIcon.commented.TextIcon{
+	display:block !important;
+	left:0;
+	bottom:0;
+}
+	
+div.diigoIcon.commented.public{
+	background: #FFFFFF url('chrome://diigotb/skin/public-annotation.png') no-repeat left;
+}
+
+div.diigoIcon.commented.private{
+	background: #FFFFFF url('chrome://diigotb/skin/private-annotation.png') no-repeat left;
+}
+	
+div.diigoIcon.commented.group{
+	background: #FFFFFF url('chrome://diigotb/skin/group-annotation.png') no-repeat left;
+}
+	
+/*Clip video*/
+div.diigoClipVideo{
+	float:left;
+	height:16px;
+	padding:0 16px 0 6px;
+	background:#f5f5f5 url(chrome://diigotb/skin/toolbar-clip-bg.gif) no-repeat right 0;
+	border:1px solid #ccc;
+	border-bottom-width:0;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	z-index:999;
+	position:absolute;
+}
+
+div.diigoClipVideo.clipped {
+  background-position: right -32px; left: 717px; top: 135px;
+}
+
+	div.diigoClipVideo span{
+		font-weight:bold;
+		font-size:10px;
+		line-height:16px;
+		text-decoration:underline;
+		color:#03f;
+		cursor:pointer;
+		margin-right:6px
+	}
+	div.diigoClipVideo span:hover,div.diigoClipVideo span:active{
+		color:#00f
+	}
+	/*.diigolet input{
+		font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+		font-size:9px;
+	}*/
+}
+
+
+@media print{
+em.diigoHighlight.a, em.diigoHighlight.b, em.diigoHighlight.c {
+	border-bottom:0.5pt dashed Black;
+}
+
+
+/*image highlight*/
+/*no inline comments*/
+img.diigoHighlight {
+	border:0.5pt dashed Black
+}
+
+/*float note*/
+div.diigoHighlight.type_2 {
+	display:none
+}
+div.diigoHighlight.type_2 span {
+	display:none
+}
+}</style><style id="diigo-activeHighlight" type="text/css">dummyRuleForDigg{}</style></head><frameset rows="100%" onload="top.qstart()">
+<frame name="tframe">
+<div style="margin: 5px; background: yellow none repeat scroll 0% 0%; position: absolute; left: 0pt; top: 0pt; z-index: 1000; font-family: arial; font-size: 13px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; -moz-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; opacity: 0.9; display: none;" id="dictdiv"></div><div id="dictaudio"></div></frameset>
+</html>
