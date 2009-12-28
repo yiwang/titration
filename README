@@ -1,0 +1,9 @@
+A research assistant web survey project for CRED at Columbia University to conduct social experiment for game theory research.
+jQuery & prototype at front end.
+PHP & YAML (spyc) at back end.
+
+The source code is at
+http://github.com/yiwang/cred
+
+The log with explanation of code is at
+http://www.yi-wang.me/web-development/jquery-yaml/progress
