@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 <div id='buf' style='visibility: hidden;'>
 <?php
-$response = http_get("https://sites.google.com/a/yi-wang.me/www/web-development/jquery-yaml/progress", array("timeout"=>1), $info);
+$response = http_get("http://sites.google.com/a/yi-wang.me/www/web-development/jquery-yaml/progress", array("timeout"=>1), $info);
 //print_r($response);
 
 echo $response;

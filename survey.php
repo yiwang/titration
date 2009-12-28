@@ -33,8 +33,6 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
   ?>
   </label>
 <br/>
-
-<label> <input type="radio" name="ctype0" value="0"/> good thing</label>
   
 <div id='ctype0'><br/>
 <table>
