@@ -1,23 +1,62 @@
 ---
-# Section title here
-# 250 - [ ] - 300 - [350] - 400 - [ 450, 500 ] - 550 - [600, 650, 700] - 750
-base: 250 
-var: [250,  300,  400,  550, 750]
-sub:[ [ ], [350], [450, 500],  [600, 650, 700] ]
+#line starting with '#' is comment, does not harm the file format, but only for human readability, the above '---' line is needed.
+
+# Section title here, for easier relating to the location in the paper.
+
+# Choose one TYPE from below and DELETE OTHERS, just for easier to identify the type later.
+
+1#Environmental: usage x gain
+2#Environmental: usage x loss
+3#Environmental: existence x loss
+4#Environmental: existence x gain
+5#Monetary: luck x gain
+6#Monetary: luck x loss
+7#Monetary: self-earned/inflicted x gain
+8#Monetary: self-earned/inflicted x loss
+9#Health: risk x gain
+10#Health: risk x loss
+11#Health: condition x loss
+12#Health: condition x gain
+13#Environmental: permanent x loss
+14#Environmental: temporary x loss
+15#Environmental: permanent x gain
+16#Environmental: temporary x gain
+17#Monetary: house x gain
+18#Monetary: earned x gain
+19#Monetary: house x loss
+20#Monetary: earned x loss
+21#Health: severe x gain
+22#Health: severe x loss
+23#Health: mild x gain
+24#Health: mild x loss
+
+# pattern for 'var' and 'sub'
+#  d      c                 b               a     for 'var'
+#                   c.i             b.i             for 'sub'
+# 22  - 30 -  (37) - 44 - (55) - 65
+
+# 'var' has EXACTLY 4 numbers in it, 'sub' has EXACTLY 2 numbers in MONOTONICALLY INCREASING order.
+# DO have one or more WHITE SPACE after ',' between each number
+
+base: 21
+var: [ 22,   30,  44,  65 ]
+sub: [ 37,   55 ]
+
 desc:
   en:>
-    $BASE_VALUE  $VAR_VALUE
+    Start paragraph here with 4 WHITE SPACES padding in the begining  $BASE_VALUE  $VAR_VALUE
   zh:>
-    $BASE_VALUE  $VAR_VALUE
+    Start paragraph here $BASE_VALUE    $VAR_VALUE
    
 ans:
   en:
-    - $BASE_VALUE
+    - start sentence here with one WHITE SPACE from '-' $BASE_VALUE
     - $VAR_VALUE
   zh:
     - $BASE_VALUE
     - $VAR_VALUE
-# note, only for ctype = 0
+# note, only for ctype = 0, the selection question
 note:
-  en: 
+  en: #start sentence here with one WHITE SPACE from ':', if there is no note, leave this blank
   zh: 
+
