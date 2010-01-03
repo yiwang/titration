@@ -1,14 +1,16 @@
+function randOrd(){return (Math.round(Math.random())-0.5); }
 //jQuery.noConflict(); 
 var s = new Survey();
 var et = new Entry();
 
 // get set of IDs
 var ids = config.sets[set];
+//var ids = config.sets[set].sort(randOrd);
 var hint = config.hint;
 
-var cid=0;
-var cid_n = ids.length;
-var cid_i = 0;
+var cid=0;                // question ID, corresponds to *.yaml file name
+var cid_n = ids.length;   // size of the set
+var cid_i = 0;            // counter, since cid = ids[cid_i]
 
 var ctype=0;
 var csub=0;
@@ -67,6 +69,8 @@ jQuery(document).ready(function(){
   new_group();
   log('ready');
   log(cid+'.yaml');
+  log(ids);
+  log('set: '+ set);
 });
 
 var sel_val= null;
@@ -196,7 +200,10 @@ function refill_html(){
   jQuery('span[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______'));
   jQuery('#note').html(q[cid]['note'][lang]);
   jQuery('#your_ans').html(config.your_ans[lang]);
-  jQuery('#next').attr({value:config.nav.next[lang]});  
+  jQuery('#next').attr({value:config.nav.next[lang]});
+  // td[name="viz"] visiblity depends on whether q[cid].base is 0
+  if(q[cid].base == 0){jQuery('td[name="viz"]').css("visibility","hidden");}
+  if(q[cid].base != 0){jQuery('td[name="viz"]').css("visibility","visible");}
   // visibility
   show_hide();
 }
@@ -230,11 +237,4 @@ function new_group(){
   v = vv[v_i];
   refill_html();
   notify_change(['sform']);
-}
-// debug
-function log(str){
-	var log = document.getElementById("log");
-	if (log){ // log!=null
-	log.innerHTML += str + "<br/>";
-	}
 }

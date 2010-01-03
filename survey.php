@@ -10,6 +10,10 @@ form { font-family: Verdana; font-size: 14px; }
 #viz-var-ctype1 {height:10px; width:0px;}
 
 label { float: none; vertical-align: center;}
+input.radio {white-space: nowrap;}
+label {white-space: pre;} 
+label.choice:hover {background-color: yellow; cursor:pointer; cursor:hand;}
+input:focus {background: yellow; }
 label.error { float: none; color: red; padding-left: .5em; vertical-align: top; display:none; }
 p { clear: both; }
 .submit { margin-left: 12em; align: center; }
@@ -37,12 +41,12 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <div id='ctype0'><br/>
 <table>
   <tr>
-    <td> <div><input type="radio" name="ctype0" value="0"/> <label name='base'></label></div> </td>
-    <td><div id='viz-base'></div></td>
+    <td> <div><label class="choice"><input type="radio" name="ctype0" value="0"/> <label class="choice" name='base'></label></label></div> </td>
+    <td name="viz"><div id='viz-base'></div></td>
   </tr>
   <tr id='var'>
-    <td><div><input type="radio" name="ctype0" value="1" /> <label name='var'></label></div> </td>
-    <td><div id='viz-var'></div></td>
+    <td><div><label class="choice"><input type="radio" name="ctype0" value="1" /> <label class="choice" name='var'></label></label></div> </td>
+    <td name="viz"><div id='viz-var'></div></td>
   </tr>
 </table>
   
@@ -54,11 +58,11 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <table>
   <tr>
     <td><div>A. <label name='base'></label></div> </td>
-    <td><div id='viz-base-ctype1'></div></td>
+    <td name="viz"><div id='viz-base-ctype1'></div></td>
   </tr>
   <tr>
     <td><div>B. <span name='var'></span></div> </td>
-    <td><div id='viz-var-ctype1'></div></td>
+    <td name="viz"><div id='viz-var-ctype1'></div></td>
   </tr>
 </table>
   <br/>

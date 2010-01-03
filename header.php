@@ -1,12 +1,10 @@
+<head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<script src="debug.js" type="text/javascript"></script>
 <?php
 $lang = $_GET['lang'];
 if(empty($lang)){
   $lang = 'en';
-}
-$set = $_GET['set'];
-if(empty($set)){
-  $set = 'A';
 }
 //echo $lang;
 ?>
@@ -25,8 +23,20 @@ echo'.js" type="text/javascript"></script>';
 <script type="text/javascript">
 <?php
 require_once('spyc/spyc.php');
+function alert($val){
+  echo 'val="'.$val.'";';
+  echo 'alert('.val.');';
+}
 $config = Spyc::YAMLLoad('config.yaml');
-$ids = $config['sets']['all'];
+$set = $_GET['set'];
+$set_value = $config['sets'][$set];
+//alert(isset($config[$set]));
+//randomization of set
+if(!isset($set_value)){
+  $set = array_rand($config['sets']);
+  //alert($set);
+}
+$ids = $config['all-ids'];
 foreach($ids as $i){
 	$q[$i] = Spyc::YAMLLoad('questions/'.strval($i).'.yaml');
 	/*
@@ -46,10 +56,11 @@ echo 'set="'.$set.'";';
 <script src="entry.js" type="text/javascript"></script>
 <script src="survey.js" type="text/javascript"></script>
 <?php
-/*
+//*
 echo '<pre>';
-print_r($ids);
-print_r($config);
+//print_r(array_rand($config['sets']));
+//print_r($ids);
+//print_r($config);
 echo '</pre>';
 //*/
 /*
@@ -64,6 +75,8 @@ echo '</pre>';
 //*/
 
 ?>
+
+</head>
 
 <div id="debug" style="!visibility: hidden;">
 <div id="log"></div>
