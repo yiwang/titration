@@ -1,0 +1,33 @@
+---
+2.3.3 Mild-Loss
+#Health: mild x loss
+base: 0
+var: [ 20, 50, 100, 200 ]
+sub: [ 70,  150]
+
+desc:
+  en:>
+    Every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse if you overexpose yourself to certain irritants like pollen and mold.<br/><br/>
+ 
+    There is a central air system in your current apartment building that filters out most of the pollen and mold from your home air. With the air system turned on between March and May, in any given spring, you have a 5% chance of aggravating your allergies by pollen and mold particles that stay in your home. This year, however, the air system in your building is broken. The lease office gives you two options:<br/><br/>
+    
+    staying, or moving to another building. If you decide to move to another building with a functioning air system, the lease office will cover all of your moving costs. The new apartment will be identical to your current one, and the filter system works. If you decide to stay in your current home, the lease office will give you rent credit. According to your doctor, your chance of getting an aggravated allergy will be increased from 5% to 20% without the air system.Which one would you prefer, move to another building with the air system, or accept rent credit worth $VAR_VALUE% of your monthly rent and stay in the current building without the air system?
+ 
+  zh:>
+    请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积. <br/><br/>
+    
+    您现在租住的公寓楼有一个中央空气过滤系统. 每年春天, 如果这个过滤系统一直运行的话, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是5%. 但是今年这个过滤系统坏了, 短期修不好. 您的房东, 一家房地产公司, 给了您两个选择: 搬家或者留下.<br/><br/>
+    
+    如果您决定搬到隔壁的公寓楼, 房东会请搬家公司帮你搬家和清洁. 您不会有任何额外花费. 如果您决定留下, 房东会给您退回相当您每月租金$VAR_VALUE%的钱.  您的医生告诉您, 如果您留在没有过滤系统的公寓里面, 您得严重过敏的可能性会从5%上升到20%.
+ 
+ans:
+  en:
+    - move to another building with the air system
+    - accept rent credit worth $VAR_VALUE% of your monthly rent and stay in the current building without the air system
+  zh:
+    - 搬到有空调系统的隔壁的公寓楼
+    - 留在现在的公寓, 收到相当您每月租金$VAR_VALUE%的钱
+note:
+  en:
+  zh:
+

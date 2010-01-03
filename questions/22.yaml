@@ -1,0 +1,27 @@
+---
+2.3.2 Severe- Loss
+#Health: severe x loss
+base: 0
+var: [ 10, 50, 100, 200 ]
+sub: [ 70,  150]
+
+desc:
+  en:>
+    Imagine that you were born with a congenital heart defect that has a 5% chance of causing permanent decreased heart function and rhythm disturbances forcing you to significantly limit your activity and especially avoid participating in outdoor activities and sports.<br/><br/>
+    Your boss recently offered you a new position that requires longer work hours and involves more stress. You doctor has told you that if you take the new position, the risk of permanent damage and rhythm disturbances will rise from 5% to 20%. 
+ 
+  zh:>
+    请设想一下, 由于先天性的心脏缺陷, 您不得不限制自己的活动, 特别是室外活动, 因为您有5%的可能性心脏功能会遭到永久性的功能减退和心率不齐.<br/><br/>
+    
+    现在您老板问您是否对某一新职位感兴趣. 这个职位工作时间要长一些, 压力也更大. 您的医生告诉您说, 如果您接受这个新职位, 您的心脏遭受永久性的功能减退和心率不齐的可能性会从5% 上升到20%. 这个新职位比你现在的职位工资要多出$VAR_VALUE%.
+
+ans:
+  en:
+    - Do not take the new position
+    - Take the new position, which has a $VAR_VALUE% higher salary
+  zh:
+    - 不要新职位
+    - 要工资多出$VAR_VALUE%的新职位
+note:
+  en:
+  zh:

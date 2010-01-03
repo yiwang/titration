@@ -1,0 +1,28 @@
+---
+#1.2.4 Self -inflicted money loss
+#Monetary: self-earned/inflicted x loss
+
+base: 100 
+var: [ 110, 134, 200, 300 ]
+sub: [ 167,  250]
+
+base-zh: 600
+var-zh: [ 660, 804, 1200, 1800 ]
+sub-zh: [ 1002,  1500 ]
+
+desc:
+  en:>
+    Imagine that you accidentally trip onto your roommate’s computer and break its hard drive. Replacing the old hard drive with a brand new one will cost $$BASE_VALUE .  Your roommate gives you two options: you can either pay her $$BASE_VALUE immediately for a new hard drive, or, she can use her friend’s old hard drive for the time being, and you will pay her a larger amount a year from today when she buys a new computer. Your roommate does not have a preference on either option. Which would you prefer?
+  zh:>
+    请设想一下, 您和室友合租. 有一天, 您不小心绊倒您室友的电脑, 烧坏了电脑的硬盘. 换一个新硬盘需要$BASE_VALUE元. 您室友给了您两个选择: 或者您现在花$BASE_VALUE元给她这台电脑换一个新硬盘, 或者她先找一个旧硬盘先用着, 等一年以后她换新电脑的时候您帮她出更多的现金. 您室友觉得这个两个办法都一样, 对她而言没有差别. 而您也愿意赔偿，请问您是愿意现在出$BASE_VALUE元, 还是一年以后出更多的现金?
+ans:
+  en:
+    - Pay $$BASE_VALUE immediately
+    - pay $$VAR_VALUE a year from now
+  zh:
+    - 现在出$BASE_VALUE元.
+    - 一年以后出$VAR_VALUE元.
+note:
+  en:
+  zh:
+

@@ -1,0 +1,29 @@
+---
+2.3.3 Mild-Gain
+#Health: mild x gain
+base: 0
+var: [ 20, 50, 100, 200 ]
+sub: [ 70,  150]
+
+desc:
+  en:>
+    Every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse and unbearable if you overexpose yourself to certain irritants like pollen and mold.  You are somewhat worried about the accumulation of these irritants in the air at your apartment.<br/><br/>
+ 
+    There is a central air system at your apartment. With the current central air system, in any given spring, you have a 20% chance of aggravating your allergies by pollen and mold particles that stay in your apartment. You recently saw an infomercial for an ionizing air cleaner system that will filter out the pollen and mold from your home air. The system is available for rental only. Accordingly to your doctor, if you rent the new system between March and May, your chance of getting aggravated allergies is reduced from 20% to 5%. Would you be willing to rent the filter system if the price of a 3-month rental (March-May) is equal to $VAR_VALUE% your monthly rent?
+ 
+  zh:>
+    请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积.  您现在租住的地方有一个中央空气过滤系统. 每年春天, 如果您使用现有的这个过滤系统, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是20%.<br/><br/>
+    
+    最近您听说出了一种新的离子空气过滤系统. 这种系统现在只能租赁. 您的医生告诉您说, 如果您在每年的3-5月租用这个系统, 您得严重过敏的可能性将会从20%降到5%. 请问您会不会租用这个新系统, 如果租用3个月(3-5月)的价格刚好是相当于您一月房租的$VAR_VALUE%?
+
+ans:
+  en:
+    - Do not rent the filter system
+    - Rent the filter system for 3 months at the price of $VAR_VALUE% of your monthly apartment rent
+  zh:
+    - 不租用新系统
+    - 租用新系统, 价格刚好是相当于您一月房租的$VAR_VALUE%
+note:
+  en:
+  zh:
+

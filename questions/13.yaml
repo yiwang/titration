@@ -1,0 +1,34 @@
+---
+#2.1.1 Species extinction (Permanent)  -- loss
+#Environmental: permanent x loss
+base: 11
+var: [ 12, 25, 35, 60 ]
+sub: [ 30,  47]
+
+desc:
+  en:>
+    Imagine that you live a city that has a population of 250,000. The current unemployment rate in the city is 15%, which is about twice the national unemployment rate of 9%.  Unemployment has caused a series of serious problems in the city, including a rising crime rate.<br/><br/>
+
+    The local government is considering giving permission to several companies to set up a series of large manufactories close to a nature reserve in order to stimulate the economy and help solve the unemployment problem. It has been estimated that these new manufactories and their subsequent influence on the economy will decrease the unemployment rate from 15% to 10%.<br/><br/>
+
+    The reserve is a natural habitat of a variety of species, including an endangered bird. Scientists predict that without any disturbance, the probability of the endangered bird becoming extinct in the next 10 years is $BASE_VALUE%. If the manufactories are set up by the reserve, the probability of extinction in the next 10 years goes up from $BASE_VALUE%.  Would you vote to give permission for the setting up of these manufactories if the probability of extinction increases?
+
+  zh:>
+    请设想一下, 您所居住的城市有25万人口. 现在这个城市的失业率是15%, 而全国的平均失业率是9%. 失业率过高造成很多严重的问题, 包括犯罪率上升.<br/><br/>
+
+    为了刺激经济和解决失业率问题, 当地政府准备允许几家公司在离一个自然保护区很近的地方修工厂. 据估计, 这些新工厂将刺激经济, 将失业率从15%降低到10%.<br/><br/>
+
+    这个省级自然保护区里面有各种各样的生物, 包括一种濒危鸟类. 科学家预测道, 在顺其自然的条件下, 这种濒危鸟类在未来10年内灭绝的可能性是$BASE_VALUE%. 如果把那些工厂建到自然保护区附近, 灭绝的可能性会上升. 如果这种鸟类灭绝的可能性从$BASE_VALUE%上升, 您会支持在自然保护区附近建工厂吗?
+
+
+ans:
+  en:
+    - Avoid setting up manufactories to maintain extinction probability of $BASE_VALUE%
+    - Set up manufactories at the expense of increasing extinction probability to $VAR_VALUE%
+  zh:
+    - 不在自然保护区附近建工厂, 灭绝的可能性保持在$BASE_VALUE%
+    - 在自然保护区附近建工厂, 灭绝的可能性从$BASE_VALUE%上升到$VAR_VALUE%
+note:
+  en: Note that giving permission will decrease the unemployment rate from 15% to 10%.
+  zh: 请记住, 这些工厂能够把失业率从15%降到10%.
+

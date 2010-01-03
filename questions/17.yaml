@@ -1,0 +1,25 @@
+---
+#2.2.1 House money- gain
+#Monetary: house x gain
+base: 100 
+var: [ 220, 350, 580, 800 ]
+sub: [ 460,  700]
+
+desc:
+  en:>
+    Imagine that the local mall is having a promotion.  You just won $750 for being the 100th person to walk into the mall today.  As part of the promotion, the mall is also selling lottery tickets. Would you be willing to pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning more money?
+
+  zh:>
+    请设想一下, 当地一个大商场正在促销. 您作为当日的第100名顾客, 赢得了750元. 这个商场还卖彩票. 请问您愿意付$BASE_VALUE元买一张有45%可能性赢得更多钱的彩票吗?
+
+ans:
+  en:
+    - Do not participate in lottery
+    - Pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning $$VAR_VALUE
+  zh:
+    - 不卖彩票
+    - 付$BASE_VALUE元,买一张有45%可能性赢得$VAR_VALUE元的彩票
+note:
+  en:
+  zh:
+

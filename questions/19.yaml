@@ -1,0 +1,33 @@
+---
+2.2.3 House money- loss
+#Monetary: house x loss
+base: 50 
+var: [ 310, 320, 400, 500 ]
+sub: [ 360,  450]
+
+desc:
+  en:>
+    Imagine that you and your friend are playing chess. The winner will toss a die. If it is 6, the loser has to pay $$VAR_VALUE to the winner. That is, the loser has 1/6 chance of paying the winner $$VAR_VALUE.<br/><br/>
+    
+    Unfortunately, you are the loser in the game, which means that you have 1/6 chance of losing $$VAR_VALUE. The winner offers you a chance to buy her out. She will not toss the die if you agree to pay her $$BASE_VALUE.<br/><br/>
+ 
+    You have $600 on you. You won the money from a lottery a couple days ago. Which one would you prefer, paying her $$BASE_VALUE, or taking the 1/6 chance of paying her more money? 
+
+  zh:>
+    请设想一下, 您和您的朋友在下棋. 赢了的人会掷一次骰子. 如果朝上的一面是6, 输了的一方要付给赢方$VAR_VALUE元. 也就是说, 输了的人有1/6的可能性要给赢方付$VAR_VALUE元.<br/><br/>
+    
+    很不幸, 您输棋了. 您现在有1/6的可能性要付给赢方$VAR_VALUE元. 赢方给了您另外一个解决办法. 如果您肯现在付给她$BASE_VALUE元, 她就不掷这个骰子了.<br/><br/>
+ 
+    您身上有600元. 是前两天您买彩票中的奖. 请问您愿意付给赢方$BASE_VALUE元还是愿意选择1/6的可能性付给她更多钱?
+
+ans:
+  en:
+    - Pay her $$BASE_VALUE
+    - Take the 1/6 chance of paying her $$VAR_VALUE?
+  zh:
+    - 给赢方$BASE_VALUE元
+    - 选择1/6的可能性付给她$VAR_VALUE元
+note:
+  en:
+  zh:
+

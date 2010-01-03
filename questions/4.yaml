@@ -1,0 +1,25 @@
+---
+#Endangered species (existence value) – Gain
+#Environmental: existence x gain
+
+base: 5 
+var: [ 6, 9, 13, 18 ]
+sub: [ 11,  16]
+
+desc:
+  en:>
+    Imagine that you live in an area where there are 20 old dams that are no longer in use. The dams block the migration of fish to pristine spawning grounds in a National Park. The local government decides to remove some of these dams. It is estimated that each dam removed will increase the fish population in the National Park by 10%. If all of the dams are removed, the fish population will double. Would you prefer removing $BASE_VALUE dams immediately, or removing more dams a year from now?
+  zh:>
+    请设想一下, 您住的区域有20个很久以前建的水坝, 现在已经没有用了. 这些水坝隔断了水流, 阻隔了鱼群上游去一个国家公园去产卵的途径. 当地政府准备拆除一些水坝. 据估计, 每拆除一个水坝, 那个国家公园的鱼群数量就会增加10%. 如果20个水坝都被拆除, 鱼群数量会翻倍.  因为经费问题, 现在政府只有两个选择: 同样的钱, 建筑公司甲可以马上拆除$BASE_VALUE个水坝, 建筑公司乙可以拆除更多个水坝, 但是要等到一年以后才能拆除. 因为经费问题, 现在政府只有两个选择. 请问您愿意选择哪一个?
+ans:
+  en:
+    - Construction company A removes $BASE_VALUE dams immediately.
+    - Construction company B removes $VAR_VALUE dams a year from now.
+  zh:
+    - 建筑公司甲马上拆除 $BASE_VALUE 个水坝.
+    - 建筑公司乙一年以后拆除 $VAR_VALUE 个水坝.
+
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政府行为的看法.
+ 

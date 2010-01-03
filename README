@@ -2,7 +2,7 @@ A research assistant web survey project for CRED at Columbia University to condu
 jQuery & prototype at front end.
 PHP & YAML (spyc) at back end.
 
-The source code is at
+The source code is hosted at
 http://github.com/yiwang/cred
 
 The log with explanation of code is at

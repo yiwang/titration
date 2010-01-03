@@ -1,0 +1,41 @@
+---
+#Gain
+#Health: condition x gain
+base: 13 
+var: [ 14, 18, 27, 40 ]
+sub: [ 23,  34]
+
+desc:
+  en:>
+    The next questions involve decisions about health. Please imagine that you are currently in poor health. Here is a description of poor health: <br/>
+
+    Because of your doctor's instructions, you need to take medication (pills) once a day. You must also be very careful about what foods you eat, so you spend a lot of time keeping track of what you eat. You sometimes have trouble falling asleep. It is difficult to concentrate.<br/><br/>
+ 
+    In the following questions, you will have to choose between two treatments that will improve your health from poor health to full health. Here is a description of full health:<br/>
+ 
+    You do not need to take any medication. You are also free to eat almost any foods you like. You never have trouble falling asleep. You are always able to concentrate on important tasks.<br/><br/>
+ 
+    However, after ending treatment, most patients find that they return to their poor health state within a week or two. Thus, each of the two treatments can give you full health for a limited period of time; after that you will return to your current poor health. In the following questions, you will be asked to choose between two different treatments. The treatments differ in length of time you will spend in full health. Which disorder would you prefer: poor health for $BASE_VALUE weeks starting today, or poor health for a longer period, starting 1 year from now?
+
+  zh:>
+    下面这个问题是关于健康的. 请设想一下, 您现在的健康状态比较差. 以下是关于较差的健康状态的描述:<br/>
+
+    您每天都要遵循医嘱吃一次药. 您需要很小心地选择食品, 必须时刻记录您吃的东西. 您有时候会失眠. 注意力很难集中.<br/><br/>
+ 
+    在下面的问题中, 有两种可能的疗法能够把您的健康状态提升到完全健康. 以下是关于完全健康状态的描述:<br/>
+
+    您不需要吃药. 您喜欢的食品您可以随便吃. 从不失眠. 总是能够集中注意力完成重要的任务.<br/><br/>
+
+    这两种疗法都只能持续一段时间. 疗法结束以后, 绝大部分人都会恢复到以前的健康状态.也就是说, 每种疗法都会让您的健康变好一段时间, 然后回到较差的状态. 两种疗法持续的时间不一样. 如果您不得不选择得其中的一种疗法, 您会选择哪一种: 疗法甲, 现在开始健康状态变好, 持续$BASE_VALUE周; 疗法乙, 一年以后的今天开始健康状态变好, 持续更长时间?
+
+ans:
+  en:
+    - Full health for $BASE_VALUE weeks starting today
+    - Full health for $VAR_VALUE weeks, a year from now
+  zh:
+    -  疗法甲, 现在开始健康状态变好, 持续$BASE_VALUE周.
+    -  疗法乙, 一年以后的今天开始健康状态变好, 持续$VAR_VALUE周.
+note:
+  en:
+  zh:
+

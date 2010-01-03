@@ -1,0 +1,24 @@
+---
+#1.2.1 luck money (lottery) – gain
+#Monetary: luck x gain
+
+base: 250 
+var: [ 260, 350, 510, 750 ]
+sub: [ 430,  630]
+
+desc:
+  en:>
+    Imagine you just won a lottery, worth $250, which will be paid to you immediately. However, the lottery commission is giving you the option of receiving a different amount, paid to you a year from now. Which one would you prefer, $$BASE_VALUE immediately, or a bigger sum, a year from now?
+  zh:>
+    请设想一下, 您刚刚中了个250元的奖. 您可以马上去兑现, 或者一年以后再兑现更大的奖. 请问您愿意选择哪一个奖?
+
+ans:
+  en:
+    - $$BASE_VALUE immediately
+    - $$VAR_VALUE a year from now
+  zh:
+    - 马上拿到$BASE_VALUE元.
+    - 一年以后拿到$VAR_VALUE元.
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政府行为的看法.

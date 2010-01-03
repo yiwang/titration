@@ -66,6 +66,7 @@ jQuery(document).ready(function(){
   });
   new_group();
   log('ready');
+  log(cid+'.yaml');
 });
 
 var sel_val= null;
@@ -190,7 +191,7 @@ function refill_html(){
   jQuery('#desc').html(q[cid]['desc'][lang].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>').replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>'));
   jQuery('#hint').html(hint[ctype][lang]);
   jQuery('label[name="base"]').html(q[cid]['ans'][lang][0].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
-  jQuery('label[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>'));
+  jQuery('label[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('#viz-var').css('width', v/q[cid].base*100+'px');
   jQuery('span[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______'));
   jQuery('#note').html(q[cid]['note'][lang]);

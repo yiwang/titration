@@ -1,0 +1,41 @@
+---
+#1.3.3 Health value – loss
+#Health: condition x loss
+base: 13 
+var: [ 14, 18, 27, 40 ]
+sub: [ 23,  34]
+
+desc:
+  en:>
+   The next questions involve decisions about health. Please imagine that you are in full health. Here is a description of full health:<br/>
+   
+   You do not need to take any medication. You are also free to eat almost any foods you like. You never have trouble falling asleep. You are always able to concentrate on important tasks.<br/><br/>
+   
+   In the following questions, you will have to choose between two disorders that will cause you to lose your full health. Losing your full health means your health will fit the following description of poor health:<br/>
+
+   Because of your doctor's instructions, you need to take medication (pills) once a day. You must also be very careful about what foods you eat, so you spend a lot of time keeping track of what you eat. You sometimes have trouble falling asleep. It is difficult to concentrate.<br/><br/>
+
+   Each disorder only lasts for a limited period of time. After the disorder is over, most patients find that they return to their full health state within a few days. Thus, each of the two disorders would cause you to be in poor health for a limited period of time; after that you will return to your current full health. The disorders differ in the amount of time you will spend in poor health. You will experience only one of the two disorders, but you must experience one.
+
+  zh:>
+    下面这个问题是关于健康的. 请设想一下, 您现在是一个完全健康的人. 以下是关于完全健康状态的描述:<br/>
+
+    您不需要吃药. 您喜欢的食品您可以随便吃. 从不失眠. 总是能够集中注意力完成重要的任务.<br/><br/>
+ 
+    在下面的问题中, 有两种可能的疾病会导致您的健康状态变得较差. 以下是关于较差的健康状态的描述:<br/>
+
+    您每天都要遵循医嘱吃一次药. 您需要很小心地选择食品, 必须时刻记录您吃的东西. 您有时候会失眠. 注意力很难集中.<br/><br/>
+ 
+    这两种疾病都只会持续一段时间. 痊愈以后, 绝大部分人都会恢复到完全健康的状态.也就是说, 每种病都会让您的健康变差一段时间, 然后完全恢复. 两种病持续的时间不一样. 如果您不得不选择得其中的一种疾病.
+
+ans:
+  en:
+    - Poor health for $BASE_VALUE weeks, starting today
+    - Poor health for $VAR_VALUE weeks, a year from now
+  zh:
+    - 疾病甲, 现在开始健康状态变差, 持续$BASE_VALUE周.
+    - 疾病乙, 一年以后的今天开始健康状态变差, 持续$VAR_VALUE周.
+note:
+  en:
+  zh:
+

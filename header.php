@@ -25,7 +25,8 @@ echo'.js" type="text/javascript"></script>';
 <script type="text/javascript">
 <?php
 require_once('spyc/spyc.php');
-$ids = array(1,2,3);
+$config = Spyc::YAMLLoad('config.yaml');
+$ids = $config['sets']['all'];
 foreach($ids as $i){
 	$q[$i] = Spyc::YAMLLoad('questions/'.strval($i).'.yaml');
 	/*
@@ -35,7 +36,7 @@ foreach($ids as $i){
 	echo $ans_var;
 	//*/
 }
-$config = Spyc::YAMLLoad('config.yaml');
+
 echo 'config='.json_encode($config).';';
 echo 'q='.json_encode($q).';';
 echo 'lang="'.$lang.'";';
@@ -47,6 +48,7 @@ echo 'set="'.$set.'";';
 <?php
 /*
 echo '<pre>';
+print_r($ids);
 print_r($config);
 echo '</pre>';
 //*/
@@ -63,9 +65,18 @@ echo '</pre>';
 
 ?>
 
-<div id="debug" style="visibility: hidden;">
+<div id="debug" style="!visibility: hidden;">
 <div id="log"></div>
 <input name="eval" id="eval" />
 <a href="javascript:void(0);" onClick="log(eval(document.getElementById('eval').value));">go</a> 
 </div>
 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1108486-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>

@@ -1,0 +1,24 @@
+---
+#1.2.2 luck money (lost rent check) - loss
+#Monetary: luck x loss
+
+base: 250 
+var: [ 260, 350, 510, 750 ]
+sub: [ 430,  630]
+
+desc:
+  en:>
+    Imagine that you live in an apartment building and have to send a rent check in to your landlord by the first Monday of every month to avoid a late fee. Recently you received a letter from your local post office apologizing for the fact that your envelope containing the check for your landlord had been misplaced but has finally turned up. In spite of this postal error, your landlord is charging you the late fee of $$BASE_VALUE on top of what you owe for rent for this month.  Your landlord gives you the option of paying a different amount instead, a year from now. Which one would you prefer, paying $$BASE_VALUE immediately, or paying more money a year from now?
+  zh:>
+    请设想一下, 您每个月的第一个星期一需要交房租, 不然就会罚款. 您每次都是通过银行转帐给房东. 最近您的银行给您发了一封信, 说因为系统出错, 您这个月的转帐被推迟了一个星期. 虽然这个不是您的过错, 您的房东还是决定罚钱.  您有两个选择:您现在马上交$BASE_VALUE元的罚金, 或者您等到一年以后再交更多的罚金. 请问您愿意选择哪一个?
+ans:
+  en:
+    - paying $$BASE_VALUE immediately
+    - paying $$VAR_VALUE a year from now
+  zh:
+    - 现在马上交$BASE_VALUE元的罚金
+    - 一年以后再交$VAR_VALUE元的罚金
+note:
+  en: Note that we are not interested in how you feel about the landlord’s decision on charging you. What we are interested in is your preference between the two options.
+  zh: 请注意, 我们是想知道您觉得以上两个选择中的哪一个比较好, 而不是您对以房东罚钱决定的看法.
+

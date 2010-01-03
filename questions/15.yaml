@@ -1,0 +1,35 @@
+---
+#2.1.3 Permanent– gain
+#Environmental: permanent x gain
+base: 50 
+var: [ 51, 60, 76, 100 ]
+sub: [ 68,  88]
+
+desc:
+  en:>
+    Imagine that your 5-year old son is starting school soon. You decide to buy a house that is close to a good school. A real estate company recently built new houses in two distinct areas. Both areas have an excellent school. The houses and other conditions in those two areas are similar except for the fact that area A has better air quality than Area B. In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
+
+    For the purpose of marketing strategy, the company does not allow their clients to choose the area. Instead, the company randomly assigns the buyers to the two areas. That is, when you buy a house from them, you have 50% chance of getting a house in area A, and 50% chance of getting one in area B.<br/><br/>
+    
+    Imagine that you have recently signed the contract to buy a house. Your agent tells you that you can also pay extra money to increase your chance of getting a house in area A. Would you be willing to pay the amount of 1% of the house price to increase your chance of getting a house in area A?           
+ 
+
+  zh:>
+    请设想一下, 您有一个5岁的儿子, 很快就要上学了. 您打算在一个好学区买个房. 有一家房产公司在两个区域修了很多新楼房. 这两个地方都有非常好的学校, 其他条件也类似. 唯一的差别是甲区的空气质量比乙区的好. 在过去5年中, 空气检测机构检测了20次空气质量, 甲区20次都是非常好. 乙区有1次非常好, 5次好, 14次一般. <br/><br/>
+    
+    作为一种市场销售策略, 这个房产公司不让它的客户挑选所在区域. 购房者得到甲区或者乙区房子的可能性各是一半. <br/><br/>
+    
+    您刚刚签下合同买一套房子. 这个时候, 您的代理告诉您, 如果您愿意付额外的钱, 您可以提高您得到甲区房子的几率. 请问您是否愿意付相当于1%的购房款的钱提高您赢得甲区的几率?
+
+
+ans:
+  en:
+    - Don't pay the amount of 1% of the house price, keeping your chance of getting a house in area A at $BASE_VALUE%
+    - Pay the amount of 1% of the house price to increase your chance of getting a house in area A to $VAR_VALUE%
+  zh:
+    - 不付相当于1%的购房款的钱, 将您赢得甲区的几率保持在$BASE_VALUE%
+    - 付相当于1%的购房款的钱, 将您赢得甲区的几率从$BASE_VALUE%提高到$VAR_VALUE%
+note:
+  en: 
+  zh: 
+

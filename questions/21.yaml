@@ -1,0 +1,25 @@
+---
+2.3.1 Severe-Gain
+#Health: severe x gain
+base: 0
+var: [ 20, 38, 57, 85 ]
+sub: [ 55,  70]
+
+desc:
+  en:>
+    Imagine that you were born with a congenital heart defect that has a 20% chance of causing permanent decreased heart function and rhythm disturbances forcing you to significantly limit your activity and especially avoid participating in outdoor activities and sports. There is a new medicine that if taken continually, can reduce the risk of permanent damage and rhythm disturbances from 20% to 5%. Your insurance company does not cover the expense of the medicine. Would you be willing to pay for the medicine by yourself if it costs $VAR_VALUE% of your salary every month?
+ 
+  zh:>
+    请设想一下, 由于先天性的心脏缺陷, 您不得不限制自己的活动, 特别是室外活动, 因为您有20%的可能性心脏功能会遭到永久性的功能减退和心率不齐. 现在有一种新药, 如果连续服用, 能够把您的心脏遭受永久性的功能减退和心率不齐的可能性从20% 降到5%. 您的医疗保险公司不会付这笔药费. 请问, 如果这个药费要占到您每个月工资的$VAR_VALUE%, 您会服用这个药吗?
+
+ans:
+  en:
+    - Do not use medicine
+    - Use medicine but pay for the medicine yourself every month, with $VAR_VALUE% of your salary
+  zh:
+    - 不服用药
+    - 服用药, 把药费占到您每个月工资的$VAR_VALUE%
+note:
+  en:
+  zh:
+  

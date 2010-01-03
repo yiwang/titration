@@ -1,0 +1,23 @@
+---
+#1.2.3 Self earned money (salary) - gain
+#Monetary: self-earned/inflicted x gain
+
+base: 750 
+var: [ 760, 1000, 1500, 2250 ]
+sub: [ 1250,  1875]
+
+desc:
+  en:>
+    Imagine that you work for a big company. Every Monday you get a $750 check as your salary. The company recently ran into a cash flow problem and proposed to its employees that anyone who puts off cashing this week’s pay check for one year can cash it for a larger amount than the face value. Which would you prefer?
+  zh:>
+    请设想一下, 您在一家大公司工作. 公司每个星期发一次工资. 每个星期一, 您都会拿到一张750元的工资条. 您可以拿这张工资条去公司的财务部兑现750元的现金. 这个星期您工作的这个公司现金流有点紧张, 所以公布了一个员工兑现工资的新政策. 根据这个新政策, 如果您今天去兑现您的工资条, 您跟平时一样, 可以拿到750元的现金. 但是如果您等一年到一年后的今天再去兑现, 您可以拿到更多的现金. 请问您愿意选择哪一个?
+ans:
+  en:
+    - Cash your check for $$BASE_VALUE today
+    - Cash your check for $$VAR_VALUE a year from now
+  zh:
+    - 今天去兑现您的工资条, 拿到$BASE_VALUE元的现金.
+    - 一年后的今天再去兑现, 拿到$VAR_VALUE元的现金
+note:
+  en:
+  zh:
