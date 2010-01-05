@@ -66,11 +66,10 @@ jQuery(document).ready(function(){
       return false;
     } // disable enter key from submit
   });
-  new_group();
-  log('ready');
-  log(cid+'.yaml');
+  log('debug ready');  
   log(ids);
   log('set: '+ set);
+  new_group();
 });
 
 var sel_val= null;
@@ -194,8 +193,8 @@ function refill_html(){
   jQuery('#progress').html((cid_i+1)+' / '+cid_n);
   jQuery('#desc').html(q[cid]['desc'][lang].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>').replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>'));
   jQuery('#hint').html(hint[ctype][lang]);
-  jQuery('label[name="base"]').html(q[cid]['ans'][lang][0].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
-  jQuery('label[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
+  jQuery('span[name="base"]').html(q[cid]['ans'][lang][0].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
+  jQuery('span[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('#viz-var').css('width', v/q[cid].base*100+'px');
   jQuery('span[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______'));
   jQuery('#note').html(q[cid]['note'][lang]);
@@ -237,4 +236,5 @@ function new_group(){
   v = vv[v_i];
   refill_html();
   notify_change(['sform']);
+  log(cid+'.yaml');
 }

@@ -1,6 +1,6 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-<meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
+<!meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
 <script src="debug.js" type="text/javascript"></script>
 <?php
 $lang = $_GET['lang'];
@@ -16,7 +16,8 @@ if(empty($lang)){
 <?php
 echo '<script src="js/jquery.validate.';
 echo $lang;
-echo'.js" type="text/javascript" charset="utf-8"></script>';
+//echo'.js" type="text/javascript" charset="utf-8"></script>';
+echo'.js" type="text/javascript"></script>';
 ?>
 <script src="js/prototype.js" type="text/javascript"></script>
 <script src="js/scriptaculous.js" type="text/javascript"></script>
