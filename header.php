@@ -16,7 +16,7 @@ if(empty($lang)){
 <?php
 echo '<script src="js/jquery.validate.';
 echo $lang;
-echo'.js" type="text/javascript"></script>';
+echo'.js" type="text/javascript" charset="utf-8"></script>';
 ?>
 <script src="js/prototype.js" type="text/javascript"></script>
 <script src="js/scriptaculous.js" type="text/javascript"></script>
