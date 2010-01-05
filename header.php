@@ -1,5 +1,6 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
 <script src="debug.js" type="text/javascript"></script>
 <?php
 $lang = $_GET['lang'];
