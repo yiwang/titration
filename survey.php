@@ -61,7 +61,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
     <td name="viz"><div id='viz-base-ctype1'></div></td>
   </tr>
   <tr>
-    <td><div>B. <span name='var'></span></div> </td>
+    <td><div>B. <span name='var-ctype1'></span></div> </td>
     <td name="viz"><div id='viz-var-ctype1'></div></td>
   </tr>
 </table>
