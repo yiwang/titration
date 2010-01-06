@@ -55,6 +55,7 @@ echo 'lang="'.$lang.'";';
 echo 'set="'.$set.'";';
 ?>
 </script>
+<script src="tm.js" type="text/javascript"></script>
 <script src="entry.js" type="text/javascript"></script>
 <script src="survey.js" type="text/javascript"></script>
 <?php

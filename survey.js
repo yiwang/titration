@@ -1,4 +1,5 @@
 function randOrd(){return (Math.round(Math.random())-0.5); }
+function sortNumberAscending(a,b){return a - b;}
 //jQuery.noConflict(); 
 var s = new Survey();
 var et = new Entry();
@@ -8,21 +9,24 @@ var ids = config.sets[set];
 //var ids = config.sets[set].sort(randOrd);
 var hint = config.hint;
 
-var cid=0;                // question ID, corresponds to *.yaml file name
-var cid_n = ids.length;   // size of the set
+var cid=0;                // current question ID, corresponds to *.yaml file name
+var cid_n = ids.length;   // size of the current set
 var cid_i = 0;            // counter, since cid = ids[cid_i]
 
-var ctype=0;
-var csub=0;
+var ctype=null;
 
-var vv=null;
-var v_i=null;
+var cat=null; //(current var at in Transition Matrix)
+var bvs_array=null; // bvs_array=[0 (for exit), base, d, c, c.i, b, b.i, a]
+
 var v=null; //$VAR_VALUE
-var g = null;
-var t = null;
+var data = null; // data
 
+var saved_time = null;
 function time(){
-  return Math.round((new Date().getTime()-et.start_time)/100);
+  var current_time = new Date().getTime();
+  t =  (current_time - saved_time)/1000;
+  saved_time = current_time;
+  return t;
 }
 
 jQuery(document).ready(function(){
@@ -32,7 +36,7 @@ jQuery(document).ready(function(){
   et.lang = lang;
   et.set = set;
   et.start_date = Date();
-  et.start_time = new Date().getTime();
+  saved_time = et.start_time = new Date().getTime();
   jQuery('#sform').validate({
     rules: {
       ctype0: {
@@ -42,7 +46,7 @@ jQuery(document).ready(function(){
       ctype1: {
         required: function(e){return ctype == 1;},
         number: true,
-        range: [30, 40]
+        // range: [30, 40]
       }
       //*/
     }
@@ -67,73 +71,29 @@ jQuery(document).ready(function(){
     } // disable enter key from submit
   });
   log('debug ready');  
-  log(ids);
   log('set: '+ set);
+  log(ids);
   new_group();
 });
 
-var sel_val= null;
-var sel_last_var = null;
-
-var low = null;
-var high = null;
-
-function new_vv(a,b,n){
-  var d = (b-a)/n;
-  var r = new Array();
-  for (var i=1;i < n;i++) {
-    r[i-1] = Math.round(a + i*d);
-  }
-  return r;
-}
+var ctm = null;
 function Survey(){
   // passed validation, and forward to next sub-question
   this.next = function (){
-    switch(ctype){
-      case 0:
-        if(1-jQuery('input:checked').attr('value')){
-          //select base
-          sel_val = q[cid].base;
-          low = v;
-          if(csub==1){
-            if(v_i == vv.length-1){
-              goto_ctype1();
-            }else{
-              v=vv[++v_i];
-            }
-          }else{
-            if(csub==0 && v_i==0){
-              // finish ctype0, go to ctype1 directly
-              goto_ctype1();
-            }else{
-              csub = 1;
-              vv = new_vv(v,sel_last_var,q[cid].division);
-              v=vv[v_i = 0];
-            }
-          }
-        }else{
-          // select var
-          sel_val = v;
-          high = v;
-          if(csub==1){
-            goto_ctype1();
-          }else{
-            sel_last_var = sel_val;
-            if(v_i == vv.length-1){
-              goto_ctype1();
-            }else{
-              v=vv[++v_i];
-            }
-          }
-        }
-        // update g, t
-        g.ctype0.push(sel_val);
-        t.ctype0.push(time());        
+    data.time.push(time());
+    switch(ctype){      
+      case 0: // for choice 
+        ctm = tm[cat+','+jQuery('input:checked').attr('value')];
+        if(v = bvs_array[cat=ctm.to]){ 
+        }else{ // 0, exit
+          goto_ctype1(bvs_array[ctm.low], bvs_array[ctm.high]);
+        }        
         break;
-      case 1:
-        g.ctype1 = (+jQuery('input[name="ctype1"]').attr('value'));
-        t.ctype1 = time();
+      case 1: // for filling blank
+        data.ctype1 = (+jQuery('input[name="ctype1"]').attr('value'));
         if(!inc_cid()){
+          et.end_time = new Date().getTime();
+          et.duration = Math.round((et.end_time - et.start_time)/100)/10;
           //jQuery('#next').attr({value:config.nav.submit[lang]});
           jQuery('#entry').html(Object.toJSON(flat(et)));
           jQuery('#next').hide();
@@ -153,12 +113,13 @@ function Survey(){
     //log('end next,cid_i:'+cid_i+',cid:'+cid+',ctype:'+ ctype);
   }  
 }
-function goto_ctype1(){
-  g.low = low;
-  g.high = high;
+function goto_ctype1(low,high){
+  data.low = low;
+  data.high = high;
+  log('user\'s preference range: ('+data.low+','+data.high+')');
   ctype = 1;
   notify_change(['hint','ctype1']);
-  //*
+  /*
   jQuery('input[name="ctype1"]').rules("remove","range min");
   if(low!=null && high!=null){
     jQuery('input[name="ctype1"]').rules("add",{range: [low, high]});
@@ -220,21 +181,18 @@ function inc_cid(){
     return false;
   }
 }
+// initialization of a new question (content of one .yaml file)
 function new_group(){
   low = high = null;
-  g = new Group();
-  t = new Group();
-  et.data.push(g);
-  et.time.push(t);
+  data = new Data();
+  et.ds.push(data);
   cid = ids[cid_i];
   ctype = 0;
-  csub = 0;
-  // reverse the original order, make vv = a large to small copy
-  vv = q[cid]['var'].concat().reverse();
-  v_i = 0;
-  // v =  current var_value, to be displayed along with base_value
-  v = vv[v_i];
+  bvs_array = [0].concat(q[cid]['base']).concat(q[cid]['var']).concat(q[cid]['sub']).sort(sortNumberAscending);
+  cat = bvs_array.length-1;
+  v = bvs_array[cat];
   refill_html();
   notify_change(['sform']);
   log(cid+'.yaml');
+  log('bvs_array: '+bvs_array);
 }

@@ -41,11 +41,11 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <div id='ctype0'><br/>
 <table>
   <tr>
-    <td> <div><label class="choice"><input type="radio" name="ctype0" value="0"/> <span class="choice" name='base'></span></label></div> </td>
+    <td> <div><label class="choice"><input type="radio" name="ctype0" value="1"/> <span class="choice" name='base'></span></label></div> </td>
     <td name="viz"><div id='viz-base'></div></td>
   </tr>
   <tr id='var'>
-    <td><div><label class="choice"><input type="radio" name="ctype0" value="1" /> <span class="choice" name='var'></span></label></div> </td>
+    <td><div><label class="choice"><input type="radio" name="ctype0" value="0" /> <span class="choice" name='var'></span></label></div> </td>
     <td name="viz"><div id='viz-var'></div></td>
   </tr>
 </table>
