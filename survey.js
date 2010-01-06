@@ -188,6 +188,15 @@ function new_group(){
   et.ds.push(data);
   cid = ids[cid_i];
   ctype = 0;
+  //try{
+    if(q[cid]['var-zh']){
+      if(lang == 'zh'){
+        q[cid]['base']=q[cid]['base-zh'];
+        q[cid]['var']=q[cid]['var-zh'];
+        q[cid]['sub']=q[cid]['sub-zh'];
+      }
+    }
+  //}catch(e){}
   bvs_array = [0].concat(q[cid]['base']).concat(q[cid]['var']).concat(q[cid]['sub']).sort(sortNumberAscending);
   cat = bvs_array.length-1;
   v = bvs_array[cat];
