@@ -93,7 +93,7 @@ function Survey(){
         data.ctype1 = (+jQuery('input[name="ctype1"]').attr('value'));
         if(!inc_cid()){
           et.end_time = new Date().getTime();
-          et.duration = Math.round((et.end_time - et.start_time)/100)/10;
+          et.duration = (et.end_time - et.start_time)/1000;
           //jQuery('#next').attr({value:config.nav.submit[lang]});
           jQuery('#entry').html(Object.toJSON(flat(et)));
           jQuery('#next').hide();

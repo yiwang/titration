@@ -3,7 +3,7 @@
 #Health: severe x gain
 base: 0
 var: [ 20, 38, 57, 85 ]
-sub: [ 55,  70]
+sub: [ 55, 70]
 
 desc:
   en:>
