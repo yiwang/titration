@@ -76,3 +76,9 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 </form>
 <input id='next' type="button"/>
 <div id='result'></div>
+
+<div id="debug" style="!visibility: hidden;">
+<div id="log"></div>
+<input name="eval" id="eval" />
+<a href="javascript:void(0);" onClick="log(eval(document.getElementById('eval').value));">go</a> 
+</div>

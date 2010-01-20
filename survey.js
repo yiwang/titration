@@ -5,8 +5,8 @@ var s = new Survey();
 var et = new Entry();
 
 // get set of IDs
-var ids = config.sets[set];
-//var ids = config.sets[set].sort(randOrd);
+//var ids = config.sets[set];
+var ids = config.sets[set].sort(randOrd);
 var hint = config.hint;
 
 var cid=0;                // current question ID, corresponds to *.yaml file name
@@ -29,7 +29,7 @@ function time(){
   return t;
 }
 
-jQuery(document).ready(function(){
+jQuery(document).ready(function(){  
   jQuery("sform").bind("submit", function(event){
     event.preventDefault();
   });
@@ -72,7 +72,7 @@ jQuery(document).ready(function(){
   });
   log('debug ready');  
   log('set: '+ set);
-  log(ids);
+  log('SEQ: '+ ids);
   new_group();
 });
 
@@ -184,9 +184,9 @@ function inc_cid(){
 // initialization of a new question (content of one .yaml file)
 function new_group(){
   low = high = null;
-  data = new Data();
-  et.ds.push(data);
   cid = ids[cid_i];
+  data = new Data();
+  et.ds[cid] = data;
   ctype = 0;
   //try{
     if(q[cid]['var-zh']){

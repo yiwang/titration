@@ -81,11 +81,7 @@ echo '</pre>';
 
 </head>
 
-<div id="debug" style="!visibility: hidden;">
-<div id="log"></div>
-<input name="eval" id="eval" />
-<a href="javascript:void(0);" onClick="log(eval(document.getElementById('eval').value));">go</a> 
-</div>
+
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
