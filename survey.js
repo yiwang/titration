@@ -45,7 +45,7 @@ jQuery(document).ready(function(){
       //*
       ctype1: {
         required: function(e){return ctype == 1;},
-        number: true,
+        number: true
         // range: [30, 40]
       }
       //*/
