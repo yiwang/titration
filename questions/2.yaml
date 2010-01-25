@@ -2,6 +2,7 @@
 #Loss
 #Environmental: usage x loss
 
+tm-index:1
 base: 21 
 var: [ 22, 30, 44, 65 ]
 sub: [ 37,  55]
