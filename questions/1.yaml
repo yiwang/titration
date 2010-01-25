@@ -10,7 +10,7 @@
 # 'var' has EXACTLY 4 numbers in it, 'sub' has EXACTLY 2 numbers in MONOTONICALLY INCREASING order.
 # DO have one or more WHITE SPACE after ',' between each number
 
-gain: 1
+tm-index: 2
 base: 21
 var: [ 22, 30,  44,  65 ]
 sub: [ 37,   55 ]
