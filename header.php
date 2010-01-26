@@ -8,6 +8,8 @@ if(empty($lang)){
   $lang = 'en';
 }
 //echo $lang;
+$debug_id = intval($_GET['id']);
+//echo $debug_id;
 ?>
 <link href='js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
 <script src="js/jquery-1.3.2" type="text/javascript"></script>
@@ -53,6 +55,7 @@ echo 'config='.json_encode($config).';';
 echo 'q='.json_encode($q).';';
 echo 'lang="'.$lang.'";';
 echo 'set="'.$set.'";';
+echo 'debug_id='.$debug_id.';';
 ?>
 </script>
 <script src="tm.js" type="text/javascript"></script>

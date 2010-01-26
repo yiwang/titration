@@ -1,6 +1,7 @@
 ---
 2.2.4 Earned money- loss
 #Monetary: earned x loss
+tm-index: 1
 base: 50 
 var: [ 310, 320, 400, 500 ]
 sub: [ 360,  450]

@@ -1,7 +1,7 @@
 ---
 #1.2.3 Self earned money (salary) - gain
 #Monetary: self-earned/inflicted x gain
-
+tm-index: 2
 base: 750 
 var: [ 760, 1000, 1500, 2250 ]
 sub: [ 1250,  1875]

@@ -1,6 +1,7 @@
 ---
 #2.2.2 Earned money- gain
 #Monetary: earned x gain
+tm-index: 2
 base: 100 
 var: [ 220, 350, 580, 800 ]
 sub: [ 460,  700]

@@ -7,6 +7,7 @@ var et = new Entry();
 // get set of IDs
 //var ids = config.sets[set];
 var ids = config.sets[set].sort(randOrd);
+if(debug_id){ids=[debug_id];}
 var hint = config.hint;
 
 var cid=0;                // current question ID, corresponds to *.yaml file name
@@ -70,10 +71,12 @@ jQuery(document).ready(function(){
       return false;
     } // disable enter key from submit
   });
-  log('debug ready');  
-  log('set: '+ set);
-  log('SEQ: '+ ids);
-  new_group();
+  log('debug ready');
+  if(!debug_id){  
+    log('set: '+ set);
+    log('SEQ: '+ ids);
+  }
+  new_group();  
 });
 
 var ctm = null;
@@ -83,7 +86,7 @@ function Survey(){
     data.time.push(time());
     switch(ctype){      
       case 0: // for choice 
-        ctm = tm[cat+','+jQuery('input:checked').attr('value')];
+        ctm = tms[q[cid]['tm-index']][cat+','+jQuery('input:checked').attr('value')];
         if(v = bvs_array[cat=ctm.to]){ 
         }else{ // 0, exit
           goto_ctype1(bvs_array[ctm.low], bvs_array[ctm.high]);
@@ -203,5 +206,6 @@ function new_group(){
   refill_html();
   notify_change(['sform']);
   log(cid+'.yaml');
+  log('tm-index: '+ q[cid]["tm-index"]);
   log('bvs_array: '+bvs_array);
 }

@@ -1,7 +1,7 @@
 ---
 #1.2.1 luck money (lottery) – gain
 #Monetary: luck x gain
-
+tm-index: 2
 base: 250 
 var: [ 260, 350, 510, 750 ]
 sub: [ 430,  630]

@@ -1,6 +1,7 @@
 ---
 #2.1.4 Temporary– gain
 #Environmental: temporary x gain
+tm-index: 2
 base: 50 
 var: [ 51, 60, 76, 100 ]
 sub: [ 68,  88]

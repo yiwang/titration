@@ -1,6 +1,7 @@
 ---
 #1.3.2 Health risk increase – loss
 #Health: risk x loss
+tm-index: 1
 base: 19 
 var: [ 20, 27, 39, 57 ]
 sub: [ 33,  48]

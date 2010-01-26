@@ -1,6 +1,7 @@
 ---
 #Gain
 #Health: condition x gain
+tm-index: 2
 base: 13 
 var: [ 14, 18, 27, 40 ]
 sub: [ 23,  34]

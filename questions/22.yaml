@@ -1,6 +1,7 @@
 ---
 2.3.2 Severe- Loss
-#Health: severe x loss
+#Health: severe x loss, with var return
+tm-index: 4
 base: 0
 var: [ 10, 50, 100, 200 ]
 sub: [ 70, 150]

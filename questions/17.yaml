@@ -1,6 +1,7 @@
 ---
 #2.2.1 House money- gain
 #Monetary: house x gain
+tm-index: 2
 base: 100 
 var: [ 220, 350, 580, 800 ]
 sub: [ 460,  700]

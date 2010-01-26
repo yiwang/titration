@@ -1,7 +1,7 @@
 ---
 #1.2.2 luck money (lost rent check) - loss
 #Monetary: luck x loss
-
+tm-index: 1
 base: 250 
 var: [ 260, 350, 510, 750 ]
 sub: [ 430,  630]

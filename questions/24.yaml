@@ -1,6 +1,7 @@
 ---
 2.3.3 Mild-Loss
-#Health: mild x loss
+#Health: mild x loss, with var return
+tm-index: 4
 base: 0
 var: [ 20, 50, 100, 200 ]
 sub: [ 70,  150]

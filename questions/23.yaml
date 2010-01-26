@@ -1,6 +1,7 @@
 ---
 2.3.3 Mild-Gain
-#Health: mild x gain
+#Health: mild x gain, with var cost
+tm-index: 3
 base: 0
 var: [ 20, 50, 100, 200 ]
 sub: [ 70,  150]
