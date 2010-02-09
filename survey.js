@@ -153,6 +153,7 @@ function notify_change(id_list,dur,c){
   }
 }
 function refill_html(){
+  jQuery('#header').html(config.header[lang]);
   jQuery('#progressbar').progressbar('option','value',(cid_i+1)/cid_n*100);
   jQuery('#progress').html((cid_i+1)+' / '+cid_n);
   jQuery('#desc').html(q[cid]['desc'][lang].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>').replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>'));
@@ -164,9 +165,11 @@ function refill_html(){
   jQuery('#note').html(q[cid]['note'][lang]);
   jQuery('#your_ans').html(config.your_ans[lang]);
   jQuery('#next').attr({value:config.nav.next[lang]});
-  // td[name="viz"] visiblity depends on whether q[cid].base is 0
+  /* td[name="viz"] visiblity depends on whether q[cid].base is 0
   if(q[cid].base == 0){jQuery('td[name="viz"]').css("visibility","hidden");}
   if(q[cid].base != 0){jQuery('td[name="viz"]').css("visibility","visible");}
+  //*/
+  jQuery('td[name="viz"]').css("visibility","hidden");
   // visibility
   show_hide();
 }

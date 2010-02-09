@@ -2,6 +2,7 @@
 require_once('header.php');
 ?>
 <style type="text/css">
+#header {color: #red}
 form { font-family: Verdana; font-size: 14px; }
 #progressbar {height:15px;}
 #viz-base {height:10px; width:100px;}
@@ -20,6 +21,7 @@ p { clear: both; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 
 </style>
+<div id="header">header</div>
 <div id="progressbar"></div>
 <form id = 'sform'>
 <fieldset>

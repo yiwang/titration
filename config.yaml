@@ -1,5 +1,8 @@
 ---
 # hint for different ctype
+header:
+  en: "Please do NOT use browser's Back button"
+  zh: '请不要使用浏览器的后退按钮'
 hint:
   # for ctype=0
   - en: Which one would you prefer?
