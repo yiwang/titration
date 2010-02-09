@@ -1,8 +1,8 @@
 <?php
-require_once('header.php');
+require_once('survey_header.php');
 ?>
 <style type="text/css">
-#header {color: #red}
+#header {color: red;}
 form { font-family: Verdana; font-size: 14px; }
 #progressbar {height:15px;}
 #viz-base {height:10px; width:100px;}
@@ -19,8 +19,8 @@ label.error { float: none; color: red; padding-left: .5em; vertical-align: top; 
 p { clear: both; }
 .submit { margin-left: 12em; align: center; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
-
 </style>
+
 <div id="header">header</div>
 <div id="progressbar"></div>
 <form id = 'sform'>
@@ -39,8 +39,6 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
   ?>
   </label>
 <br/>
-  
-<div id='ctype0'><br/>
 <table>
   <tr>
     <td> <div><label class="choice"><input type="radio" name="ctype0" value="1"/> <span class="choice" name='base'></span></label></div> </td>
@@ -79,7 +77,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <input id='next' type="button"/>
 <div id='result'></div>
 
-<div id="debug" style="visibility: visible;">
+<div id="debug" style="visibility: hidden;">
 <div id="log"></div>
 <input name="eval" id="eval" />
 <a href="javascript:void(0);" onClick="log(eval(document.getElementById('eval').value));">go</a> 

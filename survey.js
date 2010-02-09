@@ -169,6 +169,7 @@ function refill_html(){
   if(q[cid].base == 0){jQuery('td[name="viz"]').css("visibility","hidden");}
   if(q[cid].base != 0){jQuery('td[name="viz"]').css("visibility","visible");}
   //*/
+  // always hide viz bar
   jQuery('td[name="viz"]').css("visibility","hidden");
   // visibility
   show_hide();
