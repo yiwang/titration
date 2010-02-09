@@ -22,6 +22,7 @@ desc:
     您刚刚签下合同要租一套房子. 这个时候, 您的代理告诉您, 如果您愿意付额外的钱, 您可以提高您得到甲区房子的几率. 请问您是否愿意付相当于30%的月租的钱提高您赢得甲区的几率?
 
 ans:
+  %: 1
   en:
     - Don't pay the amount of 30% monthly rent, keeping your chance of getting a house in area A at $BASE_VALUE%
     - Pay the amount of 30% monthly rent to increase your chance of getting a house in area A to $VAR_VALUE%

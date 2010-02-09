@@ -24,6 +24,7 @@ desc:
 
 
 ans:
+  %: 1
   en:
     - Don't pay the amount of 1% of the house price, keeping your chance of getting a house in area A at $BASE_VALUE%
     - Pay the amount of 1% of the house price to increase your chance of getting a house in area A to $VAR_VALUE%

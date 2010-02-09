@@ -63,7 +63,8 @@ jQuery(document).ready(function(){
   jQuery('#viz-var').progressbar({ value: 100 });
   jQuery('#viz-var-ctype1').progressbar({ value: 100 });
   jQuery('input[name="ctype1"]').keyup(function(e){    
-    jQuery('#viz-var-ctype1').css('width',(+jQuery('input[name="ctype1"]').val())*100/q[cid].base);
+    // disabled
+    //jQuery('#viz-var-ctype1').css('width',(+jQuery('input[name="ctype1"]').val())*100/q[cid].base);
   });
   jQuery('*').keydown(function(e){
     if(e.which==13){
@@ -94,15 +95,17 @@ function Survey(){
         break;
       case 1: // for filling blank
         data.ctype1 = (+jQuery('input[name="ctype1"]').attr('value'));
+        // end of survey
         if(!inc_cid()){
           et.end_time = new Date().getTime();
           et.duration = (et.end_time - et.start_time)/1000;
           //jQuery('#next').attr({value:config.nav.submit[lang]});
-          jQuery('#entry').html(Object.toJSON(flat(et)));
-          jQuery('#next').hide();
-          jQuery('#sform').hide();
-          jQuery.post('save.php',{entry: Object.toJSON(flat(et))},show_result,'text');
+          //jQuery('#entry').html(Object.toJSON(flat(et)));
+          //jQuery('#next').hide();
+          //jQuery('#sform').hide();
+          jQuery.post('survey-save.php',{entry: Object.toJSON(flat(et))},show_result,'text');
           log('end survey!');
+          location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
           return;
         }
         break;
@@ -118,7 +121,7 @@ function Survey(){
 }
 function goto_ctype1(low,high){
   data.low = low;
-  data.high = high;
+  data.high = high == 0? config.constant['inf-positive']:high;
   log('user\'s preference range: ('+data.low+','+data.high+')');
   ctype = 1;
   notify_change(['hint','ctype1']);
@@ -134,7 +137,7 @@ function goto_ctype1(low,high){
   //*/
 }
 function show_result(res){
-  jQuery('#result').html(res);
+  //jQuery('#result').html(res);
 }
 //
 function notify_emphasize(name,dur,c){
@@ -164,6 +167,12 @@ function refill_html(){
   jQuery('span[name="var-ctype1"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('#note').html(q[cid]['note'][lang]);
   jQuery('#your_ans').html(config.your_ans[lang]);
+  jQuery('#note1').html(config.note1[lang]);
+  if(q[cid].ans['%']){
+    jQuery('#note1').show();  
+  }else{
+    jQuery('#note1').hide();
+  }
   jQuery('#next').attr({value:config.nav.next[lang]});
   /* td[name="viz"] visiblity depends on whether q[cid].base is 0
   if(q[cid].base == 0){jQuery('td[name="viz"]').css("visibility","hidden");}

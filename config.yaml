@@ -1,8 +1,13 @@
 ---
+constant:
+  inf-positive: 10000
+  inf-negative: -10000
+  
 # hint for different ctype
 header:
-  en: "Please do NOT use browser's Back button"
+  en: "Please do not use browser's Back button"
   zh: '请不要使用浏览器的后退按钮'
+  
 hint:
   # for ctype=0
   - en: Which one would you prefer?
@@ -15,6 +20,10 @@ hint:
 your_ans:
   en: 'Your Answer:'
   zh: '您的回答:'
+  
+note1:
+  en: 'Please do not include % symbol in your answer'
+  zh: '请不要在回答中包含 % 符号'
   
 nav:
   next:

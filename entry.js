@@ -3,7 +3,7 @@
   this.set = null;
   this.start_date = null;
   this.start_time = null;
-  this.end_time = null;
+  this.end_time = null; // in ms
   this.duration = null; // in second
   this.ds = new Object();
 }
@@ -18,7 +18,8 @@ function Data(){
 
 // encode Entry Object to CSV one line format
 function flat(e){
-  var r = [e.lang, e.set, e.start_date, e.start_time/1000, e.end_time/1000, e.duration];
+  //var r = [e.lang, e.set, e.start_date, e.start_time/1000, e.end_time/1000, e.duration];
+  var r = [e.lang, e.set, e.start_date, e.start_time, e.end_time, e.duration];
   var ids_sorted = ids.concat([]);
   ids_sorted.sort(sortNumberAscending); // for alignment
   for(var j=0; j<ids_sorted.length; j++){

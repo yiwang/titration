@@ -18,6 +18,7 @@ desc:
     最近您听说出了一种新的离子空气过滤系统. 这种系统现在只能租赁. 您的医生告诉您说, 如果您在每年的3-5月租用这个系统, 您得严重过敏的可能性将会从20%降到5%. 请问您会不会租用这个新系统, 如果租用3个月(3-5月)的价格刚好是相当于您一月房租的$VAR_VALUE%?
 
 ans:
+  %: 1
   en:
     - Do not rent the filter system
     - Rent the filter system for 3 months at the price of $VAR_VALUE% of your monthly apartment rent

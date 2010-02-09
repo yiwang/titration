@@ -17,6 +17,7 @@ desc:
     现在您老板问您是否对某一新职位感兴趣. 这个职位工作时间要长一些, 压力也更大. 您的医生告诉您说, 如果您接受这个新职位, 您的心脏遭受永久性的功能减退和心率不齐的可能性会从5% 上升到20%. 这个新职位比你现在的职位工资要多出$VAR_VALUE%.
 
 ans:
+  %: 1
   en:
     - Do not take the new position
     - Take the new position, which has a $VAR_VALUE% higher salary

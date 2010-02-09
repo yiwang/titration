@@ -28,6 +28,7 @@ desc:
 
 
 ans:
+  %: 1
   en:
     - Vote against setting up the manufactories, keeping the probability of polluting the lake beyond self-cleaning at $BASE_VALUE%
     - Vote for setting up the manufactories, increasing the probability of polluting the lake beyond self-cleaning to $VAR_VALUE%

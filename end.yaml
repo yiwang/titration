@@ -1,0 +1,19 @@
+end-form-text:
+  en: "end form text <br/> Your confirmation number is:"
+  zh: "结束语<br/>您的确认号码是:"
+
+email-form-text:
+  en: "Please input your PayPal E-mail address:"
+  zh: "请输入您的 PayPal 电子邮件地址:"
+  
+email-label-text:
+  en: E-mail
+  zh: 电子邮件
+  
+submit-text:
+  en: Submit
+  zh: 提交
+
+final-view-text:
+  en: Your submission is succesful!
+  zh: 你已经成功提交！

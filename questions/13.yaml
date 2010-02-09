@@ -23,6 +23,7 @@ desc:
 
 
 ans:
+  %: 1
   en:
     - Avoid setting up manufactories to maintain extinction probability of $BASE_VALUE%
     - Set up manufactories at the expense of increasing extinction probability to $VAR_VALUE%

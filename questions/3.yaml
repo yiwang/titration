@@ -21,7 +21,7 @@ desc:
 ans:
   en:
     - "Developer A: $BASE_VALUE trees immediately"
-    - "Developer B: $VAR_VALUE a year from now"
+    - "Developer B: $VAR_VALUE trees a year from now"
   zh:
     - 卖给甲, 马上砍掉$BASE_VALUE棵老树
     - 卖给乙, 一年以后砍掉$VAR_VALUE棵老树

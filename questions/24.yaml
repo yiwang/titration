@@ -22,6 +22,7 @@ desc:
     如果您决定搬到隔壁的公寓楼, 房东会请搬家公司帮你搬家和清洁. 您不会有任何额外花费. 如果您决定留下, 房东会给您退回相当您每月租金$VAR_VALUE%的钱.  您的医生告诉您, 如果您留在没有过滤系统的公寓里面, 您得严重过敏的可能性会从5%上升到20%.
  
 ans:
+  %: 1
   en:
     - move to another building with the air system
     - accept rent credit worth $VAR_VALUE% of your monthly rent and stay in the current building without the air system
