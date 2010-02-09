@@ -5,7 +5,7 @@ constant:
   
 # hint for different ctype
 header:
-  en: "Please do not use browser's Back button"
+  en: "Please do not use browser's back button"
   zh: '请不要使用浏览器的后退按钮'
   
 hint:
