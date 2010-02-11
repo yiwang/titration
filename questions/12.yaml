@@ -16,7 +16,7 @@ desc:
  
     You do not need to take any medication. You are also free to eat almost any foods you like. You never have trouble falling asleep. You are always able to concentrate on important tasks.<br/><br/>
  
-    However, after ending treatment, most patients find that they return to their poor health state within a week or two. Thus, each of the two treatments can give you full health for a limited period of time; after that you will return to your current poor health. In the following questions, you will be asked to choose between two different treatments. The treatments differ in length of time you will spend in full health. Which disorder would you prefer: poor health for $BASE_VALUE weeks starting today, or poor health for a longer period, starting 1 year from now?
+    However, after ending treatment, most patients find that they return to their poor health state within a week or two. Thus, each of the two treatments can give you full health for a limited period of time; after that you will return to your current poor health. In the following questions, you will be asked to choose between two different treatments. The treatments differ in length of time you will spend in full health. Which disorder would you prefer: full health for $BASE_VALUE weeks starting today, or full health for a longer period, starting 1 year from now?
 
   zh:>
     下面这个问题是关于健康的. 请设想一下, 您现在的健康状态比较差. 以下是关于较差的健康状态的描述:<br/>
