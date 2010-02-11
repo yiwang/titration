@@ -1,4 +1,9 @@
 ---
+quota-value: 160
+quota-close-text:
+  en: Thank for your interest in the study. However, we have had enough number of participants. The study is now closed.
+  zh: 感谢您对本调查的兴趣. 但是由于我们已经有了足够的参与者, 本次调查已经结束.
+
 constant:
   inf-positive: 10000
   inf-negative: -10000

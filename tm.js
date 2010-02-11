@@ -2,7 +2,7 @@
 // The number (0-7) is actually the index of elements in bvs_array.
 // 0 is used as denoting selection of var value, exit('to' field) and Infinite('high' field)
 ;function TransitionMatrixes(){
-// for tm-index: 1, initial base value is more attractive, lose var value in future
+// for tm-index: 1, lose var value in future
   this[1] = {
   //  a
     '7,1': {"to": 5, "low": 1, "high": 7},
@@ -23,7 +23,7 @@
     '2,1': {"to": 0, "low": 1, "high": 2},
     '2,0': {"to": 0, "low": 2, "high": 3}
   };
-// for tm-index: 2, initial var value is more attractive, gain var value in future
+// for tm-index: 2, gain var value in future
   this[2] = {
   //  a
     '7,0': {"to": 5, "low": 1, "high": 7},    
@@ -44,9 +44,11 @@
     '2,0': {"to": 0, "low": 1, "high": 2},
     '2,1': {"to": 0, "low": 2, "high": 3}
   };
-// for tm-index: 3, initial base value is more attractive, gain sth. in future with cost of var value
+// for tm-index: 3, gain sth. in future with cost of var value
   this[3] = this[1];
-// for tm-index: 4, initial var value is more attractive, lose sth. in future with return of var value  
+// for tm-index: 4, lose sth. in future with return of var value  
   this[4] = this[2];
+// for tm-index: 5, lose var value in future with return of sth.
+  this[5] = this[1];
 }
 var tms = new TransitionMatrixes();
