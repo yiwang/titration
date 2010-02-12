@@ -9,27 +9,27 @@ if(empty($lang)){
 }
 //echo $lang;
 ?>
-<link href='js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
-<script src="js/jquery-1.3.2" type="text/javascript"></script>
-<script src="js/jquery-ui-1.7.2.custom.min" type="text/javascript"></script>
-<script src="js/jquery.form.js" type="text/javascript"></script>
+<link href='lib/js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
+<script src="lib/js/jquery-1.3.2" type="text/javascript"></script>
+<script src="lib/js/jquery-ui-1.7.2.custom.min" type="text/javascript"></script>
+<script src="lib/js/jquery.form.js" type="text/javascript"></script>
 <?php
-echo '<script src="js/jquery.validate.';
+echo '<script src="lib/js/jquery.validate.';
 echo $lang;
 //echo'.js" type="text/javascript" charset="utf-8"></script>';
 echo'.js" type="text/javascript"></script>';
 ?>
-<script src="js/prototype.js" type="text/javascript"></script>
-<script src="js/scriptaculous.js" type="text/javascript"></script>
+<script src="lib/js/prototype.js" type="text/javascript"></script>
+<script src="lib/js/scriptaculous.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 <?php
-require_once('spyc/spyc.php');
+require_once('lib/spyc/spyc.php');
 function alert($val){
   echo 'val="'.$val.'";';
   echo 'alert('.val.');';
 }
-$consent = Spyc::YAMLLoad('consent.yaml');
+$consent = Spyc::YAMLLoad('conf.d/consent.yaml');
 
 echo 'consent='.json_encode($consent).';';
 echo 'lang="'.$lang.'";';
@@ -56,7 +56,7 @@ var pageTracker = _gat._getTracker("UA-1108486-4");
 pageTracker._trackPageview();
 } catch(err) {}</script>
 
-<center>
+
 <div id='consent-form'></div>
 <input id='digital-signature' type="button"/>
-</center>     
+

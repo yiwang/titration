@@ -11,27 +11,27 @@ if(empty($lang)){
 $debug_id = intval($_GET['id']);
 //echo $debug_id;
 ?>
-<link href='js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
-<script src="js/jquery-1.3.2" type="text/javascript"></script>
-<script src="js/jquery-ui-1.7.2.custom.min" type="text/javascript"></script>
-<script src="js/jquery.form.js" type="text/javascript"></script>
+<link href='lib/js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
+<script src="lib/js/jquery-1.3.2" type="text/javascript"></script>
+<script src="lib/js/jquery-ui-1.7.2.custom.min" type="text/javascript"></script>
+<script src="lib/js/jquery.form.js" type="text/javascript"></script>
 <?php
-echo '<script src="js/jquery.validate.';
+echo '<script src="lib/js/jquery.validate.';
 echo $lang;
 //echo'.js" type="text/javascript" charset="utf-8"></script>';
 echo'.js" type="text/javascript"></script>';
 ?>
-<script src="js/prototype.js" type="text/javascript"></script>
-<script src="js/scriptaculous.js" type="text/javascript"></script>
+<script src="lib/js/prototype.js" type="text/javascript"></script>
+<script src="lib/js/scriptaculous.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 <?php
-require_once('spyc/spyc.php');
+require_once('lib/spyc/spyc.php');
 function alert($val){
   echo 'val="'.$val.'";';
   echo 'alert('.val.');';
 }
-$config = Spyc::YAMLLoad('config.yaml');
+$config = Spyc::YAMLLoad('conf.d/config.yaml');
 $set = $_GET['set'];
 $set_value = $config['sets'][$set];
 //alert(isset($config[$set]));
@@ -42,7 +42,7 @@ if(!isset($set_value)){
 }
 $ids = $config['all-ids'];
 foreach($ids as $i){
-	$q[$i] = Spyc::YAMLLoad('questions/'.strval($i).'.yaml');
+	$q[$i] = Spyc::YAMLLoad('conf.d/questions/'.strval($i).'.yaml');
 	/*
 	$VAR_VALUE = $q[$i]['var'][0];
 	$ans_var = $q[$i]['ans'][$lang][1];
@@ -56,6 +56,21 @@ echo 'q='.json_encode($q).';';
 echo 'lang="'.$lang.'";';
 echo 'set="'.$set.'";';
 echo 'debug_id='.$debug_id.';';
+
+// check count against quota
+$fn = 'out.d/count';
+if (file_exists($fn)){
+  $file = fopen($fn, r);
+  $counter = fread($file, filesize($fn));
+  fclose($file);
+  echo 'counter='.$counter.';';
+}else{
+  $file = fopen($fn, w);
+  fwrite($file, '0');
+  fclose($file);
+  echo 'counter=0;';
+}
+
 ?>
 </script>
 <script src="tm.js" type="text/javascript"></script>
@@ -81,7 +96,6 @@ echo '</pre>';
 //*/
 
 ?>
-
 </head>
 
 

@@ -1,6 +1,6 @@
 <?php
  
-$logFile = 'email.txt';
+$logFile = 'out.d/email';
 $et = json_decode(stripslashes($_POST['entry']), true);
 //$res = json_decode($_POST['entry'],true);
 //error_log("result: ".$_POST['entry'].", res=".json_encode($et), 3, $logFile);

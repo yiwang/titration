@@ -1,0 +1,20 @@
+end-form-text:
+  en:>
+    Thank you for participating in the study. Please enter your paypal address below. You will be paid $8. <br/>
+    Here is your confirmation number in case you have any question regarding the payment.
+    
+  zh:>
+    感谢您参与此调研. 请输入您的 PayPal 电子邮件地址, 您将获得 8 美元的报酬. <br/>
+    下面是您的确认号码, 如果您对报酬有任何问题，请在和我们联系时提供此确认号码. "
+
+email-form-text:
+  en: "Please input your PayPal E-mail address:"
+  zh: "请输入您的 PayPal 电子邮件地址:"
+  
+submit-text:
+  en: Submit
+  zh: 提交
+
+final-view-text:
+  en: Your submission is succesful!
+  zh: 您已经成功提交！

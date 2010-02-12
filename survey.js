@@ -77,7 +77,11 @@ jQuery(document).ready(function(){
     log('set: '+ set);
     log('SEQ: '+ ids);
   }
-  new_group();  
+  new_group();
+  // over quota case
+  if(counter >= config['quota-value']){
+    jQuery('#all-body').html(config['quota-close-text'][lang]);
+  }
 });
 
 var ctm = null;

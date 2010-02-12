@@ -22,6 +22,8 @@ p { clear: both; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 </style>
 
+<div id="all-body">
+
 <div id="header">header</div>
 <div id="progressbar"></div>
 <form id = 'sform'>
@@ -85,4 +87,6 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <div id="log"></div>
 <input name="eval" id="eval" />
 <a href="javascript:void(0);" onClick="log(eval(document.getElementById('eval').value));">go</a> 
+</div>
+
 </div>
