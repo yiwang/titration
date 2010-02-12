@@ -5,7 +5,13 @@
     jQuery('#submit').attr({value: end['submit-text'][lang]});
     jQuery('#submit').click(function(){
       jQuery.post('end-save.php',{entry: Object.toJSON([cnum_str,jQuery('input[name="email"]').attr('value')])},show_final,'text');
-    });    
+    });
+    jQuery('*').keydown(function(e){
+    if(e.which==13){
+      //jQuery('#submit').click();
+      return false;
+    } // disable enter key from submit
+  });    
 });
 function show_final(res){
   jQuery('#submit-view').hide();
