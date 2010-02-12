@@ -1,4 +1,7 @@
 ;jQuery(document).ready(function(){  
+    jQuery("#submit-view").bind("submit", function(event){
+      event.preventDefault();
+    });  
     jQuery('#end-form').html(end['end-form-text'][lang]);
     jQuery('#confirmation-number').html(cnum_str);
     jQuery('#email-form').html(end['email-form-text'][lang]);

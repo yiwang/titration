@@ -31,7 +31,7 @@ function time(){
 }
 
 jQuery(document).ready(function(){  
-  jQuery("sform").bind("submit", function(event){
+  jQuery("#sform").bind("submit", function(event){
     event.preventDefault();
   });
   et.lang = lang;
