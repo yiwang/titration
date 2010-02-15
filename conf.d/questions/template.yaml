@@ -49,6 +49,8 @@ desc:
     Start paragraph here $BASE_VALUE    $VAR_VALUE
    
 ans:
+  #optional % attribute
+  %: 1 
   en:
     - start sentence here with one WHITE SPACE from '-' $BASE_VALUE
     - $VAR_VALUE

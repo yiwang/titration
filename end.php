@@ -1,6 +1,6 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-<!meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
 <script src="debug.js" type="text/javascript"></script>
 <?php
 $lang = $_GET['lang'];
@@ -66,6 +66,7 @@ pageTracker._trackPageview();
 
 <style type="text/css">
 input:focus {background: yellow; }
+#comment-end-input {width: 500px; }
 </style>
 
 <form id='submit-view'>
@@ -75,7 +76,11 @@ input:focus {background: yellow; }
 
 <div id='email-form'></div>
 <input id='email' name='email' type="text"/>
-<br/>
+<br /><br />
+
+  <label id='comment-end-label'></label><br />
+  <input id='comment-end-input' type="text" /><br />
+
 <input id='submit' type="button"/>
 
 </form>

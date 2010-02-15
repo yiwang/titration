@@ -6,6 +6,7 @@
   this.end_time = null; // in ms
   this.duration = null; // in second
   this.ds = new Object();
+  this.comment_end = null;
 }
 
 // Data collected within one ID (questions)
@@ -14,6 +15,7 @@ function Data(){
   this.low = null;
   this.high = null;
   this.time = []; // array of intervals in second of user's actions
+  this.comment_question = null;
 }
 
 // encode Entry Object to CSV one line format
@@ -29,7 +31,7 @@ function flat(e){
     //if(e.ds[i].high==0){e.ds[i].high=Infinity;}
     r = r.concat([e.ds[i].ctype1, e.ds[i].low, e.ds[i].high],e.ds[i].time);
     r = r.concat(new Array(config.depth + 1 - e.ds[i].time.length));
-    
+    r.push(e.ds[i].comment_question.replace(/,/g,";")); 
   }
   //* make undefined and null empty string '' for later encoding
   for(var i=r.length-1;i>=0;i--){

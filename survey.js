@@ -99,6 +99,7 @@ function Survey(){
         break;
       case 1: // for filling blank
         data.ctype1 = (+jQuery('input[name="ctype1"]').attr('value'));
+     	data.comment_question = (jQuery('#comment-question-input').attr('value'));
         // end of survey
         if(!inc_cid()){
           et.end_time = new Date().getTime();
@@ -170,8 +171,9 @@ function refill_html(){
   jQuery('#viz-var').css('width', v/q[cid].base*100+'px');
   jQuery('span[name="var-ctype1"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('#note').html(q[cid]['note'][lang]);
-  jQuery('#your_ans').html(config.your_ans[lang]);
+  jQuery('#your-ans').html(config['your-ans'][lang]);
   jQuery('#note1').html(config.note1[lang]);
+  jQuery('#comment-question-label').html(config['comment-question-label'][lang]);
   if(q[cid].ans['%']){
     jQuery('#note1').show();  
   }else{

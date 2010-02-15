@@ -20,11 +20,12 @@ label.error { float: none; color: red; padding-left: .5em; vertical-align: top; 
 p { clear: both; }
 .submit { margin-left: 12em; align: center; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
+#comment-question-input {width: 500px; }
 </style>
 
 <div id="all-body">
 
-<div id="header">header</div>
+<div id="header"></div>
 <div id="progressbar"></div>
 <form id = 'sform'>
 <fieldset>
@@ -70,9 +71,12 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
   </tr>
 </table>
   <br/>
-  <label id='your_ans'></label><input name='ctype1' type="text"  />
+  <label id='your-ans'></label><input name='ctype1' type="text"  />
 
   <div id='note1'> </div>
+  <br /><br />
+  <label id='comment-question-label'></label><br />
+  <input id='comment-question-input' type="text" />
 </div>
 
 </fieldset>

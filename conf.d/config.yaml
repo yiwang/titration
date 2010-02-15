@@ -1,8 +1,12 @@
 ---
+comment-question-label:
+  en: Do you have any comments on the above scenario? 
+  zh: 您对以上的情形有评论么?
+
 quota-value: 160
 quota-close-text:
   en: Thank for your interest in the study. However, we have had enough number of participants. The study is now closed.
-  zh: 感谢您对本调查的兴趣. 但是由于我们已经有了足够的参与者, 本次调查已经结束.
+  zh: 感谢您对本调查的兴趣. 我们已经有了足够的参与者, 本次调查已经结束.
 
 constant:
   inf-positive: 10000
@@ -22,7 +26,7 @@ hint:
     zh: '请填入一个数字, 使您觉得下面的两个选项一样:'
     
 # input only for ctype=1
-your_ans:
+your-ans:
   en: 'Your Answer:'
   zh: '您的回答:'
   
