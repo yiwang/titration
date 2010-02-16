@@ -108,7 +108,7 @@ function Survey(){
           //jQuery('#entry').html(Object.toJSON(flat(et)));
           //jQuery('#next').hide();
           //jQuery('#sform').hide();
-          jQuery.post('survey-save.php',{entry: Object.toJSON(flat(et))},show_result,'text');
+          jQuery.post('survey-save.php',{'entry': Object.toJSON(flat(et))},show_result,'text');
           log('end survey!');
           location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
           return;
