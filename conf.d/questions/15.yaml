@@ -26,8 +26,9 @@ desc:
 ans:
   %: 1
   en:
-    - Don't pay extra money, keeping your chance of getting a house in area A at 50%
+    - Do not pay extra money, keeping your chance of getting a house in area A at 50%
     - Pay the amount of $VAR_VALUE% of the house price to increase your chance of getting a house in area A to 100%
+
   zh:
     - 不付额外的钱, 将您赢得甲区的几率保持在50%
     - 付相当于$VAR_VALUE%的购房款的钱, 将您赢得甲区的几率提高到100%

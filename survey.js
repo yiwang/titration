@@ -111,7 +111,7 @@ function Survey(){
           //var post_entry = {'entry': Object.toJSON(flat(et))};
           jQuery.post('survey-save.php',{'entry': Object.toJSON(flat(et))}, show_result,'text');
           log('end survey!');
-          location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
+          //location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
           return;
         }
         break;
@@ -144,6 +144,7 @@ function goto_ctype1(low,high){
 }
 function show_result(res){
   //jQuery('#result').html(res);
+  location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
 }
 //
 function notify_emphasize(name,dur,c){
