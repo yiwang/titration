@@ -170,7 +170,9 @@ function refill_html(){
   jQuery('#hint').html(hint[ctype][lang]);
   jQuery('span[name="base"]').html(q[cid]['ans'][lang][0].replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('span[name="var"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '<span name="var_value">'+v+'</span>').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
-  jQuery('#viz-var').css('width', v/q[cid].base*100+'px');
+  if(q[cid].base){
+    jQuery('#viz-var').css('width', v/q[cid].base*100+'px');
+  }
   jQuery('span[name="var-ctype1"]').html(q[cid]['ans'][lang][1].replace(/\$VAR\_VALUE/g, '______').replace(/\$BASE\_VALUE/g, '<span name="base_value">'+q[cid].base+'</span>'));
   jQuery('#note').html(q[cid]['note'][lang]);
   jQuery('#your-ans').html(config['your-ans'][lang]);
