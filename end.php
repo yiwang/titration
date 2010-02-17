@@ -41,6 +41,7 @@ $end = Spyc::YAMLLoad('conf.d/end.yaml');
 echo 'end='.json_encode($end).';';
 echo 'lang="'.$lang.'";';
 echo 'cnum_str="'.$cnum_str.'";';
+echo 'ip="'.$_SERVER['REMOTE_ADDR'].'";';
 ?>  
 </script>
 <script src="end.js" type="text/javascript"></script>
