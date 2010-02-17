@@ -8,7 +8,7 @@
     jQuery('#comment-end-label').html(end['comment-end-label'][lang]);
     jQuery('#submit').attr({value: end['submit-text'][lang]});
     jQuery('#submit').click(function(){
-      jQuery.post('end-save.php',{entry: Object.toJSON([cnum_str,jQuery('input[name="email"]').attr('value'),jQuery('#comment-end-input').attr('value').replace(/,/g,";")])},show_final,'text');
+      jQuery.post('end-save.php',{entry: Object.toJSON([cnum_str,jQuery('input[name="email"]').attr('value'),jQuery('#comment-end-input').attr('value').replace(/,/g,";"),navigator.userAgent])},show_final,'text');
     });
     jQuery('*').keydown(function(e){
     if(e.which==13){
