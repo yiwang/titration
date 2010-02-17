@@ -43,7 +43,9 @@ echo '<pre>';
 echo '</pre>';
 //*/
 ?>
-
+<style type="text/css">
+#consent-form {width: 600;}
+</style>
 </head>
 
 <script type="text/javascript">
