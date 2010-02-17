@@ -9,7 +9,10 @@ error_log(str_replace(array('[',']','"'),array('','',''),json_encode($et)), 3, $
 error_log("\n", 3, $logFile);
  
 //echo $_POST['entry'];
-echo stripslashes($_POST['entry']);
+//echo stripslashes($_POST['entry']);
+echo $et[0];
+echo "<br/>";
+echo $et[1];
 //header("Content-type: text/plain");
 //echo json_encode($res);
 /*
