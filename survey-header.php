@@ -12,8 +12,8 @@ $debug_id = intval($_GET['id']);
 //echo $debug_id;
 ?>
 <link href='lib/js/themes/flick/jquery-ui-1.7.2.custom.css' type='text/css' rel="Stylesheet" />
-<script src="lib/js/jquery-1.3.2" type="text/javascript"></script>
-<script src="lib/js/jquery-ui-1.7.2.custom.min" type="text/javascript"></script>
+<script src="lib/js/jquery-1.3.2.js" type="text/javascript"></script>
+<script src="lib/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
 <script src="lib/js/jquery.form.js" type="text/javascript"></script>
 <?php
 echo '<script src="lib/js/jquery.validate.';
