@@ -42,6 +42,11 @@ echo 'end='.json_encode($end).';';
 echo 'lang="'.$lang.'";';
 echo 'cnum_str="'.$cnum_str.'";';
 echo 'ip="'.$_SERVER['REMOTE_ADDR'].'";';
+
+$followup = Spyc::YAMLLoad('conf.d/followup.yaml');
+$demography = Spyc::YAMLLoad('conf.d/demography.yaml');
+echo 'followup='.json_encode($followup).';';
+echo 'demography='.json_encode($demography).';';
 ?>  
 </script>
 <script src="end.js" type="text/javascript"></script>
@@ -66,11 +71,38 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
 
 <style type="text/css">
+label.choice:hover {background-color: yellow; cursor:pointer; cursor:hand;}
 input:focus {background: yellow; }
 #comment-end-input {width: 500px; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; display:none; }
 </style>
 
 <form id='submit-view'>
+
+<div id='followup-view'>
+<?php
+foreach($followup['valid-question-ids'] as $i){
+echo "<label id='followup-".$i."-desc'></label>";
+echo '<label class="error" for="followup-'.$i.'" ><br />';
+    if($lang=='zh'){
+      echo '请选择一个答案.';
+    }else{
+      echo 'Please select an answer.';
+    }
+echo "</label><br />";
+  
+  for($j=1; $j<=5; $j++){
+  echo '<label class="choice"><input type="radio" name="followup-'.$i.'" value="'.$j.'" /> <span class="choice" id="followup-'.$i.'-answer-'.$j.'" ></span>&nbsp&nbsp&nbsp&nbsp&nbsp</label>';
+  }
+echo "<br /><br />";
+}
+?>
+</div>
+
+<div id='demography-view'>
+
+</div>
+
 <div id='end-form'></div>
 <div id='confirmation-number'></div>
 <br/>

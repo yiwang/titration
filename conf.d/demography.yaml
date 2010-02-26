@@ -1,0 +1,56 @@
+valid-question-ids: ['1', '2', '3', '4', '5', '6', '7']
+desc:
+  en: Please tell us the following about yourself
+  zh: 请告诉我们一些关于您的情况
+  
+questions-answers:
+  1:
+    question:
+      en: Your gender
+      zh: 您的性别
+    answer:
+      en: ['Female', 'Male']
+      zh: ['女', '男']
+  2:
+    question:
+      en: Your age
+      zh: 您的年龄
+    answer:
+      en: ['<25', '25-34'，'35-44', '45-54', '55-64', '>64']
+      zh: ['<25', '25-34'，'35-44', '45-54', '55-64', '>64']
+  3:
+    question:
+      en: Your marital status
+      zh: 您的婚姻状况
+    answer:
+      en: ['Single', 'Living together', 'Married', 'Divorced or living separated', 'Widowed']
+      zh: ['单身', '同居', '已婚', '离异', '寡居']
+  4:
+    question:
+      en: How many children do you have?
+      zh: 您有多少个小孩?
+    answer:
+      en: ['None', '1 or 2', '3 or 4', '5 or more']
+      zh: ['无', '1 或 2', '3 或 4', '5 或 更多']
+  5:
+    question:
+      en: What is your highest level of education?
+      zh: 
+    answer:
+      en: ['No degree', 'High school diploma', 'Associate degree, occupational', 'Associate degree, academic', 'Bachelor's degree', 'Master's degree', 'Professional degree', 'Doctoral degree']
+      zh: 
+  6:
+    question:
+      en: Which of the following categories best describes your current employment?
+      zh: 
+    answer:
+      en: ['No job/ unemployed', 'Working in household', 'Student', 'Worker/ farmer', 'Civil servant/employee', 'Manager', 'Entrepreneur', 'Other']
+      zh:
+  7:
+    question:
+      en: What is the average annual income of your household?
+      zh: 
+    answer:
+      en: ['less than \$10,000', '\$10,001 - \$20,000', '\$20,001 - \$30,000', '\$30,001 - \$40,000', '\$40,001 - \$50,000', '\$50,001 - \$60,000', '\$60,001 - \$150,000', 'over \$150,000']
+      zh: 
+      

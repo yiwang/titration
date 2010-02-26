@@ -1,0 +1,56 @@
+valid-question-ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+desc:
+  en: Listed below are statements about the relationship between humans and the environment. For each one, please indicate whether you STRONGLY AGREE, MILDLY AGREE, are UNSURE, MILDLY DISAGREE or STRONGLY DISAGREE.
+  zh: 
+  
+questions:
+  1:
+    en: We are approaching the limit of the number of people the earth can support
+    zh: 
+  2:
+    en: Humans have the right to modify the natural environment to suit their needs
+    zh: 
+  3:
+    en: When humans interfere with nature it often produces disastrous consequences
+    zh: 
+  4:
+    en: Human ingenuity will insure that we do NOT make the earth unlivable
+    zh: 
+  5:
+    en: Humans are severely abusing the environment
+    zh: 
+  6:
+    en: The earth has plenty of natural resources if we just learn how to develop them
+    zh: 
+  7:
+    en: Plants and animals have as much right as humans to exist
+    zh: 
+  8:
+    en: The balance of nature is strong enough to cope with the impacts of modern industrial nations
+    zh: 
+  9:
+    en: Despite our special abilities humans are still subject to the laws of nature
+    zh: 
+  10:
+    en: The so-called "ecological crisis" facing humankind has been greatly exaggerated
+    zh: 
+  11:
+    en: The earth is like a spaceship with very limited room and resources
+    zh: 
+  12:
+    en: Humans were meant to rule over the rest of nature
+    zh: 
+  13:
+    en: The balance of nature is very delicate and easily upset
+    zh: 
+  14:
+    en: Humans will eventually learn enough about how nature works to be able to control it
+    zh: 
+  15:
+    en: If things continue on their present course, we will soon experience a major ecological catastrophe
+    zh: 
+
+answers:
+  int-value: [1, 2, 3, 4, 5]
+  en: ['strongly disagree', 'mildly disagree', 'unsure', 'mildly agree', 'strongly agree']
+  zh: ['强烈反对', '反对', '不确定', '同意', '强烈同意']
