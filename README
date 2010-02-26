@@ -23,7 +23,7 @@
  
  
 A research assistant web survey project for CRED at Columbia University to conduct social experiment for game theory research.
-jQuery & prototype at front end.
+jQuery at front end.
 PHP & YAML (spyc) at back end.
 
 The source code is hosted at
