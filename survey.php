@@ -4,6 +4,7 @@ require_once('survey-header.php');
 <style type="text/css">
 #header {color: red;}
 #note1 {color: red;}
+#note2 {color: red;}
 form { font-family: Verdana; font-size: 14px; }
 #progressbar {height:15px;}
 #viz-base {height:10px; width:100px;}
@@ -74,6 +75,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
   <label id='your-ans'></label><input name='ctype1' type="text"  />
 
   <div id='note1'> </div>
+  <div id='note2'> </div>
   <br /><br />
   <label id='comment-question-label'></label><br />
   <input id='comment-question-input' type="text" />

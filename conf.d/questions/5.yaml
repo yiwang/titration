@@ -13,6 +13,7 @@ desc:
     请设想一下, 您刚刚中了个250元的奖. 您可以马上去兑现, 或者一年以后再兑现更大的奖. 请问您愿意选择哪一个奖?
 
 ans:
+  $: 1
   en:
     - $$BASE_VALUE immediately
     - $$VAR_VALUE a year from now

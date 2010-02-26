@@ -177,11 +177,17 @@ function refill_html(){
   jQuery('#note').html(q[cid]['note'][lang]);
   jQuery('#your-ans').html(config['your-ans'][lang]);
   jQuery('#note1').html(config.note1[lang]);
+  jQuery('#note2').html(config.note2[lang]);
   jQuery('#comment-question-label').html(config['comment-question-label'][lang]);
   if(q[cid].ans['%']){
     jQuery('#note1').show();  
   }else{
     jQuery('#note1').hide();
+  }
+  if(q[cid].ans['$']){
+    jQuery('#note2').show();
+  }else{
+    jQuery('#note2').hide();
   }
   jQuery('#next').attr({value:config.nav.next[lang]});
   /* td[name="viz"] visiblity depends on whether q[cid].base is 0

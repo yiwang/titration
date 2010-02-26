@@ -34,6 +34,10 @@ note1:
   en: 'Please do not include % symbol in your answer'
   zh: '请不要在回答中包含 % 符号'
   
+note2:
+  en: 'Please do not include $ symbol in your answer'
+  zh: '请不要在回答中包含 元 字'
+
 nav:
   next:
     en: 'Next >>'

@@ -22,6 +22,7 @@ desc:
     您身上有600元. 是前两天您买彩票中的奖. 请问您愿意付给赢方$BASE_VALUE元还是愿意选择1/6的可能性付给她更多钱?
 
 ans:
+  $: 1
   en:
     - Pay her $$BASE_VALUE
     - Take the 1/6 chance of paying her $$VAR_VALUE?
