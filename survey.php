@@ -22,9 +22,10 @@ p { clear: both; }
 .submit { margin-left: 12em; align: center; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 #comment-question-input {width: 500px; }
+//#all-body {width: 800;}
 </style>
 
-<div id="all-body">
+<div id="all-body" >
 
 <div id="header"></div>
 <div id="progressbar"></div>
