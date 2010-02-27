@@ -14,6 +14,7 @@ desc:
     请设想一下, 您刚刚领到本周的工资, 750元. 您走进一个商场, 发现他们在卖彩票. 请问您愿意付$BASE_VALUE元买一张有45%可能性赢得更多钱的彩票吗?
 
 ans:
+  $: 1
   en:
     - Do not participate in lottery
     - Pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning $$VAR_VALUE
