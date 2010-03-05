@@ -64,11 +64,11 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <div id='ctype1'><br/>
 <table>
   <tr>
-    <td><div>A. <span name='base'></span></div> </td>
+    <td><div><label> A. <span name='base'></span> </label></div> </td>
     <td name="viz"><div id='viz-base-ctype1'></div></td>
   </tr>
   <tr>
-    <td><div>B. <span name='var-ctype1'></span></div> </td>
+    <td><div><label> B. <span name='var-ctype1'></span> </label></div> </td>
     <td name="viz"><div id='viz-var-ctype1'></div></td>
   </tr>
 </table>
@@ -84,6 +84,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 
 </fieldset>
 </form>
+
 <form id='endform'>
 <div id='entry'></div>
 </form>
