@@ -7,8 +7,8 @@ require_once('survey-header.php');
 #note2 {color: red;}
 form { font-family: Verdana; font-size: 14px; }
 #progressbar {height:15px;}
-#viz-base {height:10px; width:100px;}
-#viz-base-ctype1 {height:10px; width:100px;}
+#viz-base {height:10px; width:0px;}
+#viz-base-ctype1 {height:10px; width:0px;}
 #viz-var {height:10px;}
 #viz-var-ctype1 {height:10px; width:0px;}
 
@@ -30,7 +30,7 @@ em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 <div id="header"></div>
 <div id="progressbar"></div>
 <form id = 'sform'>
-<fieldset>
+<fieldset id = 'sform-fset'>
 <legend id='progress'></legend>
 <div id='desc'></div><br/>
 

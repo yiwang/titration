@@ -233,7 +233,7 @@ function new_group(){
   cat = bvs_array.length-1;
   v = bvs_array[cat];
   refill_html();
-  notify_change(['sform']);
+  notify_change(['sform-fset']);
   log(cid+'.yaml');
   log('tm-index: '+ q[cid]["tm-index"]);
   log('bvs_array: '+bvs_array);
