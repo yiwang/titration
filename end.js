@@ -1,30 +1,29 @@
 ;
 var cstage = null;
 jQuery(document).ready(function(){  
-    jQuery('#followup-form').validate();
-    jQuery('#demography-form').validate();
-    jQuery('#final-form').validate({
-      rules: {
-        email: {
-          required: true,
-          email: true
-        }
+  jQuery('#followup-form').validate();
+  jQuery('#demography-form').validate();
+  jQuery('#final-form').validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
       }
-    });
-    jQuery('#header').html(end.header[lang]);
-    fill_html_followup();
-    fill_html_demography(); jQuery('#demography-form').hide();
-    fill_html_final(); jQuery('#final-form').hide();
-    cstage = 0;
-    jQuery('#submit').click(function(){
-      next();
-    });
-    jQuery('*').keydown(function(e){
+    }
+  });
+  jQuery('#header').html(end.header[lang]);
+  fill_html_followup();
+  fill_html_demography(); jQuery('#demography-form').hide();
+  fill_html_final(); jQuery('#final-form').hide();
+  cstage = 0;
+  jQuery('#submit').click(function(){
+    next();
+  });
+  jQuery('*').keydown(function(e){
     if(e.which==13){
       //jQuery('#submit').click();
       return false;
-    } // disable enter key from submit
-    
+    } // disable enter key from submit    
   });    
 });
 function flat_end(){
@@ -49,6 +48,7 @@ function flat_end(){
   return r;
 }
 function next(){
+  jQuery.scrollTo(0);
   if(cstage==0){
     if(jQuery('#followup-form').valid()){
       jQuery('#followup-form').hide();

@@ -21,6 +21,8 @@ echo '</pre>';
 <script src="lib/js/jquery-1.3.2.js" type="text/javascript"></script>
 <script src="lib/js/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
 <script src="lib/js/jquery.form.js" type="text/javascript"></script>
+<script src="lib/js/jquery.serialScroll-1.2.2/jquery.scrollTo.js" type="text/javascript"></script>
+<script src="lib/js/jquery.serialScroll-1.2.2/jquery.serialScroll.js" type="text/javascript"></script>
 <?php
 echo '<script src="lib/js/jquery.validate.';
 echo $lang;
