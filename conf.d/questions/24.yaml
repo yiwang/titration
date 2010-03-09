@@ -9,10 +9,12 @@ sub: [ 70,  150]
 desc:
   en:>
     Every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse if you overexpose yourself to certain irritants like pollen and mold.<br/><br/>
+
+    There is a central air system in your current apartment building that filters out most of the pollen and mold from your home air. With the air system turned on between March and May, in any given spring, you have a 5% chance of aggravating your allergies by pollen and mold particles that stay in your home.<br/><br/>
+
+    This year, however, the lease office would like to turn of the air system to save on the maintenance cost. You have options: agreeing  to turn it off, or insisting turn it on. If you agree to turn it off, the lease office will give you some rent credit.<br/><br/>
  
-    There is a central air system in your current apartment building that filters out most of the pollen and mold from your home air. With the air system turned on between March and May, in any given spring, you have a 5% chance of aggravating your allergies by pollen and mold particles that stay in your home. This year, however, the air system in your building is broken. The lease office gives you two options:<br/><br/>
-    
-    staying, or moving to another building. If you decide to move to another building with a functioning air system, the lease office will cover all of your moving costs. The new apartment will be identical to your current one, and the filter system works. If you decide to stay in your current home, the lease office will give you rent credit. According to your doctor, your chance of getting an aggravated allergy will be increased from 5% to 20% without the air system.Which one would you prefer, move to another building with the air system, or accept rent credit worth $VAR_VALUE% of your monthly rent and stay in the current building without the air system?
+    According to your doctor, your chance of getting an aggravated allergy will be increased from 5% to 20% without the air system. Which one would you prefer, lobbying to turn the air system back on, or accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system?
  
   zh:>
     请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积. <br/><br/>
@@ -24,8 +26,8 @@ desc:
 ans:
   %: 1
   en:
-    - move to another building with the air system
-    - accept rent credit worth $VAR_VALUE% of your monthly rent and stay in the current building without the air system
+    - lobbying to turn the air system back on 
+    - accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system
   zh:
     - 搬到有空调系统的隔壁的公寓楼
     - 留在现在的公寓, 收到相当您每月租金$VAR_VALUE%的钱

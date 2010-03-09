@@ -8,7 +8,7 @@ sub: [ 68,  88]
 
 desc:
   en:>      
-    Imagine that a real estate company recently built new apartment building in two distinct areas. The units and other conditions in those two areas are similar except for the fact that area A has better air quality than area B. In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
+    Imagine that a real estate company recently built new apartment building in two distinct areas. <b>The units and other conditions in those two areas are similar except for the fact that area A has better air quality than area B. </b> In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
     
     For the purpose of marketing strategy, the company does not allow their clients to choose the area. Instead, the company randomly assigns the tenants to the two areas. That is, when you a rent an apartment from them, you have 50% chance of getting an unit in area A, and 50% chance of getting one in area B.<br/><br/>
     

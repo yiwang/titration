@@ -14,7 +14,7 @@ desc:
     
     The lake has a good self-cleaning capacity. In any given year, the probability that the lake becomes so polluted that it is beyond self-cleaning, is $BASE_VALUE%. If that happens, the population of fish and birds in the lake will be greatly reduced and there will be a bad smell all over the area, including where you live. If the lake becomes polluted for 3 months without successful self-cleaning, the city council pays for the cleaning.<br/><br/>
 
-    The local government is considering giving permission to several companies to set up a series of large manufactories close to a lake in order to stimulate the economy and help solve the unemployment problem. It has been estimated that those new manufactories and their subsequent influence on the economy will decrease the unemployment rate from 15% to 10%. But they will also increase the probability of the lake being polluted in any given year. Would you vote to give permission for the setting up of these manufactories if the probability of pollution increases?
+    The local government is considering giving permission to several companies to set up a series of large factories close to a lake in order to stimulate the economy and help solve the unemployment problem. It has been estimated that those new factories and their subsequent influence on the economy will decrease the unemployment rate from 15% to 10%. But they will also increase the probability of the lake being polluted in any given year. Would you vote to give permission for the setting up of these factories if the probability of pollution increases?
 
   zh:>
     请设想一下, 您所居住的城市有25万人口. 现在这个城市的失业率是15%, 而全国的平均失业率是9%. 失业率过高造成很多严重的问题, 包括犯罪率上升.<br/><br/>
@@ -30,8 +30,8 @@ desc:
 ans:
   %: 1
   en:
-    - Vote against setting up the manufactories, keeping the probability of polluting the lake beyond self-cleaning at $BASE_VALUE%
-    - Vote for setting up the manufactories, increasing the probability of polluting the lake beyond self-cleaning to $VAR_VALUE%
+    - Vote against setting up the factories, keeping the probability of polluting the lake beyond self-cleaning at $BASE_VALUE%
+    - Vote for setting up the factories, increasing the probability of polluting the lake beyond self-cleaning to $VAR_VALUE%
   zh:
     - 不允许公司在湖边修工厂, 将每年湖水被污染的可能性维持在$BASE_VALUE%
    - 允许几家公司在湖边修工厂, 将每年湖水被污染的可能性增大到$VAR_VALUE%

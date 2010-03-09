@@ -8,7 +8,7 @@ sub: [ 3, 7 ]
 
 desc:
   en:>
-    Imagine that your 5-year old son is starting school soon. You decide to buy a house that is close to a good school. A real estate company recently built new houses in two distinct areas. Both areas have an excellent school. The houses and other conditions in those two areas are similar except for the fact that area A has better air quality than Area B. In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
+    Imagine that your 5-year old son is starting school soon. You decide to buy a house that is close to a good school. A real estate company recently built new houses in two distinct areas. Both areas have an excellent school. <b>The houses and other conditions in those two areas are similar except for the fact that area A has better air quality than Area B.</b> In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
 
     For the purpose of marketing strategy, the company does not allow their clients to choose the area. Instead, the company randomly assigns the buyers to the two areas. That is, when you buy a house from them, you have 50% chance of getting a house in area A, and 50% chance of getting one in area B.<br/><br/>
     
