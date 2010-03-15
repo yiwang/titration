@@ -8,11 +8,13 @@ comment-end-label:
 
 end-desc:
   en:>
-    Thank you for participating in the study. Please enter your paypal address below. You will be paid $8 in 2 ~ 3 weeks. Note that each household is allowed to finish the survey once only. Duplicate submission will void all submissions, and result in NO payment. <br/>
+    Thank you for participating in the study. Please enter your paypal address below. You will be paid $8 in 2 ~ 3 weeks. <br/>
+    Note that each household is allowed to finish the survey once only. Duplicate submission will void all submissions, and result in NO payment. <br/>
     Here is your confirmation number in case you have any question regarding the payment.
     
   zh:>
-    感谢您参与此调研. 请输入您的 PayPal 电子邮件地址, 您将在2 ~ 3周内获得 8 美元的报酬. <br/>
+    感谢您参与此调研. 请输入您的 PayPal 电子邮件地址, 您将在2 ~ 3周内获得 8 美元的报酬.<br/>
+    请注意每个家庭只能回答该调查一次. 重复的提交回答将不会获得报酬. <br/>
     下面是您的确认号码, 如果您对报酬有任何问题，请在和我们联系时提供此确认号码. "
 
 email-desc:
