@@ -4,54 +4,56 @@ desc:
   en:>
    Follow up questions [1 / 2] <br/><br/>
    Listed below are statements about the relationship between humans and the environment. For each one, please indicate whether you STRONGLY AGREE, MILDLY AGREE, are UNSURE, MILDLY DISAGREE or STRONGLY DISAGREE.
-  zh: 
+  zh:>
+   后续问题[1 / 2] <br/><br/>
+   以下是关于人和环境关系的陈述. 对每一个问题, 请您选择 强烈同意, 同意, 不确定, 反对, 强烈反对 当中的一个.
   
 questions:
   1:
     en: We are approaching the limit of the number of people the earth can support
-    zh: 
+    zh: 我们正在接近地球能够支持的人类人口数目的极限 
   2:
     en: Humans have the right to modify the natural environment to suit their needs
-    zh: 
+    zh: 人类有权根据自己的需求改造自然环境 
   3:
     en: When humans interfere with nature it often produces disastrous consequences
-    zh: 
+    zh: 人类对自然的影响经常导致灾难性的后果
   4:
     en: Human ingenuity will insure that we do NOT make the earth unlivable
-    zh: 
+    zh: 人类的创造力会保证我们<b> 不会</b> 使地球不适合居住 
   5:
     en: Humans are severely abusing the environment
-    zh: 
+    zh: 人类正在严重地破坏环境
   6:
     en: The earth has plenty of natural resources if we just learn how to develop them
-    zh: 
+    zh: 地球会有足够的自然资源, 如果我们学会如何开发它们.
   7:
     en: Plants and animals have as much right as humans to exist
-    zh: 
+    zh: 植物和动物有和人类一样的存在的权利
   8:
     en: The balance of nature is strong enough to cope with the impacts of modern industrial nations
-    zh: 
+    zh: 自然的平衡能力足够强大, 它能应付现代工业国家的影响
   9:
     en: Despite our special abilities humans are still subject to the laws of nature
-    zh: 
+    zh: 尽管人类有特殊的能力, 但仍然受自然规律的控制
   10:
     en: The so-called "ecological crisis" facing humankind has been greatly exaggerated
-    zh: 
+    zh: 人类面临的所谓"生态灾难"是被严重夸大的
   11:
     en: The earth is like a spaceship with very limited room and resources
-    zh: 
+    zh: 地球就像一个具有有限空间和资源的宇宙飞船
   12:
     en: Humans were meant to rule over the rest of nature
-    zh: 
+    zh: 人类注定就是应该控制其它的自然界
   13:
     en: The balance of nature is very delicate and easily upset
-    zh: 
+    zh: 自然的平衡相当微妙并很容易被破坏
   14:
     en: Humans will eventually learn enough about how nature works to be able to control it
-    zh: 
+    zh: 人类最终会学会自然如何运作并能够控制它
   15:
     en: If things continue on their present course, we will soon experience a major ecological catastrophe
-    zh: 
+    zh: 如果继续目前的情形, 我们将很快经历一个严重的生态灾难
 
 answers:
   int-value: [1, 2, 3, 4, 5]

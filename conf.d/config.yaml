@@ -3,10 +3,10 @@ comment-question-label:
   en: Do you have any comments on the above scenario? 
   zh: 您对以上的情形有评论么?
 
-quota-value: 160
+quota-value: 120
 quota-close-text:
-  en: Thank for your interest in the study. However, we have had enough number of participants. The study is now closed.
-  zh: 感谢您对本调查的兴趣. 我们已经有了足够的参与者, 本次调查已经结束.
+  en: Thank you for your interest in the study. However, we have had enough respondents, and the study is now closed.
+  zh: 感谢您对本调查的兴趣. 我们已经有了足够多的参与者, 本次调查已经结束.
 
 constant:
   inf-positive: 10000

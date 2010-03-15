@@ -8,20 +8,22 @@ sub: [ 70,  150]
 
 desc:
   en:>
-    Every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse if you overexpose yourself to certain irritants like pollen and mold.<br/><br/>
+    Imagine that every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse if you overexpose yourself to certain irritants like pollen and mold.<br/><br/>
 
     There is a central air system in your current apartment building that filters out most of the pollen and mold from your home air. With the air system turned on between March and May, in any given spring, you have a 5% chance of aggravating your allergies by pollen and mold particles that stay in your home.<br/><br/>
 
     This year, however, the lease office would like to turn of the air system to save on the maintenance cost. You have options: agreeing  to turn it off, or insisting turn it on. If you agree to turn it off, the lease office will give you some rent credit.<br/><br/>
  
     According to your doctor, your chance of getting an aggravated allergy will be increased from 5% to 20% without the air system. Which one would you prefer, lobbying to turn the air system back on, or accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system?
- 
+
   zh:>
     请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积. <br/><br/>
     
-    您现在租住的公寓楼有一个中央空气过滤系统. 每年春天, 如果这个过滤系统一直运行的话, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是5%. 但是今年这个过滤系统坏了, 短期修不好. 您的房东, 一家房地产公司, 给了您两个选择: 搬家或者留下.<br/><br/>
+    您现在租住的公寓楼有一个中央空气过滤系统可以过滤花粉和霉菌. 每年春天, 如果这个过滤系统一直运行的话, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是5%.<br/><br/>
+   
+    但是今年, 您的房东物业公司为了节省开支，打算关掉这个过滤系统. 您有两个选择: 同意关掉空气过滤系统, 或者坚持打开空气过滤系统. 如果您同意关掉, 物业公司会补偿您一些费用.<br/><br/>
     
-    如果您决定搬到隔壁的公寓楼, 房东会请搬家公司帮你搬家和清洁. 您不会有任何额外花费. 如果您决定留下, 房东会给您退回相当您每月租金$VAR_VALUE%的钱.  您的医生告诉您, 如果您留在没有过滤系统的公寓里面, 您得严重过敏的可能性会从5%上升到20%.
+    您的医生告诉您, 如果您留在没有过滤系统的公寓里面, 您得严重过敏的可能性会从5%上升到20%.
  
 ans:
   %: 1
@@ -29,8 +31,8 @@ ans:
     - lobbying to turn the air system back on 
     - accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system
   zh:
-    - 搬到有空调系统的隔壁的公寓楼
-    - 留在现在的公寓, 收到相当您每月租金$VAR_VALUE%的钱
+    - 坚持游说房东重新开启空调系统
+    - 留在现在没有空调系统的公寓, 收到相当您每月租金$VAR_VALUE%的补偿费用
 note:
   en:
   zh:
