@@ -1,3 +1,27 @@
+Titration Method Survey
+ 
+A research assistant web survey project for CRED at Columbia University to conduct social experiment for game theory research. Implementation of customizable titration method with predefined transition matrixes.
+
+jQuery at front end.
+PHP & YAML (spyc) at back end.
+
+The source code is hosted at
+http://github.com/yiwang/cred
+
+Demo
+http://www.yi-wang.me/web-development/jquery-yaml
+Documentation
+http://www.yi-wang.me/web-development/jquery-yaml/documentation
+Progress
+http://www.yi-wang.me/web-development/jquery-yaml/progress
+
+Deployment URL
+English: http://cred.columbia.edu/min-survey/survey.php
+Chinese: http://cred.columbia.edu/min-survey/survey.php?lang=zh
+parameter 'lang' is to specify language
+If language not specified, default is lang=en
+
+
  Copyright (c) 2010 Yi Wang (e@yi-wang.me)
 
  Permission is hereby granted, free of charge, to any person
@@ -21,25 +45,3 @@
  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  OTHER DEALINGS IN THE SOFTWARE.
  
- 
-A research assistant web survey project for CRED at Columbia University to conduct social experiment for game theory research.
-jQuery at front end.
-PHP & YAML (spyc) at back end.
-
-The source code is hosted at
-http://github.com/yiwang/cred
-
-Demo
-http://www.yi-wang.me/web-development/jquery-yaml
-
-Documentation
-http://www.yi-wang.me/web-development/jquery-yaml/documentation
-
-Progress
-http://www.yi-wang.me/web-development/jquery-yaml/progress
-
-Deployment URL
-English: http://min-gong.info/cred/survey.php
-Chinese: http://min-gong.info/cred/survey.php?lang=zh
-parameter 'lang' is to specify language
-If language not specified, default is lang=en
