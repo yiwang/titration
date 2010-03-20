@@ -64,6 +64,10 @@ if (file_exists($fn)){
   $counter = fread($file, filesize($fn));
   fclose($file);
   echo 'counter='.$counter.';';
+  // assign set according to counter value
+  $remainder = $counter % 2;
+  if ($remainder == 1) $set='A';
+  if ($remainder == 0) $set='B';
 }else{
   $file = fopen($fn, w);
   fwrite($file, '0');
@@ -77,7 +81,8 @@ if (file_exists($fn)){
 <script src="entry.js" type="text/javascript"></script>
 <script src="survey.js" type="text/javascript"></script>
 <?php
-//*
+/*
+echo $remainder.' '.$set;
 echo '<pre>';
 //print_r(array_rand($config['sets']));
 //print_r($ids);

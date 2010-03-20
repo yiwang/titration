@@ -2,7 +2,7 @@ AddDefaultCharset UTF-8
 DirectoryIndex index.html index.php index.htm
 
 RewriteEngine On
-RewriteBase /min-survey
+#RewriteBase /min-survey
 RewriteRule ^start-en$ start.en.php [R=301,L]
 RewriteRule ^start-zh$ start.zh.php [R=301,L]
 
