@@ -1,5 +1,7 @@
 ---
-2.3.3 Mild-Gain
+id: 23
+
+#2.3.3 Mild-Gain
 #Health: mild x gain, with var cost
 tm-index: 3
 base: 0

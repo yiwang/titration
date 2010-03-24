@@ -1,0 +1,809 @@
+---
+id: 1
+
+#1.1.1Air quality (usage value)– Gain and Loss 
+#Environmental: usage x gain
+
+# pattern for 'var' and 'sub'
+#  d      c                 b               a     for 'var'
+#                   c.i             b.i             for 'sub'
+# 22  - 30 -  (37) - 44 - (55) - 65
+
+# 'var' has EXACTLY 4 numbers in it, 'sub' has EXACTLY 2 numbers in MONOTONICALLY INCREASING order.
+# DO have one or more WHITE SPACE after ',' between each number
+
+tm-index: 2
+base: 21
+var: [ 22, 30,  44,  65 ]
+sub: [ 37, 55 ]
+
+
+desc:
+  en:>
+    Imagine that you live in a region that has a fairly constant climate all year round, like San Diego. The current air quality (measured by number and size of particulates) in the area is moderate and the local county government is considering a temporary change to its emissions policy to study the effects of air quality on human health and the local wildlife. The particulate output of nearby factories will be reduced, but the factories will be compensated so that they do not incur any costs during the test period. The test will lead to an immediate improvement in air quality over a period of three weeks ($BASE_VALUE days), after which time the air quality will return to its former level. However, the government is also considering carrying out the test a year from now, for a different length of time. Which one would you prefer, improved air quality immediately for 21 days, or improved air quality a year from now for a longer duration?<br/><br/>
+
+    No matter when the test period begins, the government will start implementing the new policy two years from today's date, if the new policy is approved.
+
+  zh:>
+    请设想一下, 您住在一个气候比较稳定的地方, 比如昆明. 您那里的空气质量 (主要是空气中的浮尘) 属于中等. 当地政府准备试行一段时间一个新的排污政策, 用来测试空气质量对人们的身体健康以及对当地野生动物的影响. 试行期间,附近的工厂要减少大气排放. 因为减少排放而造成工厂的利润损失将由政府补贴. 如果现在马上开始试行的话, 试行会持续3个星期 ($BASE_VALUE 天).<br/><br/>
+
+    这3个星期的空气质量会有所提高. 3个星期以后将恢复原有政策, 空气质量回落到现有水平. 当地政府也在考虑等到一年以后再做这个试行测试. 如果等到一年以后再试行, 试行持续的时间长短还没有确定. 您是愿意试行马上开始, 接下来$BASE_VALUE天的空气质量都有提高, 还是愿意等一年再试行, 试行时间更长(空气质量比较好的时间更长)?<br/><br/>
+
+    无论试行何时开始, 如果该排污政策被批准，政府都会在两年之后正式执行该政策.
+ 
+ans:
+  en:
+    - Improved air quality immediately for $BASE_VALUE days.
+    - Improved air quality a year from now for $VAR_VALUE days.
+  zh:
+    - 试行马上开始, 接下来$BASE_VALUE天的空气质量都有提高.
+    - 等一年再试行, 试行时间持续$VAR_VALUE天 ($VAR_VALUE天比较好的空气质量).
+# note, only for ctype = 0
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政策的看法.
+
+---
+id: 2
+
+#Loss
+#Environmental: usage x loss
+
+tm-index:1
+base: 21 
+var: [ 22, 30, 44, 65 ]
+sub: [ 37,  55]
+
+desc:
+  en:>
+    Imagine that you live in a region that has a fairly constant climate all year around, like San Diego. The current air quality (measured by number and size of particulates) in the area is moderate and the local county government is considering a temporary change to its emissions policy to study the effects of air quality on human health and the local wildlife. The pollution output of nearby factories and power plants will be increased, but they will be taxed so that they do not incur any extra profits during the test period. The test will lead to an immediate decrease in air quality over a period of three weeks ($BASE_VALUE days), after which time the air quality will return to its former level. However, the government is also considering carrying out the test a year from now, for a different length of time.Which one would you prefer, deterioration in air quality immediately for $BASE_VALUE days, or deterioration in air quality a year from now for a longer period?
+
+  zh:>
+    请设想一下, 您住在一个气候比较稳定的地方, 比如昆明. 您那里的空气质量 (主要是空气中的浮尘) 属于中等. 当地政府准备试行一段时间一个新的排污政策, 用来测试空气质量对人们的身体健康以及对当地野生动物的影响. 试行期间,附近的工厂会增加大气排放. 因为增加排放, 工厂要交额外的税, 所以增加排放不会给工厂带来额外的利润. 如果现在马上开始试行这个新政策的话, 试行会持续3个星期($BASE_VALUE 天). 这3个星期的空气质量会有所下降. 3个星期以后将恢复原有政策, 空气质量回升到现有水平. 当地政府也在考虑等到一年以后再做这个试行测试. 如果等到一年以后再试行, 试行持续的时间长短还没有确定. 您是愿意试行马上开始, 接下来$BASE_VALUE天的空气质量都有下降, 还是愿意等一年再试行, 试行时间更长   (比较好空气质量比较差的时间更长)?
+ 
+ans:
+  en:
+    - Deterioration in air quality immediately for $BASE_VALUE days.
+    - Deterioration in air quality a year from now for $VAR_VALUE days.
+  zh:
+    - 试行马上开始, 接下来$BASE_VALUE天的空气质量都有下降.
+    - 等一年再试行, 试行时间持续$VAR_VALUE天 ($VAR_VALUE天比较差的空气质量).
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政策的看法.    
+
+---
+id: 3
+
+# 1.1.2. 100-year-old trees (existence value) -- Loss
+# Environmental: existence x loss
+tm-index: 1
+base: 22 
+
+# Changed by Yi from
+# var: [66,  45,  31, 23]
+# sub:[ [ ], [56], [38] ]
+# to
+
+var: [23,  31,  45, 66]
+sub:[ 38, 56 ]
+
+desc:
+  en:>
+    Imagine that you live 2 hours (by car) away from a forest. You have never visited it and do not plan to do so. The local government is selling part of the forest to an estate developer to help cover the financial deficit. Two developers are interested in buying it. Developer A has informed the government that they will cut down $BASE_VALUE 100-year-old trees immediately to make space for their current project. Developer B intends to cut down even more 100-year-old trees a year from now for their project. The government is conducting a survey on the public’s preference. Which would you prefer, Developer A cutting $BASE_VALUE trees immediately, or Developer B cutting more trees a year from now?
+  zh:>
+   请设想一下, 离您住的地方附近有一个森林. 坐车去那里要2个小时. 你从来没有去过那个森林, 也不打算去. 因为财政问题, 当地政府准备把森林的一部分卖给房产开发商. 现在有两个开发商想要买这块地. 开发商甲告诉政府说如果卖给他们, 他们会马上砍掉$BASE_VALUE棵百年老树, 因为他们马上就需要地皮. 开发商乙说如果卖给他们, 他们会在一年以后砍掉更多棵百年老树, 因为他们一年以后才有计划开发那里. 当地政府正在做一个调查, 想知道人们愿意选择卖给谁. 请问您会选择卖给甲, 马上砍掉$BASE_VALUE棵老树, 还是乙, 一年以后砍掉更多棵老树?
+   
+ans:
+  en:
+    - "Developer A: cutting $BASE_VALUE trees immediately"
+    - "Developer B: cutting $VAR_VALUE trees a year from now"
+  zh:
+    - 卖给甲, 马上砍掉$BASE_VALUE棵老树
+    - 卖给乙, 一年以后砍掉$VAR_VALUE棵老树
+# note, only for ctype = 0
+note:
+  en: 
+  zh: 
+
+---
+id: 4
+
+#Endangered species (existence value) – Gain
+#Environmental: existence x gain
+tm-index: 2
+base: 5 
+var: [ 6, 9, 13, 18 ]
+sub: [ 11,  16]
+
+desc:
+  en:>
+    Imagine that you live in an area where there are 20 old dams that are no longer in use. The dams block the migration of fish to pristine spawning grounds in a National Park. The local government decides to remove some of these dams. It is estimated that each dam removed will increase the fish population in the National Park by 10%. If all of the dams are removed, the fish population will double. Would you prefer removing $BASE_VALUE dams immediately, or removing more dams a year from now?
+  zh:>
+    请设想一下, 您住的区域有20个很久以前建的水坝, 现在已经没有用了. 这些水坝隔断了水流, 阻隔了鱼群上游去一个国家公园去产卵的途径. 当地政府准备拆除一些水坝. 据估计, 每拆除一个水坝, 那个国家公园的鱼群数量就会增加10%. 如果20个水坝都被拆除, 鱼群数量会翻倍.  因为经费问题, 现在政府只有两个选择: 同样的钱, 建筑公司甲可以马上拆除$BASE_VALUE个水坝, 建筑公司乙可以拆除更多个水坝, 但是要等到一年以后才能拆除. 因为经费问题, 现在政府只有两个选择. 请问您愿意选择哪一个?
+ans:
+  en:
+    - Construction company A removes $BASE_VALUE dams immediately.
+    - Construction company B removes $VAR_VALUE dams a year from now.
+  zh:
+    - 建筑公司甲马上拆除 $BASE_VALUE 个水坝.
+    - 建筑公司乙一年以后拆除 $VAR_VALUE 个水坝.
+
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政府行为的看法.
+ 
+---
+id: 5
+
+#1.2.1 luck money (lottery) – gain
+#Monetary: luck x gain
+tm-index: 2
+base: 250 
+var: [ 260, 350, 510, 750 ]
+sub: [ 430,  630]
+
+desc:
+  en:>
+    Imagine you just won a lottery, worth $250, which will be paid to you immediately. However, the lottery commission is giving you the option of receiving a different amount, paid to you a year from now. Which one would you prefer, $$BASE_VALUE immediately, or a bigger sum, a year from now?
+  zh:>
+    请设想一下, 您刚刚中了个250元的奖. 您可以马上去兑现, 或者一年以后再兑现更大的奖. 请问您愿意选择哪一个奖?
+
+ans:
+  $: 1
+  en:
+    - $$BASE_VALUE immediately
+    - $$VAR_VALUE a year from now
+  zh:
+    - 马上拿到$BASE_VALUE元.
+    - 一年以后拿到$VAR_VALUE元.
+note:
+  en: Note that we are not interested in how you feel about the government’s decision on changing its policy. What we are interested in is your preference between the two options. 
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上政府行为的看法.
+---
+id: 6
+
+#1.2.2 luck money (lost rent check) - loss
+#Monetary: luck x loss
+tm-index: 1
+base: 250 
+var: [ 260, 350, 510, 750 ]
+sub: [ 430,  630]
+
+desc:
+  en:>
+    Imagine that you live in an apartment building and have to send a rent check in to your landlord by the first Monday of every month to avoid a late fee. Recently you received a letter from your local post office apologizing for the fact that your envelope containing the check for your landlord had been misplaced but has finally turned up. In spite of this postal error, your landlord is charging you the late fee of $$BASE_VALUE on top of what you owe for rent for this month.  Your landlord gives you the option of paying a different amount instead, a year from now. Which one would you prefer, paying $$BASE_VALUE immediately, or paying more money a year from now?
+  zh:>
+    请设想一下, 您每个月的第一个星期一需要交房租, 不然就会罚款. 您每次都是通过银行转帐给房东. 最近您的银行给您发了一封信, 说因为系统出错, 您这个月的转帐被推迟了一个星期. 虽然这个不是您的过错, 您的房东还是决定罚钱.  您有两个选择:您现在马上交$BASE_VALUE元的罚金, 或者您等到一年以后再交更多的罚金. 请问您愿意选择哪一个?
+ans:
+  $: 1
+  en:
+    - paying $$BASE_VALUE immediately
+    - paying $$VAR_VALUE a year from now
+  zh:
+    - 现在马上交$BASE_VALUE元的罚金
+    - 一年以后再交$VAR_VALUE元的罚金
+note:
+  en: Note that we are not interested in how you feel about the landlord’s decision on charging you. What we are interested in is your preference between the two options.
+  zh: 请注意, 我们是想知道您觉得以上两个选择中的哪一个比较好, 而不是您对以房东罚钱决定的看法.
+
+---
+id: 7
+
+#1.2.3 Self earned money (salary) - gain
+#Monetary: self-earned/inflicted x gain
+tm-index: 2
+base: 750 
+var: [ 760, 1000, 1500, 2250 ]
+sub: [ 1250,  1875]
+
+desc:
+  en:>
+    Imagine that you work for a big company. Every Monday you get a $750 check as your salary. The company recently ran into a cash flow problem and proposed to its employees that anyone who puts off cashing this week’s pay check for one year can cash it for a larger amount than the face value. Which would you prefer?
+  zh:>
+    请设想一下, 您在一家大公司工作. 公司每个星期发一次工资. 每个星期一, 您都会拿到一张750元的工资条. 您可以拿这张工资条去公司的财务部兑现750元的现金. 这个星期您工作的这个公司现金流有点紧张, 所以公布了一个员工兑现工资的新政策. 根据这个新政策, 如果您今天去兑现您的工资条, 您跟平时一样, 可以拿到750元的现金. 但是如果您等一年到一年后的今天再去兑现, 您可以拿到更多的现金. 请问您愿意选择哪一个?
+ans:
+  $: 1
+  en:
+    - Cash your check for $$BASE_VALUE today
+    - Cash your check for $$VAR_VALUE a year from now
+  zh:
+    - 今天去兑现您的工资条, 拿到$BASE_VALUE元的现金.
+    - 一年后的今天再去兑现, 拿到$VAR_VALUE元的现金
+note:
+  en:
+  zh:
+---
+id: 8
+
+#1.2.4 Self -inflicted money loss
+#Monetary: self-earned/inflicted x loss
+tm-index: 1
+base: 100 
+var: [ 110, 134, 200, 300 ]
+sub: [ 167,  250]
+
+base-zh: 600
+var-zh: [ 660, 804, 1200, 1800 ]
+sub-zh: [ 1002, 1500 ]
+
+desc:
+  en:>
+    Imagine that you accidentally trip onto your roommate’s computer and break its hard drive. Replacing the old hard drive with a brand new one will cost $$BASE_VALUE .  Your roommate gives you two options: you can either pay her $$BASE_VALUE immediately for a new hard drive, or, she can use her friend’s old hard drive for the time being, and you will pay her a larger amount a year from today when she buys a new computer. Your roommate does not have a preference on either option. Which would you prefer?
+  zh:>
+    请设想一下, 您和室友合租. 有一天, 您不小心绊倒您室友的电脑, 烧坏了电脑的硬盘. 换一个新硬盘需要$BASE_VALUE元. 您室友给了您两个选择: 或者您现在花$BASE_VALUE元给她这台电脑换一个新硬盘, 或者她先找一个旧硬盘先用着, 等一年以后她换新电脑的时候您帮她出更多的现金. 您室友觉得这个两个办法都一样, 对她而言没有差别. 而您也愿意赔偿，请问您是愿意现在出$BASE_VALUE元, 还是一年以后出更多的现金?
+ans:
+  $: 1
+  en:
+    - Pay $$BASE_VALUE immediately
+    - pay $$VAR_VALUE a year from now
+  zh:
+    - 现在出$BASE_VALUE元.
+    - 一年以后出$VAR_VALUE元.
+note:
+  en:
+  zh:
+
+---
+id: 9
+
+#1.3.1 Health risk reduction– gain
+#Health: risk x gain
+tm-index: 2
+base: 12 
+var: [ 13, 16, 24, 36 ]
+sub: [ 20,  30]
+
+desc:
+  en:>
+    Research has shown that people who have a gym membership are more likely to exercise regularly and have a smaller chance of catching a variety of diseases.
+    Imagine that you recently signed a 2-year-lease for an apartment. As a token of appreciation, the lease office offers a free gym membership for $BASE_VALUE weeks. Because of the large number of new tenants this week, the office proposes that anyone who is willing to defer their gym membership by one year will receive a longer period of free gym membership than $BASE_VALUE weeks. Which membership package would you prefer?
+  zh:>
+    有研究显示,跟一般人比较, 健身房的会员定期运动的可能性大一些, 得病的几率小一些.  请设想一下, 您最近签了一个2年的租房合同. 这个合同里面包括了12周的免费健身房会员费. 这个星期, 房产公司发现因为新签合同的人很多, 健身房可能会太拥挤. 于是, 房产公司提出租房的人如果愿意等明年这个时候再享受他们的免费健身房, 他们可以得到更多的免费时间. 请问您是愿意现在享受$BASE_VALUE周的免费健身房, 还是一年以后享受比$BASE_VALUE周时间更长的免费健身房?
+ans:
+  en:
+    - Getting $BASE_VALUE free weeks immediately
+    - Getting $VAR_VALUE free weeks a year from now
+  zh:
+    - 现在享受$BASE_VALUE周的免费健身房.
+    - 明年这个时候再享受$VAR_VALUE周的免费健身房.
+note:
+  en: Note that we are not interested in how you feel about exercise. What we are interested in is your preference between the two options.
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对健身的看法.
+---
+id: 10
+
+#1.3.2 Health risk increase – loss
+#Health: risk x loss
+tm-index: 1
+base: 19 
+var: [ 20, 27, 39, 57 ]
+sub: [ 33,  48]
+
+desc:
+  en:>
+     Imagine that your company is sending you to one of its divisions overseas in a highly industrialized area for a certain period of time. Because of the high level of bacteria in the water, the chance of contracting a waterborne or foodborne disease from contaminated water is considerably high. You have no choice but to go overseas because you need this job to support your family. You have the choice of going overseas immediately for $BASE_VALUE weeks, or you can defer the task for a year and leave exactly one year from today and stay there for a longer term. Which one would you prefer?
+  zh:>
+    请设想一下, 您所在的公司准备把您派到一个工业污染比较严重的地方去工作一段时间. 由于当地生活用水中的微生物污染, 您有比较高的可能性会得病. 您需要这份工作养家糊口, 所以您别无选择, 不得不听从安排. 不过您有机会选择去工作的时间. 如果您马上就去的话, 您需要在那里工作$BASE_VALUE周. 您也可以推迟到明年这个时候再去. 如果您决定明年再去的话, 您需要在那里工作更长时间.  请问您会选择马上去，还是明年去? 
+ans:
+  en:
+    - Stay overseas immediately for $BASE_VALUE weeks
+    - Leave exactly one year from today and stay overseas for $VAR_VALUE weeks
+  zh:
+    - 现在马上去工作$BASE_VALUE周.
+    - 明年再去工作$VAR_VALUE周.
+note:
+  en: Note that we are not interested in how you feel about the company’s decision on sending its employees overseas. What we are interested in is your preference between the two options.
+  zh: 请注意, 我们是想知道您觉得以上两个可能性中的哪一个比较好, 而不是您对以上公司行为的看法.
+
+---
+id: 11
+
+#1.3.3 Health value – loss
+#Health: condition x loss
+tm-index: 1
+base: 13 
+var: [ 14, 18, 27, 40 ]
+sub: [ 23,  34]
+
+desc:
+  en:>
+   The next questions involve decisions about health. Please imagine that you are in full health. Here is a description of full health:<br/>
+   
+   You do not need to take any medication. You are also free to eat almost any foods you like. You never have trouble falling asleep. You are always able to concentrate on important tasks.<br/><br/>
+   
+   In the following questions, you will have to choose between two disorders that will cause you to lose your full health. Losing your full health means your health will fit the following description of poor health:<br/>
+
+   Because of your doctor's instructions, you need to take medication (pills) once a day. You must also be very careful about what foods you eat, so you spend a lot of time keeping track of what you eat. You sometimes have trouble falling asleep. It is difficult to concentrate.<br/><br/>
+
+   Each disorder only lasts for a limited period of time. After the disorder is over, most patients find that they return to their full health state within a few days. Thus, each of the two disorders would cause you to be in poor health for a limited period of time; after that you will return to your current full health. The disorders differ in the amount of time you will spend in poor health. You will experience only one of the two disorders, but you must experience one.
+
+  zh:>
+    下面这个问题是关于健康的. 请设想一下, 您现在是一个完全健康的人. 以下是关于完全健康状态的描述:<br/>
+
+    您不需要吃药. 您喜欢的食品您可以随便吃. 从不失眠. 总是能够集中注意力完成重要的任务.<br/><br/>
+ 
+    在下面的问题中, 有两种可能的疾病会导致您的健康状态变得较差. 以下是关于较差的健康状态的描述:<br/>
+
+    您每天都要遵循医嘱吃一次药. 您需要很小心地选择食品, 必须时刻记录您吃的东西. 您有时候会失眠. 注意力很难集中.<br/><br/>
+ 
+    这两种疾病都只会持续一段时间. 痊愈以后, 绝大部分人都会恢复到完全健康的状态.也就是说, 每种病都会让您的健康变差一段时间, 然后完全恢复. 两种病持续的时间不一样. 如果您不得不选择得其中的一种疾病.
+
+ans:
+  en:
+    - Poor health for $BASE_VALUE weeks, starting today
+    - Poor health for $VAR_VALUE weeks, a year from now
+  zh:
+    - 疾病甲, 现在开始健康状态变差, 持续$BASE_VALUE周.
+    - 疾病乙, 一年以后的今天开始健康状态变差, 持续$VAR_VALUE周.
+note:
+  en:
+  zh:
+
+---
+id: 12
+
+#Gain
+#Health: condition x gain
+tm-index: 2
+base: 13 
+var: [ 14, 18, 27, 40 ]
+sub: [ 23,  34]
+
+desc:
+  en:>
+    The next questions involve decisions about health. Please imagine that you are currently in poor health. Here is a description of poor health: <br/>
+
+    Because of your doctor's instructions, you need to take medication (pills) once a day. You must also be very careful about what foods you eat, so you spend a lot of time keeping track of what you eat. You sometimes have trouble falling asleep. It is difficult to concentrate.<br/><br/>
+ 
+    In the following questions, you will have to choose between two treatments that will improve your health from poor health to full health. Here is a description of full health:<br/>
+ 
+    You do not need to take any medication. You are also free to eat almost any foods you like. You never have trouble falling asleep. You are always able to concentrate on important tasks.<br/><br/>
+ 
+    However, after ending treatment, most patients find that they return to their poor health state within a week or two. Thus, each of the two treatments can give you full health for a limited period of time; after that you will return to your current poor health. In the following questions, you will be asked to choose between two different treatments. The treatments differ in length of time you will spend in full health. Which disorder would you prefer: full health for $BASE_VALUE weeks starting today, or full health for a longer period, starting 1 year from now?
+
+  zh:>
+    下面这个问题是关于健康的. 请设想一下, 您现在的健康状态比较差. 以下是关于较差的健康状态的描述:<br/>
+
+    您每天都要遵循医嘱吃一次药. 您需要很小心地选择食品, 必须时刻记录您吃的东西. 您有时候会失眠. 注意力很难集中.<br/><br/>
+ 
+    在下面的问题中, 有两种可能的疗法能够把您的健康状态提升到完全健康. 以下是关于完全健康状态的描述:<br/>
+
+    您不需要吃药. 您喜欢的食品您可以随便吃. 从不失眠. 总是能够集中注意力完成重要的任务.<br/><br/>
+
+    这两种疗法都只能持续一段时间. 疗法结束以后, 绝大部分人都会恢复到以前的健康状态.也就是说, 每种疗法都会让您的健康变好一段时间, 然后回到较差的状态. 两种疗法持续的时间不一样. 如果您不得不选择得其中的一种疗法, 您会选择哪一种: 疗法甲, 现在开始健康状态变好, 持续$BASE_VALUE周; 疗法乙, 一年以后的今天开始健康状态变好, 持续更长时间?
+
+ans:
+  en:
+    - Full health for $BASE_VALUE weeks starting today
+    - Full health for $VAR_VALUE weeks, a year from now
+  zh:
+    -  疗法甲, 现在开始健康状态变好, 持续$BASE_VALUE周.
+    -  疗法乙, 一年以后的今天开始健康状态变好, 持续$VAR_VALUE周.
+note:
+  en:
+  zh:
+
+---
+id: 13
+
+#2.1.1 Species extinction (Permanent)  -- loss
+#Environmental: permanent x loss
+tm-index: 1
+base: 11
+var: [ 12, 25, 35, 60 ]
+sub: [ 30,  47]
+
+desc:
+  en:>
+    Imagine that you live a city that has a population of 250,000. The current unemployment rate in the city is 15%, which is about twice the national unemployment rate of 9%.  Unemployment has caused a series of serious problems in the city, including a rising crime rate.<br/><br/>
+
+    The local government is considering giving permission to several companies to set up a series of large factories close to a nature reserve in order to stimulate the economy and help solve the unemployment problem. It has been estimated that these new factories and their subsequent influence on the economy will decrease the unemployment rate from 15% to 10%.<br/><br/>
+
+    The reserve is a natural habitat of a variety of species, including an endangered bird. Scientists predict that without any disturbance, the probability of the endangered bird becoming extinct in the next 10 years is $BASE_VALUE%. If the factories are set up by the reserve, the probability of extinction in the next 10 years goes up from $BASE_VALUE%.  Would you vote to give permission for the setting up of these factories if the probability of extinction increases?
+
+  zh:>
+    请设想一下, 您所居住的城市有25万人口. 现在这个城市的失业率是15%, 而全国的平均失业率是9%. 失业率过高造成很多严重的问题, 包括犯罪率上升.<br/><br/>
+
+    为了刺激经济和解决失业率问题, 当地政府准备允许几家公司在离一个自然保护区很近的地方修工厂. 据估计, 这些新工厂将刺激经济, 将失业率从15%降低到10%.<br/><br/>
+
+    这个省级自然保护区里面有各种各样的生物, 包括一种濒危鸟类. 科学家预测道, 在顺其自然的条件下, 这种濒危鸟类在未来10年内灭绝的可能性是$BASE_VALUE%. 如果把那些工厂建到自然保护区附近, 灭绝的可能性会上升. 如果这种鸟类灭绝的可能性从$BASE_VALUE%上升到$VAR_VALUE%, 您会支持在自然保护区附近建工厂吗?
+
+
+ans:
+  %: 1
+  en:
+    - Avoid setting up factories to maintain extinction probability of $BASE_VALUE%
+    - Set up factories at the expense of increasing extinction probability to $VAR_VALUE%
+  zh:
+    - 不在自然保护区附近建工厂, 灭绝的可能性保持在$BASE_VALUE%
+    - 在自然保护区附近建工厂, 灭绝的可能性从$BASE_VALUE%上升到$VAR_VALUE%
+note:
+  en: Note that giving permission will decrease the unemployment rate from 15% to 10%.
+  zh: 请记住, 这些工厂能够把失业率从15%降到10%.
+
+---
+id: 14
+
+#Loss
+#Environmental: temporary x loss
+tm-index: 1
+base: 3 
+var: [ 5, 8, 18, 30 ]
+sub: [ 13,  24]
+
+desc:
+  en:>
+    Imagine that you live a city that has a population of 250,000. The current unemployment rate in the city is 15%, which is about twice the national unemployment rate of 9%.  Unemployment has caused a series of serious problems in the city, including a rising crime rate.<br/><br/>
+
+    There is a lake in your city. You do not drink the lake water or swim in the lake, but you enjoy the view and sometimes picnic by the lake.<br/><br/>
+    
+    The lake has a good self-cleaning capacity. In any given year, the probability that the lake becomes so polluted that it is beyond self-cleaning, is $BASE_VALUE%. If that happens, the population of fish and birds in the lake will be greatly reduced and there will be a bad smell all over the area, including where you live. If the lake becomes polluted for 3 months without successful self-cleaning, the city council pays for the cleaning.<br/><br/>
+
+    The local government is considering giving permission to several companies to set up a series of large factories close to a lake in order to stimulate the economy and help solve the unemployment problem. It has been estimated that those new factories and their subsequent influence on the economy will decrease the unemployment rate from 15% to 10%. But they will also increase the probability of the lake being polluted in any given year. Would you vote to give permission for the setting up of these factories if the probability of pollution increases?
+
+  zh:>
+    请设想一下, 您所居住的城市有25万人口. 现在这个城市的失业率是15%, 而全国的平均失业率是9%. 失业率过高造成很多严重的问题, 包括犯罪率上升.<br/><br/>
+
+    当地有一个湖. 您不饮用湖里的水, 也不去湖里游泳. 但是您喜欢湖上风景, 有的时候会跟家人和朋友去湖边野餐.<br/><br/>
+    
+    这个湖有比较强的自我清洁能力. 一般来说, 一年中这个湖被污染得太严重以至于自我清洁不再有效的可能性只有3%. 如果这种情况发生的话, 鱼虾和水鸟数量都会减少, 附近区域, 包括您住的地方, 都有弥漫异味. 要是这种状态持续3个月以上, 湖水还是不能自我清洁, 政府就会出钱人工清洁湖水.<br/><br/>
+
+    为了刺激经济和解决失业率问题, 当地政府准备允许几家公司在湖边修工厂. 据估计, 这些新工厂将刺激经济, 将失业率从15%降低到10%.  这样做的后果是, 每年湖水被污染的可能性会增大.
+    如果这种被污染的可能性从$BASE_VALUE%上升到$VAR_VALUE%, 您会支持在湖边建工厂吗? 
+
+
+ans:
+  %: 1
+  en:
+    - Vote against setting up the factories, keeping the probability of polluting the lake beyond self-cleaning at $BASE_VALUE%
+    - Vote for setting up the factories, increasing the probability of polluting the lake beyond self-cleaning to $VAR_VALUE%
+  zh:
+    - 不允许公司在湖边修工厂, 将每年湖水被污染的可能性维持在$BASE_VALUE%
+   - 允许几家公司在湖边修工厂, 将每年湖水被污染的可能性增大到$VAR_VALUE%
+note:
+  en: Note that giving permission will decrease the unemployment rate from 15% to 10%.
+  zh: 请记住, 这些工厂能够把失业率从15%降到10%.
+  
+---
+id: 15
+
+#2.1.3 Permanent– gain
+#Environmental: permanent x gain
+tm-index: 5
+base: 0 
+var: [ 0.1, 1, 5, 10 ]
+sub: [ 3, 7 ]
+
+desc:
+  en:>
+    Imagine that your 5-year old son is starting school soon. You decide to buy a house that is close to a good school. A real estate company recently built new houses in two distinct areas. Both areas have an excellent school. <b>The houses and other conditions in those two areas are similar except for the fact that area A has better air quality than Area B.</b> In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
+
+    For the purpose of marketing strategy, the company does not allow their clients to choose the area. Instead, the company randomly assigns the buyers to the two areas. That is, when you buy a house from them, you have 50% chance of getting a house in area A, and 50% chance of getting one in area B.<br/><br/>
+    
+    Imagine that you have recently signed the contract to buy a house. Your agent tells you that you can also pay extra money to increase your chance of getting a house in area A. Would you be willing to pay the amount of $VAR_VALUE% of the house price to increase your chance of getting a house in area A to 100%?           
+ 
+
+  zh:>
+    请设想一下, 您有一个5岁的儿子, 很快就要上学了. 您打算在一个好学区买个房. 有一家房产公司在两个区域修了很多新楼房. 这两个地方都有非常好的学校, 其他条件也类似. 唯一的差别是甲区的空气质量比乙区的好. 在过去5年中, 空气检测机构检测了20次空气质量, 甲区20次都是非常好. 乙区有1次非常好, 5次好, 14次一般. <br/><br/>
+    
+    作为一种市场销售策略, 这个房产公司不让它的客户挑选所在区域. 购房者得到甲区或者乙区房子的可能性各是一半. <br/><br/>
+    
+    您刚刚签下合同买一套房子. 这个时候, 您的代理告诉您, 如果您愿意付额外的钱, 您可以提高您得到甲区房子的几率. 请问您是否愿意付相当于$VAR_VALUE%的购房款的钱提高您赢得甲区的几率到100%?
+
+
+ans:
+  %: 1
+  en:
+    - Do not pay extra money, keeping your chance of getting a house in area A at 50%
+    - Pay the amount of $VAR_VALUE% of the house price to increase your chance of getting a house in area A to 100%
+
+  zh:
+    - 不付额外的钱, 将您赢得甲区的几率保持在50%
+    - 付相当于$VAR_VALUE%的购房款的钱, 将您赢得甲区的几率提高到100%
+note:
+  en: 
+  zh: 
+
+---
+id: 16
+
+#2.1.4 Temporary– gain
+#Environmental: temporary x gain
+tm-index: 2
+base: 50 
+var: [ 51, 60, 76, 100 ]
+sub: [ 68,  88]
+
+desc:
+  en:>      
+    Imagine that a real estate company recently built new apartment building in two distinct areas. <b>The units and other conditions in those two areas are similar except for the fact that area A has better air quality than area B. </b> In the past 5 years, the local air quality inspection agency rated the air quality in area A as Excellent 20 out of 20 times, and rated the air quality in area B as Excellent once, Good 5 times, and Average 14 times out of 20 times.<br/><br/>
+    
+    For the purpose of marketing strategy, the company does not allow their clients to choose the area. Instead, the company randomly assigns the tenants to the two areas. That is, when you a rent an apartment from them, you have 50% chance of getting an unit in area A, and 50% chance of getting one in area B.<br/><br/>
+    
+    Imagine that you have recently signed the contract to rent an apartment. Your agent tells you that you can also pay extra money to increase your chance of getting an apartment in area A. Would you be willing to pay the amount of 30% of your monthly rent to increase your chance of renting an apartment in area A?
+
+  zh:>
+    请设想一下,有一家房产公司在两个区域修了很多新楼房. 这两个地方条件类似. 唯一的差别是甲区的空气质量比乙区的好. 在过去5年中, 空气检测机构检测了20次空气质量, 甲区20次都是非常好. 乙区有1次非常好, 5次好, 14次一般. <br/><br/>
+    
+    作为一种市场销售策略, 这个房产公司不让它的客户挑选所在区域. 租房者得到甲区或者乙区房子的可能性各是$BASE_VALUE%. <br/><br/>
+
+    您刚刚签下合同要租一套房子. 这个时候, 您的代理告诉您, 如果您愿意付额外的钱, 您可以提高您得到甲区房子的几率. 请问您是否愿意付相当于30%的月租的钱提高您赢得甲区的几率?
+
+ans:
+  %: 1
+  en:
+    - Don't pay the amount of 30% monthly rent, keeping your chance of getting a house in area A at $BASE_VALUE%
+    - Pay the amount of 30% monthly rent to increase your chance of getting a house in area A to $VAR_VALUE%
+  zh:
+    - 不付相当于30%的月租的钱, 将您赢得甲区的几率保持在$BASE_VALUE%
+    - 付相当于30%的月租的钱, 将您赢得甲区的几率从$BASE_VALUE%提高到$VAR_VALUE%
+note:
+  en: 
+  zh: 
+
+---
+id: 17
+
+#2.2.1 House money- gain
+#Monetary: house x gain
+tm-index: 2
+base: 100 
+var: [ 220, 350, 580, 800 ]
+sub: [ 460,  700]
+
+desc:
+  en:>
+    Imagine that the local mall is having a promotion.  You just won $750 for being the 100th person to walk into the mall today.  As part of the promotion, the mall is also selling lottery tickets. Would you be willing to pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning more money?
+
+  zh:>
+    请设想一下, 当地一个大商场正在促销. 您作为当日的第100名顾客, 赢得了750元. 这个商场还卖彩票. 请问您愿意付$BASE_VALUE元买一张有45%可能性赢得更多钱的彩票吗?
+
+ans:
+  en:
+    - Do not participate in lottery
+    - Pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning $$VAR_VALUE
+  zh:
+    - 不卖彩票
+    - 付$BASE_VALUE元,买一张有45%可能性赢得$VAR_VALUE元的彩票
+note:
+  en:
+  zh:
+
+---
+id: 18
+
+#2.2.2 Earned money- gain
+#Monetary: earned x gain
+tm-index: 2
+base: 100 
+var: [ 220, 350, 580, 800 ]
+sub: [ 460,  700]
+
+desc:
+  en:>
+    Imagine that you just received your weekly paycheck of $750. You walk into a mall and find that they are selling lottery tickets. Would you be willing to pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning more money?
+
+  zh:>
+    请设想一下, 您刚刚领到本周的工资, 750元. 您走进一个商场, 发现他们在卖彩票. 请问您愿意付$BASE_VALUE元买一张有45%可能性赢得更多钱的彩票吗?
+
+ans:
+  $: 1
+  en:
+    - Do not participate in lottery
+    - Pay $$BASE_VALUE to participate in a lottery in which you have a 45% chance of winning $$VAR_VALUE
+  zh:
+    - 不买彩票
+    - 付$BASE_VALUE元,买一张有45%可能性赢得$VAR_VALUE元的彩票
+note:
+  en:
+  zh:
+
+---
+id: 19
+
+# 2.2.3 House money- loss
+#Monetary: house x loss
+tm-index: 1
+base: 50 
+var: [ 310, 320, 400, 500 ]
+sub: [ 360,  450]
+
+desc:
+  en:>
+    Imagine that you and your friend are playing chess. The winner will toss a die. If it is 6, the loser has to pay $$VAR_VALUE to the winner. That is, the loser has 1/6 chance of paying the winner $$VAR_VALUE.<br/><br/>
+    
+    Unfortunately, you are the loser in the game, which means that you have 1/6 chance of losing $$VAR_VALUE. The winner offers you a chance to buy her out. She will not toss the die if you agree to pay her $$BASE_VALUE.<br/><br/>
+ 
+    You have $600 on you. You won the money from a lottery a couple days ago. Which one would you prefer, paying her $$BASE_VALUE, or taking the 1/6 chance of paying her more money? 
+
+  zh:>
+    请设想一下, 您和您的朋友在下棋. 赢了的人会掷一次骰子. 如果朝上的一面是6, 输了的一方要付给赢方$VAR_VALUE元. 也就是说, 输了的人有1/6的可能性要给赢方付$VAR_VALUE元.<br/><br/>
+    
+    很不幸, 您输棋了. 您现在有1/6的可能性要付给赢方$VAR_VALUE元. 赢方给了您另外一个解决办法. 如果您肯现在付给她$BASE_VALUE元, 她就不掷这个骰子了.<br/><br/>
+ 
+    您身上有600元. 是前两天您买彩票中的奖. 请问您愿意付给赢方$BASE_VALUE元还是愿意选择1/6的可能性付给她更多钱?
+
+ans:
+  $: 1
+  en:
+    - Pay her $$BASE_VALUE
+    - Take the 1/6 chance of paying her $$VAR_VALUE?
+  zh:
+    - 给赢方$BASE_VALUE元
+    - 选择1/6的可能性付给她$VAR_VALUE元
+note:
+  en:
+  zh:
+
+---
+id: 20
+
+#2.2.4 Earned money- loss
+#Monetary: earned x loss
+tm-index: 1
+base: 50 
+var: [ 310, 320, 400, 500 ]
+sub: [ 360,  450]
+
+desc:
+  en:>
+    Imagine that you and your friend are playing chess. The winner will toss a die. If it is 6, the loser has to pay $$VAR_VALUE to the winner. That is, the loser has 1/6 chance of paying the winner $$VAR_VALUE.<br/><br/>
+    
+    Unfortunately, you are the loser in the game, which means that you have 1/6 chance of losing $$VAR_VALUE. The winner offers you a chance to buy her out. She will not toss the die if you agree to pay her $$BASE_VALUE.<br/><br/>
+ 
+    You have $600 on you. It is your wage of this week. Which one would you prefer, paying her $$BASE_VALUE, or taking the 1/6 chance of paying her more money? 
+
+  zh:>
+   请设想一下, 您和您的朋友在下棋. 赢了的人会掷一次骰子. 如果朝上的一面是6, 输了的一方要付给赢方$VAR_VALUE元. 也就是说, 输了的人有1/6的可能性要给赢方付$VAR_VALUE元.<br/><br/>
+   
+   很不幸, 您输棋了. 您现在有1/6的可能性要付给赢方$VAR_VALUE元. 赢方给了您另外一个解决办法. 如果您肯现在付给她$BASE_VALUE元, 她就不掷这个骰子了.<br/><br/>
+ 
+   您身上有600元. 是您这个星期的工资. 请问您愿意付给赢方$BASE_VALUE元还是愿意选择1/6的可能性付给她更多钱?
+
+ans:
+  $: 1
+  en:
+    - Pay her $$BASE_VALUE
+    - Take the 1/6 chance of paying her $$VAR_VALUE
+  zh:
+    - 给赢方$BASE_VALUE元
+    - 选择1/6的可能性付给她$VAR_VALUE元
+note:
+  en:
+  zh:
+
+---
+id: 21
+
+#2.3.1 Severe-Gain
+#Health: severe x gain, with var cost
+tm-index: 3
+base: 0
+var: [ 20, 38, 57, 85 ]
+sub: [ 55, 70]
+
+desc:
+  en:>
+    Imagine that you were born with a congenital heart defect that has a 20% chance of causing permanent decreased heart function and rhythm disturbances forcing you to significantly limit your activity and especially avoid participating in outdoor activities and sports. There is a new medicine that if taken continually, can reduce the risk of permanent damage and rhythm disturbances from 20% to 5%. Your insurance company does not cover the expense of the medicine. Would you be willing to pay for the medicine by yourself if it costs $VAR_VALUE% of your salary every month?
+ 
+  zh:>
+    请设想一下, 由于先天性的心脏缺陷, 您不得不限制自己的活动, 特别是室外活动, 因为您有20%的可能性心脏功能会遭到永久性的功能减退和心率不齐. 现在有一种新药, 如果连续服用, 能够把您的心脏遭受永久性的功能减退和心率不齐的可能性从20% 降到5%. 您的医疗保险公司不会付这笔药费. 请问, 如果这个药费要占到您每个月工资的$VAR_VALUE%, 您会服用这个药吗?
+
+ans:
+  %: 1
+  en:
+    - Do not use medicine
+    - Use medicine but pay for the medicine yourself every month, with $VAR_VALUE% of your salary
+  zh:
+    - 不服用药
+    - 服用药, 把药费占到您每个月工资的$VAR_VALUE%
+note:
+  en:
+  zh:
+  
+---
+id: 22
+
+#2.3.2 Severe- Loss
+#Health: severe x loss, with var return
+tm-index: 4
+base: 0
+var: [ 10, 50, 100, 200 ]
+sub: [ 70, 150]
+
+desc:
+  en:>
+    Imagine that you were born with a congenital heart defect that has a 5% chance of causing permanent decreased heart function and rhythm disturbances forcing you to significantly limit your activity and especially avoid participating in outdoor activities and sports.<br/><br/>
+    Your boss recently offered you a new position that requires longer work hours and involves more stress. You doctor has told you that if you take the new position, the risk of permanent damage and rhythm disturbances will rise from 5% to 20%. 
+ 
+  zh:>
+    请设想一下, 由于先天性的心脏缺陷, 您不得不限制自己的活动, 特别是室外活动, 因为您有5%的可能性心脏功能会遭到永久性的功能减退和心率不齐.<br/><br/>
+    
+    现在您老板问您是否对某一新职位感兴趣. 这个职位工作时间要长一些, 压力也更大. 您的医生告诉您说, 如果您接受这个新职位, 您的心脏遭受永久性的功能减退和心率不齐的可能性会从5% 上升到20%. 这个新职位比你现在的职位工资要多出$VAR_VALUE%.
+
+ans:
+  %: 1
+  en:
+    - Do not take the new position
+    - Take the new position, which has a $VAR_VALUE% higher salary
+  zh:
+    - 不要新职位
+    - 要工资多出$VAR_VALUE%的新职位
+note:
+  en:
+  zh:
+---
+id: 23
+
+#2.3.3 Mild-Gain
+#Health: mild x gain, with var cost
+tm-index: 3
+base: 0
+var: [ 20, 50, 100, 200 ]
+sub: [ 70,  150]
+
+desc:
+  en:>
+    Every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse and unbearable if you overexpose yourself to certain irritants like pollen and mold.  You are somewhat worried about the accumulation of these irritants in the air at your apartment.<br/><br/>
+ 
+    There is a central air system at your apartment. With the current central air system, in any given spring, you have a 20% chance of aggravating your allergies by pollen and mold particles that stay in your apartment. You recently saw an infomercial for an ionizing air cleaner system that will filter out the pollen and mold from your home air. The system is available for rental only. Accordingly to your doctor, if you rent the new system between March and May, your chance of getting aggravated allergies is reduced from 20% to 5%. Would you be willing to rent the filter system if the price of a 3-month rental (March-May) is equal to $VAR_VALUE% your monthly rent?
+ 
+  zh:>
+    请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积.  您现在租住的地方有一个中央空气过滤系统. 每年春天, 如果您使用现有的这个过滤系统, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是20%.<br/><br/>
+    
+    最近您听说出了一种新的离子空气过滤系统. 这种系统现在只能租赁. 您的医生告诉您说, 如果您在每年的3-5月租用这个系统, 您得严重过敏的可能性将会从20%降到5%. 请问您会不会租用这个新系统, 如果租用3个月(3-5月)的价格刚好是相当于您一月房租的$VAR_VALUE%?
+
+ans:
+  %: 1
+  en:
+    - Do not rent the filter system
+    - Rent the filter system for 3 months at the price of $VAR_VALUE% of your monthly apartment rent
+  zh:
+    - 不租用新系统
+    - 租用新系统, 价格刚好是相当于您一月房租的$VAR_VALUE%
+note:
+  en:
+  zh:
+
+---
+id: 24
+
+#2.3.3 Mild-Loss
+#Health: mild x loss, with var return
+tm-index: 4
+base: 0
+var: [ 20, 50, 100, 200 ]
+sub: [ 70,  150]
+
+desc:
+  en:>
+    Imagine that every spring you suffer from sneezing, coughing, and a runny nose. Your symptoms are manageable, but annoying. They can become much worse if you overexpose yourself to certain irritants like pollen and mold.<br/><br/>
+
+    There is a central air system in your current apartment building that filters out most of the pollen and mold from your home air. With the air system turned on between March and May, in any given spring, you have a 5% chance of aggravating your allergies by pollen and mold particles that stay in your home.<br/><br/>
+
+    This year, however, the lease office would like to turn of the air system to save on the maintenance cost. You have options: agreeing  to turn it off, or insisting turn it on. If you agree to turn it off, the lease office will give you some rent credit.<br/><br/>
+ 
+    According to your doctor, your chance of getting an aggravated allergy will be increased from 5% to 20% without the air system. Which one would you prefer, lobbying to turn the air system back on, or accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system?
+
+  zh:>
+    请设想一下, 每年春天您都会过敏, 打喷嚏, 咳嗽, 流鼻涕, 等等. 您的症状可以忍受, 但是有些烦人. 如果您接触到有些过敏原, 比如花粉和霉菌, 这些症状会加剧严重, 变得难以忍受. 您有些担心这些过敏原会在家里的空气中堆积. <br/><br/>
+    
+    您现在租住的公寓楼有一个中央空气过滤系统可以过滤花粉和霉菌. 每年春天, 如果这个过滤系统一直运行的话, 您由于家里空气中堆积的花粉和霉菌而严重过敏的可能性是5%.<br/><br/>
+   
+    但是今年, 您的房东物业公司为了节省开支，打算关掉这个过滤系统. 您有两个选择: 同意关掉空气过滤系统, 或者坚持打开空气过滤系统. 如果您同意关掉, 物业公司会补偿您一些费用.<br/><br/>
+    
+    您的医生告诉您, 如果您留在没有过滤系统的公寓里面, 您得严重过敏的可能性会从5%上升到20%.
+ 
+ans:
+  %: 1
+  en:
+    - lobbying to turn the air system back on 
+    - accept rent credit worth $VAR_VALUE% of your monthly rent and live without the air system
+  zh:
+    - 坚持游说房东重新开启空调系统
+    - 留在现在没有空调系统的公寓, 收到相当您每月租金$VAR_VALUE%的补偿费用
+note:
+  en:
+  zh:
+

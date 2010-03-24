@@ -1,5 +1,7 @@
 ---
-2.3.3 Mild-Loss
+id: 24
+
+#2.3.3 Mild-Loss
 #Health: mild x loss, with var return
 tm-index: 4
 base: 0

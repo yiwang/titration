@@ -1,5 +1,7 @@
 ---
-2.3.1 Severe-Gain
+id: 21
+
+#2.3.1 Severe-Gain
 #Health: severe x gain, with var cost
 tm-index: 3
 base: 0
