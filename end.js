@@ -68,7 +68,8 @@ function next(){
   if(cstage==2){
     if(jQuery('#final-form').valid()){
       jQuery('#submit').hide();
-      jQuery.post('end-save.php',{entry: Object.toJSON(flat_end())},show_final,'text');
+      //jQuery.post('end-save.php',{entry: Object.toJSON(flat_end())},show_final,'text');
+      jQuery.post('end-save.php',{entry: flat_end().join()},show_final,'text');
     }
     return;
   }

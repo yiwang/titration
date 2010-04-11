@@ -1,10 +1,16 @@
 <?php
  
 $logFile = 'out.d/email';
-$et = json_decode(stripslashes($_POST['entry']), true);
+
+// $post is string
+$post = $_POST['entry'];
+
+//$et = json_decode(stripslashes($_POST['entry']), true);
 //$res = json_decode($_POST['entry'],true);
 //error_log("result: ".$_POST['entry'].", res=".json_encode($et), 3, $logFile);
-error_log(str_replace(array('[',']','"'),array('','',''),json_encode($et)), 3, $logFile);
+//error_log(str_replace(array('[',']','"'),array('','',''),json_encode($et)), 3, $logFile);
+error_log($post, 3, $logFile);
+
 //error_log(", sales1_lastname: ".$res['sales'][1]['lastname'], 3, $logFile);
 error_log("\n", 3, $logFile);
  
