@@ -144,8 +144,8 @@ function goto_ctype1(low,high){
   //*/
 }
 function show_result(res){
-  jQuery('#result').html(res);
-  //location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
+  //jQuery('#result').html(res);
+  location.href = 'end.php?lang='+lang+'&cnum_str='+et.end_time+'-'+Math.floor(et.duration);
 }
 //
 function notify_emphasize(name,dur,c){
