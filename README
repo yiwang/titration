@@ -21,7 +21,7 @@ Chinese: http://cred.columbia.edu/min-survey/survey.php?lang=zh
 parameter 'lang' is to specify language
 If language not specified, default is lang=en
 
-
+MIT License
  Copyright (c) 2010 Yi Wang (e@yi-wang.me)
 
  Permission is hereby granted, free of charge, to any person
