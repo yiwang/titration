@@ -1,4 +1,4 @@
-#valid-question-ids: [ '15']
+  #valid-question-ids: [ '15']
 valid-question-ids: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
 desc:
   en:>
@@ -11,46 +11,46 @@ desc:
 questions:
   1:
     en: We are approaching the limit of the number of people the earth can support
-    zh: 我们正在接近地球能够支持的人类人口数目的极限 
+    zh: 我们正在接近地球能够支持的人类人口数目的极限
   2:
     en: Humans have the right to modify the natural environment to suit their needs
-    zh: 人类有权根据自己的需求改造自然环境 
+    zh: 人类有权根据自己的需求改造自然环境
   3:
     en: When humans interfere with nature it often produces disastrous consequences
     zh: 人类对自然的影响经常导致灾难性的后果
   4:
     en: Human ingenuity will insure that we do NOT make the earth unlivable
-    zh: 人类的创造力会保证我们<b> 不会</b> 使地球不适合居住 
+    zh: 人类的创造力会保证我们<b> 不会</b> 使地球没法居住
   5:
     en: Humans are severely abusing the environment
     zh: 人类正在严重地破坏环境
   6:
     en: The earth has plenty of natural resources if we just learn how to develop them
-    zh: 地球会有足够的自然资源, 如果我们学会如何开发它们.
+    zh: 如果我们能够学会如何开发自然资源, 地球会有足够的资源
   7:
     en: Plants and animals have as much right as humans to exist
-    zh: 植物和动物有和人类一样的存在的权利
+    zh: 动植物和人类一样, 有生存的权利
   8:
     en: The balance of nature is strong enough to cope with the impacts of modern industrial nations
-    zh: 自然的平衡能力足够强大, 它能应付现代工业国家的影响
+    zh: 自然的平衡能力非常强大, 能应付现代工业国家的影响
   9:
     en: Despite our special abilities humans are still subject to the laws of nature
     zh: 尽管人类有特殊的能力, 但仍然受自然规律的控制
   10:
     en: The so-called "ecological crisis" facing humankind has been greatly exaggerated
-    zh: 人类面临的所谓"生态灾难"是被严重夸大的
+    zh: 人类面临的所谓"生态灾难"被严重夸大了
   11:
     en: The earth is like a spaceship with very limited room and resources
     zh: 地球就像一个具有有限空间和资源的宇宙飞船
   12:
     en: Humans were meant to rule over the rest of nature
-    zh: 人类注定就是应该控制其它的自然界
+    zh: 人类注定就是应该控制自然界的
   13:
     en: The balance of nature is very delicate and easily upset
-    zh: 自然的平衡相当微妙并很容易被破坏
+    zh: 自然的平衡相当微妙并很容易就会被破坏
   14:
     en: Humans will eventually learn enough about how nature works to be able to control it
-    zh: 人类最终会学会自然如何运作并能够控制它
+    zh: 人类最终会学会自然运作的规律,并学会控制自然
   15:
     en: If things continue on their present course, we will soon experience a major ecological catastrophe
     zh: 如果继续目前的情形, 我们将很快经历一个严重的生态灾难
