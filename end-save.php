@@ -5,6 +5,8 @@ $logFile = 'out.d/email';
 // $post is string
 $post = $_POST['entry'];
 
+$et = explode(",", $post);
+
 //$et = json_decode(stripslashes($_POST['entry']), true);
 //$res = json_decode($_POST['entry'],true);
 //error_log("result: ".$_POST['entry'].", res=".json_encode($et), 3, $logFile);
