@@ -29,7 +29,10 @@ jQuery(document).ready(function(){
       "months": {
         required: function(e){var checked_val = jQuery('input[name="residency"]:checked').val(); return checked_val == 3;},
         number: true,
-        range: [0, 12]
+        range: [0, 11]
+      },
+      "country": {
+        required: function(e){var checked_val = jQuery('input[name="residency"]:checked').val(); return checked_val == 3;}
       }
     }
   }); 
@@ -86,7 +89,7 @@ function flat_end(){
   
   // extra questions
   r.push('Chinese in America');
-  r = r.concat([jQuery('input[name="residency"]:checked').attr('value'), jQuery('#year-abroad').attr('value'), jQuery('#years').attr('value'), jQuery('#months').attr('value')]);
+  r = r.concat([jQuery('input[name="residency"]:checked').attr('value'), jQuery('#year-abroad').val(), jQuery('#years').val(), jQuery('#months').val(), jQuery('#country').val()]);
   
   return r;
 }
@@ -100,9 +103,9 @@ function next(){
       cstage=1;
     } 
     return;
-  }
+  } 
   if(cstage==1){
-    if(jQuery('#Chinese-in-America-form').valid() && jQuery('#demography-form').valid()){
+    if(jQuery('#demography-form').valid() && jQuery('#Chinese-in-America-form').valid()){
       jQuery('#demography-form').hide();
       jQuery('#Chinese-in-America-form').hide();
       jQuery('#final-form').show();
