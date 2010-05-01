@@ -88,7 +88,7 @@ function flat_end(){
   r = r.concat([ip,navigator.userAgent]);
   
   // extra questions
-  r.push('Chinese in America');
+  r.push('RESIDENCY');
   r = r.concat([jQuery('input[name="residency"]:checked').attr('value'), jQuery('#year-abroad').val(), jQuery('#years').val(), jQuery('#months').val(), jQuery('#country').val()]);
   
   return r;
