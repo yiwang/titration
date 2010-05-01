@@ -106,8 +106,37 @@ echo "<br /><br />";
 </div>
 </form>
 
-<form id='demography-form'>
+<form id='Chinese-in-America-form'>
 <div id='demography-desc'></div><br/>
+  <label>1. 您现在哪里居住?</label>
+  <?php
+    echo '<label class="error" for="residency" ><br />';
+      if($lang=='zh'){
+        echo '请选择一个答案.';
+      }else{
+        echo 'Please select an answer.';
+      }
+    echo "</label><br />";
+  ?>
+  <label class="choice"><input type="radio" name="residency" value="1" /> <span class="choice">美国</span> </label><br/>
+  <label class="choice"><input type="radio" name="residency" value="2" /> <span class="choice">加拿大</span> </label><br/>
+  <label class="choice"><input type="radio" name="residency" value="3" /> <span class="choice">中国</span> </label><br/>
+  <label class="choice"><input type="radio" name="residency" value="4" /> <span class="choice">其他</span> </label><br/>
+
+  <br/>       
+  <div id='not-live-in-China'>
+    <label>如果您现在不在中国居住, 您是哪一年出国的?</label><br/>
+    <input name='year-abroad' type="text" size="6"/>年<label class="error" for="year-abroad" >&nbsp&nbsp&nbsp&nbsp&nbsp请输入年份数字</label>
+  </div>
+  <br/>
+  <div id='live-in-China'>
+    <label>如果您现在在中国居住, 但是曾经在国外居住一段时间, 请问您曾在国外呆了多长时间?</label><br/>
+    <input id="years" name='years' type="text" size="2"/>年<label class="error" for="years" >&nbsp&nbsp&nbsp&nbsp&nbsp请输入数字(0 ~ 100)</label><br/>
+    <input id="months" name='months' type="text" size="2"/>月<label class="error" for="months" >&nbsp&nbsp&nbsp&nbsp&nbsp请输入数字(0 ~ 12)</label>
+  </div>
+</form>
+
+<form id='demography-form'>
 <?php
 foreach($demography['valid-question-ids'] as $i){
 echo "<label id='demography-".$i."-desc'></label>";

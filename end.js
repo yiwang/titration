@@ -11,9 +11,47 @@ jQuery(document).ready(function(){
       }
     }
   });
+  jQuery('#Chinese-in-America-form').validate({
+    rules: {
+      residency: {
+        required: true
+      },
+      "year-abroad": {
+        required: function(e){var checked_val = jQuery('input[name="residency"]:checked').val(); return (checked_val != 3) && (checked_val!=undefined);},
+        number: true,
+        range: [1900, 2010]
+      },
+      "years": {
+        required: function(e){var checked_val = jQuery('input[name="residency"]:checked').val(); return checked_val == 3;},
+        number: true,
+        range: [0, 100]
+      },
+      "months": {
+        required: function(e){var checked_val = jQuery('input[name="residency"]:checked').val(); return checked_val == 3;},
+        number: true,
+        range: [0, 12]
+      }
+    }
+  }); 
+  jQuery('input[name="residency"]').change(function(e){
+    var checked_val = jQuery('input[name="residency"]:checked').val();
+    if(checked_val == 3){
+      jQuery('#not-live-in-China').hide();
+      jQuery('#live-in-China').show();
+    }
+    if((checked_val != 3) && (checked_val!=undefined)){
+      jQuery('#not-live-in-China').show();
+      jQuery('#live-in-China').hide();
+    }
+    
+  });
+  
   jQuery('#header').html(end.header[lang]);
   fill_html_followup();
   fill_html_demography(); jQuery('#demography-form').hide();
+  jQuery('#Chinese-in-America-form').hide();
+  jQuery('#not-live-in-China').hide();
+  jQuery('#live-in-China').hide();
   fill_html_final(); jQuery('#final-form').hide();
   cstage = 0;
   jQuery('#submit').click(function(){
@@ -45,6 +83,11 @@ function flat_end(){
   r = r.concat(jQuery('#comment-end-input').attr('value').replace(/,/g,";"));
   r.push('IP');
   r = r.concat([ip,navigator.userAgent]);
+  
+  // extra questions
+  r.push('Chinese in America');
+  r = r.concat([jQuery('input[name="residency"]:checked').attr('value'), jQuery('#year-abroad').attr('value'), jQuery('#years').attr('value'), jQuery('#months').attr('value')]);
+  
   return r;
 }
 function next(){
@@ -53,13 +96,15 @@ function next(){
     if(jQuery('#followup-form').valid()){
       jQuery('#followup-form').hide();
       jQuery('#demography-form').show();
+      jQuery('#Chinese-in-America-form').show();
       cstage=1;
     } 
     return;
   }
   if(cstage==1){
-    if(jQuery('#demography-form').valid()){
+    if(jQuery('#Chinese-in-America-form').valid() && jQuery('#demography-form').valid()){
       jQuery('#demography-form').hide();
+      jQuery('#Chinese-in-America-form').hide();
       jQuery('#final-form').show();
       cstage=2;
     } 

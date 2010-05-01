@@ -1,4 +1,4 @@
-valid-question-ids: ['1', '2', '3', '4', '5', '6', '7']
+valid-question-ids: ['2', '3', '4', '5', '6', '7', '8']
 desc:
   en:>
     Follow up questions [2 / 2] <br/><br/>
@@ -8,42 +8,42 @@ desc:
     这是该调研问卷的最后一页问题. 我们希望了解一些关于您的情况.
   
 questions-answers:
-  1:
+  2:
     question:
       en: Your gender
       zh: 您的性别
     answer:
       en: ['Female', 'Male', 'I prefer not to answer']
       zh: ['女', '男', '我选择不作答']
-  2:
+  3:
     question:
       en: Your age
       zh: 您的年龄
     answer:
       en: ['<25', '25-34', '35-44', '45-54', '55-64', '>64', 'I prefer not to answer']
       zh: ['<25', '25-34', '35-44', '45-54', '55-64', '>64', '我选择不作答']
-  3:
+  4:
     question:
       en: Your marital status
       zh: 您的婚姻状况
     answer:
       en: ['Single', 'Living together', 'Married', 'Divorced or living separated', 'Widowed', 'I prefer not to answer']
       zh: ['单身', '同居', '已婚', '离异或分居', '寡居', '我选择不作答']
-  4:
+  5:
     question:
       en: How many children do you have?
       zh: 您有多少个小孩?
     answer:
       en: ['None', '1 or 2', '3 or 4', '5 or more', 'I prefer not to answer']
       zh: ['无', '1 或 2', '3 或 4', '5 或 更多', '我选择不作答']
-  5:
+  6:
     question:
       en: What is your highest level of education?
       zh: 您的最高学历? 
     answer:
       en: ['No degree', 'High school diploma', 'Associate degree, occupational', 'Associate degree, academic', "Bachelor's degree", "Master's degree", 'Professional degree', 'Doctoral degree', 'I prefer not to answer']
       zh: ['无', '高中', '高职', '高专', '学士', '硕士', '专业学位', '博士', '我选择不作答']
-  6:
+  7:
     question:
       en: Which of the following categories best describes your current employment?
       zh: 以下哪一类最符合您当前的工作情况 
@@ -51,12 +51,10 @@ questions-answers:
       en: ['No job/ unemployed', 'Working in household', 'Student', 'Worker/ farmer', 'Civil servant/employee', 'Manager', 'Entrepreneur', 'Other', 'I prefer not to answer']
       zh: ['失业', '自由职业', '学生', '工人/ 农民', '公务员/ 员工', '经理', '企业家', 
 '其他', '我选择不作答']
-  7:
+  8:
     question:
       en: What is the average annual income of your household?
       zh: 您家庭的平均年收入?
     answer:
       en: ['less than \$10,000', '\$10,001 - \$20,000', '\$20,001 - \$30,000', '\$30,001 - \$40,000', '\$40,001 - \$50,000', '\$50,001 - \$60,000', '\$60,001 - \$150,000', 'over \$150,000', 'I prefer not to answer']
       zh: ['少于 10,000 元', '10,001 - 20,000 元', '20,001 - 30,000 元', '30,001 - 40,000 元', '40,001 - 50,000 元', '50,001 - 60,000 元', '60,001 - 150,000 元', '大于 150,000 元', '我选择不作答']
-
-      

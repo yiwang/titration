@@ -62,7 +62,7 @@ jQuery(document).ready(function(){
   jQuery('#viz-base-ctype1').progressbar({ value: 100 });
   jQuery('#viz-var').progressbar({ value: 100 });
   jQuery('#viz-var-ctype1').progressbar({ value: 100 });
-  jQuery('input[name="ctype1"]').keyup(function(e){    
+  jQuery('input[name="ctype1"]').keyup(function(e){
     // disabled
     //jQuery('#viz-var-ctype1').css('width',(+jQuery('input[name="ctype1"]').val())*100/q[cid].base);
   });
