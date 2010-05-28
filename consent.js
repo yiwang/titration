@@ -4,4 +4,9 @@
     jQuery('#digital-signature').click(function(){
       location.href = 'survey.php?lang='+lang;
     });
+    
+  // hide all
+  jQuery('#consent-form').hide();
+  jQuery('#digital-signature').hide();
+  
 });
